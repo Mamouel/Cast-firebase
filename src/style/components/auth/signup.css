@@ -1,0 +1,25 @@
+.signup-container {
+  text-align: center;
+  min-height: 100vh; }
+  .signup-container .signup-form-container {
+    text-align: center;
+    width: 20%;
+    margin: 50px auto;
+    background-color: #FEFDD9;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.5); }
+    .signup-container .signup-form-container .signup-form-title {
+      margin-top: 25px;
+      font-size: 36px; }
+    .signup-container .signup-form-container .input-fields {
+      margin: 45px auto;
+      width: 80%;
+      height: 30px; }
+      .signup-container .signup-form-container .input-fields .signup-btn {
+        border-radius: 8px;
+        width: 80%;
+        margin: auto;
+        font-size: 20px;
+        background-color: #FEFDD9;
+        border: 1px solid #417505; }

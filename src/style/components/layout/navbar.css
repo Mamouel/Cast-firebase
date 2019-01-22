@@ -1,0 +1,6 @@
+.nav-wrapper {
+  height: 50px;
+  width: 100%; }
+  .nav-wrapper .nav-container {
+    display: flex;
+    justify-content: space-between; }

@@ -1,0 +1,11 @@
+.navlinks {
+  width: 30%;
+  display: flex;
+  justify-content: space-around;
+  list-style:none;
+  .avatar {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+  }
+}
