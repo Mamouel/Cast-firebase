@@ -9,20 +9,19 @@ import firebase from '../../config/fbConfig';
 
 
 const StoryDetails = (props) => {
+  
   const { story, auth } = props;
-console.log(story)
   const storageRef = firebase.storage().ref();
   const storyImg = storageRef.child(story.img).getDownloadURL().then((url) => {
-    var img = document.getElementById('myimg');
+    var img = document.getElementById('story-img');
     img.src = url;
   });
-  console.log(storyImg)
   if (!auth.uid) return <Redirect to='/signin'/>
   if(story) {
     return(
       <div className='stories-details-container'>
         <div className='stories-details-card'>
-        <img id='myimg'></img>
+        <img id='story-img' alt='story-img'></img>
           <div className='stories-details-card-content'>
             <span className='stories-details-card-title'>{ story.title }</span>
             <p>{ story.content }</p>

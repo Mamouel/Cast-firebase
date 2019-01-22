@@ -11,7 +11,7 @@ const SignedInLinks = (props) => {
     <ul className='navlinks'>
       <li><NavLink to='/create'><Button>New Article</Button></NavLink></li>
       <li><Button onClick={props.signOut}>Log Out</Button></li>
-      <li><NavLink to='/'><Button className='avatar'>{props.profile.initials}</Button></NavLink></li>
+      <li><NavLink to='/'><Button className='avatar'>{props.profile.initials ? props.profile.initials : 'Guest'}</Button></NavLink></li>
     </ul>
   )
 }
