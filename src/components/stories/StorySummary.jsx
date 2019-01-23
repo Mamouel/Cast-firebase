@@ -12,7 +12,7 @@ class StorySummary extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      imageUrl : ""
+      imageUrl : ''
     };
   }
 
@@ -32,15 +32,17 @@ class StorySummary extends Component {
   render() {
     const { story } = this.props
     console.log(story)
+    
     return (
-      <div className='story-summary-container'>
+      this.state.imageUrl !== '' ?
+      <div className='story-summary-container' style={{ backgroundImage: `url(${this.state.imageUrl})` }}>
         <div className='story-summary-content'>
-          <img className='story-summary-img' src={this.state.imageUrl} />
           <span className='story-summary-title'>{story.title}</span>
           <p className='story-summary-author'>Posted by { story.authorFirstName } {story.authorLastName}</p>
           <p className='story-summary-date'>{moment(story.createdAt.toDate().toISOString()).calendar()}</p>
         </div>
-      </div>
+      </div> :
+      null
     )
   }
 }

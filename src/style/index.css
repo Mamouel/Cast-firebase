@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600|Source+Serif+Pro:400,600");
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,500,800i,900");
+h1, h2, h3, h4, h5, h6 {
+  font-family: Lato, "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  color: #b15804; }
+
+h1 {
+  font-size: 2em;
+  letter-spacing: 0.03em;
+  color: #b15804; }
+
+h2 {
+  font-size: 1.5em;
+  letter-spacing: 0.025em;
+  color: #b15804; }
+
+h3 {
+  font-size: 1.25em;
+  letter-spacing: 0.02em;
+  color: #b15804; }
+
+h4 {
+  font-size: 1.15em;
+  letter-spacing: 0.02em;
+  color: #b15804; }
+
+h5 {
+  font-size: 1em;
+  letter-spacing: 0.01em;
+  color: #b15804; }
+
+h6 {
+  font-size: 0.9em;
+  letter-spacing: 0.01em;
+  color: #b15804; }
+
+p {
+  line-height: 1.2em; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Lato, "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: linear-gradient(#ffad5f, #e5760d);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  min-height: 100vh; }
+  body a {
+    color: #ffffff;
+    text-decoration: none; }
+    body a:link {
+      color: #ffffff;
+      text-decoration: none; }
+    body a:visited {
+      color: #ffffff;
+      text-decoration: none; }
+    body a:hover {
+      color: #ffffff;
+      text-decoration: none; }
+    body a:active {
+      color: #ffffff;
+      text-decoration: none; }
+  body button {
+    padding: 10px;
+    background-color: #ffffff;
+    border-style: solid 2px #e5760d;
+    color: #b15804;
+    border-radius: 10px; }
+  body .input-fields {
+    color: #b15804;
+    border-color: #b15804; }
+    body .input-fields .input-fields-email:focus {
+      color: #b15804;
+      border-color: #b15804; }
+
+/* SCROLLBAR */
+/* width */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 8px; }
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 2px white;
+  border-radius: 20px; }
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #e5760d;
+  border-radius: 10px;
+  width: 50px; }

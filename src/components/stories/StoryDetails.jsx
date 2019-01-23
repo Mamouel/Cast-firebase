@@ -6,7 +6,7 @@ import { Redirect } from 'react-router-dom';
 import moment from 'moment';
 import firebase from '../../config/fbConfig';
 
-
+import '../../style/components/stories/story-details.css';
 
 const StoryDetails = (props) => {
   
@@ -21,9 +21,11 @@ const StoryDetails = (props) => {
     return(
       <div className='stories-details-container'>
         <div className='stories-details-card'>
-        <img id='story-img' alt='story-img'></img>
-          <div className='stories-details-card-content'>
+          <div className='stories-details-banner'>
             <span className='stories-details-card-title'>{ story.title }</span>
+            <img className='stories-details-img' id='story-img' alt='story-img' />
+          </div>
+          <div className='stories-details-card-content'>
             <p>{ story.content }</p>
           </div>
           <div className='stories-details-card-action'>
