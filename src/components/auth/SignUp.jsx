@@ -23,7 +23,7 @@ class SignUp extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    if(this.state.email != '' && this.state.password != '' && this.state.firstName != '' && this.state.lastName != '') {
+    if(this.state.email !== '' && this.state.password !== '' && this.state.firstName !== '' && this.state.lastName !== '') {
       this.props.signUp(this.state);
       this.props.history.push('/');
     } else {

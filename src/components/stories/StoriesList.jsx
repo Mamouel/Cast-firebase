@@ -9,7 +9,7 @@ const storyList = ({ stories }) => {
     <div className='story-list'>
       {stories && stories.map(story => {
         return(
-          <Link to={'/story/' + story.id} key={story.id}>
+          <Link className='story-link' to={'/story/' + story.id} key={story.id}>
             <StorySummary story={story} />
           </Link>
         )

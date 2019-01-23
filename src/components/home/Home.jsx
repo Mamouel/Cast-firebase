@@ -12,7 +12,6 @@ import '../../style/components/home/home.css';
 class Home extends Component {
   render() {
     const { stories, auth } = this.props
-
     if (!auth.uid) return <Redirect to='/signin'/>
 
     return(

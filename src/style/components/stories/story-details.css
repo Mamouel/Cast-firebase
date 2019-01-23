@@ -1,0 +1,23 @@
+.stories-details-container {
+  width: 100%;
+  margin: auto; }
+  .stories-details-container .stories-details-card .stories-details-banner {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    max-height: 300px;
+    margin: auto;
+    background-color: beige;
+    text-align: center; }
+    .stories-details-container .stories-details-card .stories-details-banner .stories-details-img {
+      width: 40%;
+      margin: auto;
+      position: absolute;
+      top: 65%;
+      left: 30%; }
+    .stories-details-container .stories-details-card .stories-details-banner .stories-details-card-title {
+      width: 60%;
+      position: absolute;
+      top: 15%;
+      left: 20%;
+      font-size: 72px; }

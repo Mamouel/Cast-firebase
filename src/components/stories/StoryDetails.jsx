@@ -6,25 +6,26 @@ import { Redirect } from 'react-router-dom';
 import moment from 'moment';
 import firebase from '../../config/fbConfig';
 
-
+import '../../style/components/stories/story-details.css';
 
 const StoryDetails = (props) => {
+  
   const { story, auth } = props;
-console.log(story)
   const storageRef = firebase.storage().ref();
   const storyImg = storageRef.child(story.img).getDownloadURL().then((url) => {
-    var img = document.getElementById('myimg');
+    var img = document.getElementById('story-img');
     img.src = url;
   });
-  console.log(storyImg)
   if (!auth.uid) return <Redirect to='/signin'/>
   if(story) {
     return(
       <div className='stories-details-container'>
         <div className='stories-details-card'>
-        <img id='myimg'></img>
-          <div className='stories-details-card-content'>
+          <div className='stories-details-banner'>
             <span className='stories-details-card-title'>{ story.title }</span>
+            <img className='stories-details-img' id='story-img' alt='story-img' />
+          </div>
+          <div className='stories-details-card-content'>
             <p>{ story.content }</p>
           </div>
           <div className='stories-details-card-action'>

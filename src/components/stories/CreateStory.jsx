@@ -71,8 +71,7 @@ class CreateStory extends Component {
           </div>
 
           <div>
-            <label className='displayInlineBlock'>
-              Image
+            <label>
               <input
                 name='image'
                 type='file'
