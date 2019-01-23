@@ -1,5 +1,7 @@
 @import "./fonts.scss";
 @import "./variables.scss";
+@import "./mixins.scss";
+
 
 body {
   margin: 0;
@@ -14,6 +16,8 @@ body {
   a {
     color: $white;
     text-decoration: none;
+    cursor: pointer;
+    @include transition (all, 0.25s, ease);
     &:link {
       color: $white;
       text-decoration: none;
@@ -31,23 +35,63 @@ body {
       text-decoration: none;
     }
   }
-  button {
-    padding: 10px;
-    background-color: $white;
-    border-style: solid 2px $primaryDark;
-    color: $primaryDarker;
-    border-radius: 10px;
-  }
-  .input-fields {
-    color: $primaryDarker;
-    border-color: $primaryDarker;
-    .input-fields-email {
-      &:focus {
-        color: $primaryDarker;
-        border-color: $primaryDarker;
-      }
 
-    }
+  input, textarea, select {
+    @include transition (all, 0.25s, ease);
+  }
+
+  button {
+    border-radius: 10px;
+    border-style: solid 2px $primaryDark;
+
+    margin: 0.5em 0;
+    padding: 0.7em 1em;
+    background-color: $primaryDark;
+    color: $primaryDark;
+    border: none;
+      &:hover, &:focus {
+        background-color: $primaryDarker;
+        color: $grayLight;
+      }
+      &:active {
+        box-shadow: 0 2px 4px 2px rgba(54, 39, 28, 0);
+      }
+      &:focus {
+        outline: $black !important;
+      }
+      &.secondaryBtn {
+        background-color: $black;
+        display: block;
+        &:hover {
+          box-shadow: 0 2px 4px 2px rgba(54, 39, 28, 0);
+          background-color: $blackest;
+          color: $grayLight;
+        }
+        &:hover {
+          background-color: $blackest;
+          color: $primaryDark;
+        }
+      }
+      &.tertiaryBtn {
+        background-color: $grayLight;
+        color: $black;
+        &:hover {
+          background-color: $grayMed;
+        }
+        &:focus {
+          color: $blackest;
+        }
+      }
+  }
+
+  .banner {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    max-height: 300px;
+    margin: auto;
+    background-color: beige;
+    text-align: center;
   }
 }
 

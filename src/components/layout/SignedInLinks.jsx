@@ -8,11 +8,11 @@ import '../../style/components/layout/navlinks.css';
 
 const SignedInLinks = (props) => {
   return (
-    <ul className='navlinks'>
-      <li><NavLink to='/create'><Button>New Article</Button></NavLink></li>
-      <li><Button onClick={props.signOut}>Log Out</Button></li>
-      <li><NavLink to='/'><Button className='avatar'>{props.profile.initials ? props.profile.initials : 'Guest'}</Button></NavLink></li>
-    </ul>
+    <div className='navlinks'>
+      <NavLink to='/create'><Button className='nav-btn'>New Article</Button></NavLink>
+      <Button className='nav-btn' onClick={props.signOut} >Log Out</Button>
+      <NavLink to='/'><Button className='avatar'>{props.profile.initials ? props.profile.initials : 'Guest'}</Button></NavLink>
+    </div>
   )
 }
 

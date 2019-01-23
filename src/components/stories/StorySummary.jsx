@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import moment from 'moment';
 import firebase from '../../config/fbConfig';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Typography from '@material-ui/core/Typography';
 
 import '../../style/components/stories/story-summary.css';
 
@@ -35,13 +39,29 @@ class StorySummary extends Component {
     
     return (
       this.state.imageUrl !== '' ?
-      <div className='story-summary-container' style={{ backgroundImage: `url(${this.state.imageUrl})` }}>
-        <div className='story-summary-content'>
-          <span className='story-summary-title'>{story.title}</span>
-          <p className='story-summary-author'>Posted by { story.authorFirstName } {story.authorLastName}</p>
-          <p className='story-summary-date'>{moment(story.createdAt.toDate().toISOString()).calendar()}</p>
-        </div>
-      </div> :
+      <div  >
+        <Card className='story-summary-container' >
+          <CardMedia
+            component='img'
+            className='media'
+            height='140'
+            image={this.state.imageUrl}
+            title='something'
+          />
+          <CardContent>
+            <Typography className='story-summary-title' gutterBottom variant='headline' component='h2'>
+              {story.title}
+            </Typography>
+            <Typography className='story-summary-author' type='subheading' component='p'>
+              Posted by { story.authorFirstName } {story.authorLastName}
+            </Typography>
+            <Typography className='story-summary-date' type='caption' component='p'>
+              {moment(story.createdAt.toDate().toISOString()).calendar()}
+            </Typography>
+          </CardContent>
+        </Card>
+      </div> 
+      :
       null
     )
   }

@@ -8,6 +8,8 @@ import firebase from '../../config/fbConfig';
 
 import '../../style/components/stories/create-story.css'
 
+const storageRef = firebase.storage().ref();
+
 class CreateStory extends Component {
   state = {
     title: '',
@@ -34,10 +36,8 @@ class CreateStory extends Component {
   addImage = async img => {
     try {
     console.log(img)
-    const storageRef = firebase.storage().ref();
     const storyImgRef = storageRef.child('images/stories/' + img.name)
     const snapshot = await storyImgRef.put(img);
-    console.log(snapshot)
     this.setState({ img: snapshot.metadata.fullPath });
     } 
     catch(err) {
@@ -49,13 +49,18 @@ class CreateStory extends Component {
     this.addImage(event.target.files[0]);
   };
 
-  removeImage = () => {
-    this.setState({ img: '' })
+  removeImage = async () => {
+    try {
+     await storageRef.child(this.state.img).delete().then(() => {
+        this.setState({ img: '' })
+      });
+    } catch(err) {
+      console.log(err)
+    }
   }
 
   render() {
     const { auth } = this.props;
-    console.log(this.state)
 
     if (!auth.uid) return <Redirect to='/signin'/>
 
@@ -64,28 +69,29 @@ class CreateStory extends Component {
         <form className='create-story-form' onSubmit={this.handleSubmit}>
           <h5>Create new story</h5>
           <div className='input-fields'>
-            <TextField label='Title' type='text' id='title' onChange={this.handleChange} variant='outlined'></TextField>
+            <TextField className='input-field-title' label='Title' type='text' id='title' onChange={this.handleChange} variant='outlined'></TextField>
           </div>
           <div className='input-fields'>
-            <TextField label='Content' multiline type='text' id='content' onChange={this.handleChange} variant='outlined'></TextField>
+            <TextField className='input-field-content' label='Content' multiline type='text' id='content' onChange={this.handleChange} variant='outlined'></TextField>
           </div>
 
           <div>
-            <label>
-              <input
-                name='image'
-                type='file'
-                className='selectImgInput'
-                onChange={this.handleImageChange}
-              />
-            </label>
+            <label htmlFor="file" className="label-file">Add image ...</label>
+            <input
+              className='input-image'
+              name='image'
+              id='file'
+              type='file'
+              onChange={this.handleImageChange}
+            />
+            
             {this.state.img !== '' && (
-              <img src={this.state.img} alt='uploaded recipe img' />
+              <p>Image successfully uploaded!</p>
             )}
             
           </div>
           {this.state.img !== '' && (
-          <button className='removeImage' onClick={this.removeImage}>Remove image</button>
+          <Button className='removeImage' onClick={this.removeImage}>Remove image</Button>
           )}
           
           <div className='btn-ctn'>

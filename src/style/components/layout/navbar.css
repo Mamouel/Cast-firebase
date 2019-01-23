@@ -1,6 +1,7 @@
 .nav-wrapper {
-  height: 50px;
   width: 100%; }
   .nav-wrapper .nav-container {
     display: flex;
     justify-content: space-between; }
+    .nav-wrapper .nav-container .home-button {
+      height: 100%; }

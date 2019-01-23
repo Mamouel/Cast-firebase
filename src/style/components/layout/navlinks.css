@@ -3,7 +3,8 @@
   display: flex;
   justify-content: space-around;
   list-style: none; }
+  .navlinks .nav-btn {
+    height: 100%;
+    min-height: 45px; }
   .navlinks .avatar {
-    height: 30px;
-    width: 30px;
-    border-radius: 50%; }
+    height: 100%; }

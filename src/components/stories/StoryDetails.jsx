@@ -12,16 +12,17 @@ const StoryDetails = (props) => {
   
   const { story, auth } = props;
   const storageRef = firebase.storage().ref();
-  const storyImg = storageRef.child(story.img).getDownloadURL().then((url) => {
+  const storyImgRef = () => storageRef.child(story.img).getDownloadURL().then((url) => {
     var img = document.getElementById('story-img');
     img.src = url;
   });
+  storyImgRef();
   if (!auth.uid) return <Redirect to='/signin'/>
   if(story) {
     return(
       <div className='stories-details-container'>
         <div className='stories-details-card'>
-          <div className='stories-details-banner'>
+          <div className='banner'>
             <span className='stories-details-card-title'>{ story.title }</span>
             <img className='stories-details-img' id='story-img' alt='story-img' />
           </div>

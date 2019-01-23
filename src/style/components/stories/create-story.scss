@@ -2,7 +2,7 @@
 
 .create-story-container {
   .create-story-form {
-    width: 20%;
+    width: 60%;
     text-align: center;
     background-color: #FEFDD9;
     border-radius: 8px;
@@ -10,10 +10,27 @@
     padding: 25px;
     box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.5);
     text-decoration: none;
+    
     .input-fields {
       margin: 45px auto;
       width: 100%;
-      height: 30px;
+      .input-field-title {
+        width: 100%;
+      }
+      .input-field-content {
+        width: 100%;
+      }
+    }
+    .label-file {
+      cursor: pointer;
+      color: #00b1ca;
+      font-weight: bold;
+      &:hover {
+        color: pink;
+      }
+    }
+    .input-image {
+      display: none;
     }
     .create-story-btn {
       border-radius: 8px;
@@ -26,6 +43,8 @@
       padding-right: 20px;
       padding-top: 5px;
       padding-bottom: 5px;
+      box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.5);
+
     }
   }
 }

@@ -38,6 +38,15 @@ h6 {
 p {
   line-height: 1.2em; }
 
+/*Utils*/
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+/*Media Queries*/
+/*Transitions*/
 body {
   margin: 0;
   padding: 0;
@@ -50,7 +59,13 @@ body {
   min-height: 100vh; }
   body a {
     color: #ffffff;
-    text-decoration: none; }
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+    -ms-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    transition: all 0.25s ease; }
     body a:link {
       color: #ffffff;
       text-decoration: none; }
@@ -63,18 +78,52 @@ body {
     body a:active {
       color: #ffffff;
       text-decoration: none; }
+  body input, body textarea, body select {
+    -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+    -ms-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    transition: all 0.25s ease; }
   body button {
-    padding: 10px;
-    background-color: #ffffff;
+    border-radius: 10px;
     border-style: solid 2px #e5760d;
-    color: #b15804;
-    border-radius: 10px; }
-  body .input-fields {
-    color: #b15804;
-    border-color: #b15804; }
-    body .input-fields .input-fields-email:focus {
-      color: #b15804;
-      border-color: #b15804; }
+    margin: 0.5em 0;
+    padding: 0.7em 1em;
+    background-color: #e5760d;
+    color: #e5760d;
+    border: none; }
+    body button:hover, body button:focus {
+      background-color: #b15804;
+      color: #f4f3f2; }
+    body button:active {
+      box-shadow: 0 2px 4px 2px rgba(54, 39, 28, 0); }
+    body button:focus {
+      outline: #262424 !important; }
+    body button.secondaryBtn {
+      background-color: #262424;
+      display: block; }
+      body button.secondaryBtn:hover {
+        box-shadow: 0 2px 4px 2px rgba(54, 39, 28, 0);
+        background-color: #000000;
+        color: #f4f3f2; }
+      body button.secondaryBtn:hover {
+        background-color: #000000;
+        color: #e5760d; }
+    body button.tertiaryBtn {
+      background-color: #f4f3f2;
+      color: #262424; }
+      body button.tertiaryBtn:hover {
+        background-color: #d1cfcf; }
+      body button.tertiaryBtn:focus {
+        color: #000000; }
+  body .banner {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    max-height: 300px;
+    margin: auto;
+    background-color: beige;
+    text-align: center; }
 
 /* SCROLLBAR */
 /* width */

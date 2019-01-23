@@ -1,0 +1,69 @@
+/*Utils*/
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/*Media Queries*/
+
+@mixin bp-mobileOnly {
+  //ONLY for small screns
+  //480px
+  @media only screen and (max-width: 30em) {
+    @content;
+  }
+}
+
+@mixin bp-sm {
+  //480px
+  @media only screen and (min-width: 30em) {
+    @content;
+  }
+}
+
+@mixin bp-md {
+  //640px
+  @media only screen and (min-width: 40em) {
+    @content;
+  }
+}
+
+@mixin bp-lg {
+  //960px
+  @media only screen and (min-width: 60em) {
+    @content;
+  }
+}
+
+@mixin bp-xl {
+  //1280px
+  @media only screen and (min-width: 80em) {
+    @content;
+  }
+}
+
+@mixin bp-xxl {
+  //1600px
+  @media only screen and (min-width: 100em) {
+    @content;
+  }
+}
+
+@mixin printQuery {
+  @media print {
+    @content;
+  }
+}
+
+
+/*Transitions*/
+
+@mixin transition($what: all, $time: 0.2s, $how: ease-in-out) {
+    -webkit-transition: $what $time $how;
+    -moz-transition:    $what $time $how;
+    -ms-transition:     $what $time $how;
+    -o-transition:      $what $time $how;
+    transition:         $what $time $how;
+}

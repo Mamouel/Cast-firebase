@@ -16,6 +16,7 @@ class Home extends Component {
 
     return(
       <div className='home-container'>
+        <div className='banner' />
         <div>
           <div className='left'>
             <StoriesList stories={stories} />

@@ -14,7 +14,7 @@ const Navbar = (props) => {
   return (
     <nav className='nav-wrapper'>
       <div className='nav-container'>
-        <Link to='/'><Button>CAST</Button></Link>
+        <Link to='/'><Button className='home-button'>CAST</Button></Link>
         {links}
       </div>
     </nav>
