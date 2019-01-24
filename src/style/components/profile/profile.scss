@@ -1,0 +1,11 @@
+
+
+.profile-container {
+  margin: auto;
+  .profile-stories-list {
+    display: flex;
+    overflow: overlay;
+    width: 80%;
+    margin: 50px auto;
+  }
+}
