@@ -29,13 +29,12 @@ class StorySummary extends Component {
     this._isMounted = false;
   }
 
-  getStoryImg = () => storageRef.child(this.props.story.img).getDownloadURL().then((url) => {
+  getStoryImg = async () => await storageRef.child(this.props.story.img).getDownloadURL().then((url) => {
     if(this._isMounted) {this.setState({ imageUrl: url })}
   });
 
   render() {
     const { story } = this.props
-    console.log(story)
     
     return (
       this.state.imageUrl !== '' ?
