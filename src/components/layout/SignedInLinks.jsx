@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button';
 import '../../style/components/layout/navlinks.css';
 
 const SignedInLinks = (props) => {
+  console.log(props)
   return (
     <div className='navlinks'>
       <NavLink to='/create'><Button className='nav-btn'>New Article</Button></NavLink>

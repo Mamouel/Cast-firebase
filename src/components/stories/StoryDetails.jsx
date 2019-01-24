@@ -16,8 +16,15 @@ const StoryDetails = (props) => {
     var img = document.getElementById('story-img');
     img.src = url;
   });
-  storyImgRef();
+
+  if(story) {
+    storyImgRef();
+  } else {
+    return <Redirect to='/' />
+  }
+
   if (!auth.uid) return <Redirect to='/signin'/>
+  
   if(story) {
     return(
       <div className='stories-details-container'>
@@ -26,12 +33,14 @@ const StoryDetails = (props) => {
             <span className='stories-details-card-title'>{ story.title }</span>
             <img className='stories-details-img' id='story-img' alt='story-img' />
           </div>
-          <div className='stories-details-card-content'>
-            <p>{ story.content }</p>
-          </div>
+          
           <div className='stories-details-card-action'>
             <div className='stories-details-author'>Posted by { story.authorFirstName } { story.authorLastName }</div>
             <div className='stories-details-date'>{moment(story.createdAt.toDate().toISOString()).calendar()}</div>
+          </div>
+
+          <div className='stories-details-card-content'>
+            <p>{ story.content }</p>
           </div>
         </div>
       </div>

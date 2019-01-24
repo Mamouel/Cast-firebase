@@ -2,13 +2,14 @@
   width: 100%;
   margin: auto;
   .stories-details-card {
+    position: relative;
     .banner {
       .stories-details-img {
         width: 40%;
         margin: auto;
         position: absolute;
-        top: 65%;
-        left: 30%;
+        top: 80%;
+        left: 10%;
       }
       .stories-details-card-title {
         width: 60%;
@@ -18,16 +19,24 @@
         font-size: 72px;
       }
     }
+    .stories-details-card-action {
+      position: absolute;
+      top: 100%;
+      right: 15%;
+      .stories-details-author {
+        background-color: blue;
+      }
+      .stories-details-date {
+        background-color: red;
+      }
+    }
     .stories-details-card-content {
-      
+      background-color: white;
+      width: 40%;
+      float: right;
+      margin: 50px;
     }
-  }
-  .stories-details-card-action {
-    .stories-details-author {
-
-    }
-    .stories-details-date {
-      
-    }
+    
   }
 }
+

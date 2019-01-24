@@ -9,8 +9,8 @@ import Button from '@material-ui/core/Button';
 import '../../style/components/layout/navbar.css';
 
 const Navbar = (props) => {
-  const { auth, profile } = props;
-  const links = auth.uid ? <SignedInLinks profile={profile} /> : <SignedOutLinks />;
+  const { auth, profile, stories } = props;
+  const links = auth.uid ? <SignedInLinks profile={profile} stories={stories}/> : <SignedOutLinks />;
   return (
     <nav className='nav-wrapper'>
       <div className='nav-container'>
@@ -24,7 +24,8 @@ const Navbar = (props) => {
 const mapStateToProps = (state) => {
   return {
     auth: state.firebase.auth,
-    profile: state.firebase.profile
+    profile: state.firebase.profile,
+    stories: state.firestore.ordered.stories
   }
 }
 

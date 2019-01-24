@@ -39,14 +39,7 @@ class StorySummary extends Component {
     return (
       this.state.imageUrl !== '' ?
       <div  >
-        <Card className='story-summary-container' >
-          <CardMedia
-            component='img'
-            className='media'
-            height='140'
-            image={this.state.imageUrl}
-            title='something'
-          />
+        <Card className='story-summary-container' style={{ backgroundImage: `url(${this.state.imageUrl})` }}>
           <CardContent>
             <Typography className='story-summary-title' gutterBottom variant='headline' component='h2'>
               {story.title}

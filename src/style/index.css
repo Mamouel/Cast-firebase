@@ -3,37 +3,37 @@
 h1, h2, h3, h4, h5, h6 {
   font-family: Lato, "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 600;
-  color: #b15804; }
+  color: #e5760d; }
 
 h1 {
   font-size: 2em;
   letter-spacing: 0.03em;
-  color: #b15804; }
+  color: #e5760d; }
 
 h2 {
   font-size: 1.5em;
   letter-spacing: 0.025em;
-  color: #b15804; }
+  color: #e5760d; }
 
 h3 {
   font-size: 1.25em;
   letter-spacing: 0.02em;
-  color: #b15804; }
+  color: #e5760d; }
 
 h4 {
   font-size: 1.15em;
   letter-spacing: 0.02em;
-  color: #b15804; }
+  color: #e5760d; }
 
 h5 {
   font-size: 1em;
   letter-spacing: 0.01em;
-  color: #b15804; }
+  color: #e5760d; }
 
 h6 {
   font-size: 0.9em;
   letter-spacing: 0.01em;
-  color: #b15804; }
+  color: #e5760d; }
 
 p {
   line-height: 1.2em; }
@@ -53,7 +53,7 @@ body {
   font-family: Lato, "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: linear-gradient(#ffad5f, #e5760d);
+  background-image: linear-gradient(#FFB166, #F28014);
   background-repeat: no-repeat;
   background-size: 100%;
   min-height: 100vh; }
@@ -86,14 +86,14 @@ body {
     transition: all 0.25s ease; }
   body button {
     border-radius: 10px;
-    border-style: solid 2px #e5760d;
+    border-style: solid 2px #F28014;
     margin: 0.5em 0;
     padding: 0.7em 1em;
-    background-color: #e5760d;
-    color: #e5760d;
+    background-color: #F28014;
+    color: #F28014;
     border: none; }
     body button:hover, body button:focus {
-      background-color: #b15804;
+      background-color: #e5760d;
       color: #f4f3f2; }
     body button:active {
       box-shadow: 0 2px 4px 2px rgba(54, 39, 28, 0); }
@@ -108,7 +108,7 @@ body {
         color: #f4f3f2; }
       body button.secondaryBtn:hover {
         background-color: #000000;
-        color: #e5760d; }
+        color: #F28014; }
     body button.tertiaryBtn {
       background-color: #f4f3f2;
       color: #262424; }
@@ -138,6 +138,6 @@ body {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #e5760d;
+  background: #F28014;
   border-radius: 10px;
   width: 50px; }
