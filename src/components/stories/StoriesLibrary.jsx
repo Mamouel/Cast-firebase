@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-// import Notifications from './Notifications';
-import StoriesList from '../stories/StoriesList';
+import StoriesList from './StoriesList';
 import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
@@ -9,7 +8,7 @@ import { Redirect } from 'react-router-dom';
 
 import '../../style/components/home/home.css';
 
-class Home extends Component {
+class StoriesLibrary extends Component {
   render() {
     const { stories, auth } = this.props
     if (!auth.uid) return <Redirect to='/signin'/>
@@ -17,6 +16,11 @@ class Home extends Component {
     return(
       <div className='home-container'>
         <div className='banner' />
+        <div>
+          <div className='left'>
+            <StoriesList stories={stories} />
+          </div>
+        </div>
       </div>
     )
   }
@@ -34,4 +38,4 @@ export default compose(
   firestoreConnect([
     { collection: 'stories' }
   ])
-)(Home);
+)(StoriesLibrary);
