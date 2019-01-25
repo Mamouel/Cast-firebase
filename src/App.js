@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Router, Switch, Route } from 'react-router-dom';
 import Navbar from './components/layout/NavBar';
 import Home from './components/home/Home'
 import StoryDetails from './components/stories/StoryDetails';
@@ -7,12 +7,15 @@ import SignIn from './components/auth/SignIn';
 import SignUp from './components/auth/SignUp';
 import CreateStory from './components/stories/CreateStory';
 import Profile from './components/profile/Profile';
+import SearchResults from './components/stories/SearchResults';
 
+import createBrowserHistory from 'history/createBrowserHistory';
+const history = createBrowserHistory();
 
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
+      <Router history={history}>
         <div className="App">
           <Navbar />
           <Switch>
@@ -22,9 +25,10 @@ class App extends Component {
             <Route path='/signup' component={SignUp} />
             <Route path='/create' component={CreateStory} />
             <Route path='/profile' component={Profile} />
+            <Route path='/search' component={SearchResults} />
           </Switch>
         </div>
-      </BrowserRouter>
+      </Router>
     );
   }
 }

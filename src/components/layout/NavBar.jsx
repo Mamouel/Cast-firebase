@@ -4,13 +4,14 @@ import SignedInLinks from './SignedInLinks';
 import SignedOutLinks from './SignedOutLinks';
 import { connect } from 'react-redux';
 import Button from '@material-ui/core/Button';
-
+import { withRouter } from 'react-router'
 
 import '../../style/components/layout/navbar.css';
 
 const Navbar = (props) => {
-  const { auth, profile, stories } = props;
-  const links = auth.uid ? <SignedInLinks profile={profile} stories={stories}/> : <SignedOutLinks />;
+  const { auth, profile, stories, history } = props;
+
+  const links = auth.uid ? <SignedInLinks profile={profile} stories={stories} history={history}/> : <SignedOutLinks />;
   return (
     <nav className='nav-wrapper'>
       <div className='nav-container'>
@@ -21,7 +22,7 @@ const Navbar = (props) => {
   )
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, props) => {
   return {
     auth: state.firebase.auth,
     profile: state.firebase.profile,
@@ -29,4 +30,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(Navbar);
+export default withRouter(connect(mapStateToProps)(Navbar));
