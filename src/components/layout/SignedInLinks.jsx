@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { signOut } from '../../store/actions/authActions';
 import { search } from '../../store/actions/searchActions';
-
+import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { NavLink } from 'react-router-dom';
 
@@ -61,8 +61,16 @@ class SignedInLinks extends Component {
     const { profile, signOut } = this.props
     return (
       <div className='navlinks'>
-        <input type="text" className="input" onChange={this.handleChange} placeholder="Search..." />
-        <Button onClick={this.handleSubmit}>SEARCH</Button>
+      <TextField
+        id="outlined-search"
+        label="Search  ..."
+        type="search"
+        className="search-input"
+        margin="normal"
+        variant="outlined"
+        onChange={this.handleChange}
+      />
+        <Button className="search-btn" onClick={this.handleSubmit}>SEARCH</Button>
         <NavLink to='/create'><Button className='nav-btn'>New Article</Button></NavLink>
         <Button className='nav-btn' onClick={signOut} >Log Out</Button>
         <NavLink to='/profile'><Button className='avatar'>{profile.initials ? profile.initials : 'Guest'}</Button></NavLink>
