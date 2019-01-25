@@ -11,9 +11,7 @@ import '../../style/components/profile/profile.css';
 class Profile extends Component {
   render() {
     const { stories, auth, profile } = this.props
-    console.log(profile)
-    console.log(stories)
-    console.log(auth)
+    console.log(this.props)
     if (!auth.uid) return <Redirect to='/signin'/>
 
     return(

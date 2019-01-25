@@ -1,8 +1,15 @@
 .navlinks {
-  width: 30%;
+  width: 70%;
   display: flex;
   justify-content: flex-end;
   list-style: none; }
+  .navlinks input {
+    color: white; }
+  .navlinks .search-input {
+    width: 50%;
+    color: white; }
+  .navlinks .search-btn {
+    margin-right: 100px; }
   .navlinks .nav-btn {
     height: 100%;
     min-height: 45px;
