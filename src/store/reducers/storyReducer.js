@@ -9,10 +9,16 @@ const initialState = {
 const storyReducer = (state = initialState, action) => {
   switch(action.type) {
     case 'CREATE_STORY':
-      console.log('Story created', action.article);
+      console.log('Story created', action);
       return state;
-    case 'CREATE_ARTICLE_ERROR':
+    case 'CREATE_STORY_ERROR':
       console.log('Story create error', action.err);
+      return state;
+    case 'DELETE_STORY':
+      console.log('Story deleted', action);
+      return null;
+    case 'DELETE_STORY_ERROR':
+      console.log('Story delete error', action.err);
       return state;
     default: 
       return state;

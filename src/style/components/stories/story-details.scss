@@ -1,7 +1,7 @@
 .stories-details-container {
   width: 100%;
   margin: auto;
-  .stories-details-card {
+  .stories-details {
     position: relative;
     .banner {
       .stories-details-img {
@@ -11,7 +11,7 @@
         top: 80%;
         left: 10%;
       }
-      .stories-details-card-title {
+      .stories-details-title {
         width: 60%;
         position: absolute;
         top: 15%;
@@ -19,7 +19,7 @@
         font-size: 72px;
       }
     }
-    .stories-details-card-action {
+    .stories-details-infos {
       position: absolute;
       top: 100%;
       right: 15%;
@@ -30,7 +30,7 @@
         background-color: red;
       }
     }
-    .stories-details-card-content {
+    .stories-details-content {
       background-color: white;
       width: 40%;
       float: right;

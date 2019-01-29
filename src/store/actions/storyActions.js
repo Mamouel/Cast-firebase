@@ -17,3 +17,20 @@ export const createStory = (story) => {
     })
   };
 };
+
+
+export const deleteStory = (story, storyId) => {
+  return (dispatch, getState, { getFirebase, getFirestore }) => {
+    //make async call to database
+    const firestore = getFirestore();
+    firestore.collection('stories').doc(storyId).delete()
+      .then(() => {
+        console.log('story deleted')
+      })
+      .then(() => {
+        dispatch({ type: 'DELETE_STORY', story });
+      }).catch((err) => {
+        dispatch({ type: 'DELETE_STORY_ERROR', err });
+      })
+  };
+};

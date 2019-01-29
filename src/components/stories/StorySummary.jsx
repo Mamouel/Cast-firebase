@@ -26,7 +26,6 @@ class StorySummary extends Component {
   }
 
   getStoryImg = async () => {
-    console.log(this.props.story.img)
     try {
       await storageRef.child(this.props.story.img).getDownloadURL().then((url) => {
         if(this._isMounted) {this.setState({ imageUrl: url })}
@@ -46,11 +45,15 @@ class StorySummary extends Component {
             <div className='story-summary-title'>
               {story.title}
             </div>
-            <div className='story-summary-author'>
-              Posted by { story.authorFirstName } {story.authorLastName}
-            </div>
-            <div className='story-summary-date'>
-              {moment(story.createdAt.toDate().toISOString()).calendar()}
+            <div className=''>
+
+              <div className='story-summary-author'>
+                Posted by { story.authorFirstName } {story.authorLastName}
+              </div>
+              <div className='story-summary-date'>
+                {moment(story.createdAt.toDate().toISOString()).calendar()}
+              </div>
+              {}
             </div>
           </div>
         </div>

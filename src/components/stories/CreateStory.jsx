@@ -78,11 +78,11 @@ class CreateStory extends Component {
           </div>
 
           <div className='input-fields'>
-            <input className='input-field-title' label='Title' type='text' id='title' onChange={this.handleChange} variant='outlined'></input>
+            <input className='input-field-title' type='text' id='title' onChange={this.handleChange}></input>
           </div>
 
           <div className='input-fields'>
-            <input className='input-field-content' label='Content' multiline type='text' id='content' onChange={this.handleChange} variant='outlined'></input>
+            <input className='input-field-content' id='content' onChange={this.handleChange}></input>
           </div>
 
           <div>

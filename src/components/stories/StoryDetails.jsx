@@ -6,12 +6,17 @@ import { Redirect } from 'react-router-dom';
 import moment from 'moment';
 import firebase from '../../config/fbConfig';
 
+import { deleteStory } from '../../store/actions/storyActions';
+
+
 import '../../style/components/stories/story-details.css';
 
 const StoryDetails = (props) => {
   
   const { story, auth } = props;
+  const storyId = props.match.params.id;
   const storageRef = firebase.storage().ref();
+  
   const storyImgRef = async () => { 
     try {
       await storageRef.child(story.img).getDownloadURL().then((url) => {
@@ -22,6 +27,18 @@ const StoryDetails = (props) => {
       console.log(err)
     }
   }
+
+
+  const alertUserBeforeDelete = (story, storyId) => {
+    console.log(storyId)
+    let answer = window.confirm("Do you really want to delete this story?");
+    if(answer) {
+      props.deleteStory(story, storyId)
+      props.history.push("/stories")
+    } else {
+      console.log("cancelled")
+    }
+}
 
   if(story) {
     storyImgRef();
@@ -34,20 +51,23 @@ const StoryDetails = (props) => {
   if(story) {
     return(
       <div className='stories-details-container'>
-        <div className='stories-details-card'>
+        <div className='stories-details'>
           <div className='banner'>
-            <span className='stories-details-card-title'>{ story.title }</span>
+            <span className='stories-details-title'>{ story.title }</span>
             <img className='stories-details-img' id='story-img' alt='story-img' />
           </div>
           
-          <div className='stories-details-card-action'>
+          <div className='stories-details-infos'>
             <div className='stories-details-author'>Posted by { story.authorFirstName } { story.authorLastName }</div>
             <div className='stories-details-date'>{moment(story.createdAt.toDate().toISOString()).calendar()}</div>
           </div>
 
-          <div className='stories-details-card-content'>
+          <div className='stories-details-content'>
             <p>{ story.content }</p>
           </div>
+          {auth.uid === story.authorId && (
+            <button className='delete-story-btn' onClick={() => alertUserBeforeDelete(story, storyId)}>Delete this story</button>
+          )}
         </div>
       </div>
     )
@@ -68,8 +88,14 @@ const mapStateToProps = (state, ownProps) => {
   }
 }
 
+const mapDispatchToProps = (dispatch) => {
+  return {
+    deleteStory: (story, storyId) => dispatch(deleteStory(story, storyId))
+  }
+};
+
 export default compose(
-  connect(mapStateToProps),
+  connect(mapStateToProps, mapDispatchToProps),
   firestoreConnect([
     { collection: 'stories' }
   ])

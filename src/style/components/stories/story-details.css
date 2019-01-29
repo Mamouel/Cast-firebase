@@ -1,29 +1,29 @@
 .stories-details-container {
   width: 100%;
   margin: auto; }
-  .stories-details-container .stories-details-card {
+  .stories-details-container .stories-details {
     position: relative; }
-    .stories-details-container .stories-details-card .banner .stories-details-img {
+    .stories-details-container .stories-details .banner .stories-details-img {
       width: 40%;
       margin: auto;
       position: absolute;
       top: 80%;
       left: 10%; }
-    .stories-details-container .stories-details-card .banner .stories-details-card-title {
+    .stories-details-container .stories-details .banner .stories-details-title {
       width: 60%;
       position: absolute;
       top: 15%;
       left: 20%;
       font-size: 72px; }
-    .stories-details-container .stories-details-card .stories-details-card-action {
+    .stories-details-container .stories-details .stories-details-infos {
       position: absolute;
       top: 100%;
       right: 15%; }
-      .stories-details-container .stories-details-card .stories-details-card-action .stories-details-author {
+      .stories-details-container .stories-details .stories-details-infos .stories-details-author {
         background-color: blue; }
-      .stories-details-container .stories-details-card .stories-details-card-action .stories-details-date {
+      .stories-details-container .stories-details .stories-details-infos .stories-details-date {
         background-color: red; }
-    .stories-details-container .stories-details-card .stories-details-card-content {
+    .stories-details-container .stories-details .stories-details-content {
       background-color: white;
       width: 40%;
       float: right;
