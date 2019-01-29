@@ -23,11 +23,11 @@ body {
       text-decoration: none;
     }
     &:visited {
-      color: $white;
+      color: $primaryDark;
       text-decoration: none;
     }
     &:hover {
-      color: $white;
+      color: $primaryLight;
       text-decoration: none;
     }
     &:active {
@@ -41,12 +41,8 @@ body {
   }
 
   button {
-    border-radius: 10px;
     border-style: solid 2px $primaryDark;
-
-    margin: 0.5em 0;
-    padding: 0.7em 1em;
-    background-color: $primaryDark;
+    background-color: $primaryLight;
     color: $primaryDark;
     border: none;
       &:hover, &:focus {

@@ -11,7 +11,6 @@ import '../../style/components/profile/profile.css';
 class Profile extends Component {
   render() {
     const { stories, auth, profile } = this.props
-    console.log(this.props)
     if (!auth.uid) return <Redirect to='/signin'/>
 
     return(
@@ -23,7 +22,7 @@ class Profile extends Component {
         </div>
           <p>Your stories</p>
         <div className='profile-stories-list'>
-          {stories && stories.map(story => {
+          {stories ? stories.map(story => {
             if(story.authorId === auth.uid) {
               return (
                 <Link className='story-link' to={'/story/' + story.id} key={story.id}>
@@ -31,7 +30,7 @@ class Profile extends Component {
                 </Link>
               )
             }
-          })}
+          }) : <div>No story to show</div>}
         </div>
       </div>
     )

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { signUp } from '../../store/actions/authActions';
-import TextField from '@material-ui/core/TextField';
 
 
 import '../../style/components/auth/signup.css';
@@ -27,32 +26,35 @@ class SignUp extends Component {
       this.props.signUp(this.state);
       this.props.history.push('/');
     } else {
-      document.getElementById('signup-error').innerHTML = 'All fields are mandatory'
+      document.getElementById('signup-error').innerHTML = 'All fields are mandatory';
+      this.props.history.push('/signup');
     }
   };
 
   render() {
     const { auth, authError } = this.props;
-    // if (auth) return <Redirect to='/' />
+    console.log(authError)
+    if (auth.uid) return <Redirect to='/' />
+
     return (
       <div className='signup-container'>
         <form className='signup-form-container' onSubmit={this.handleSubmit}>
           <h5 className='signup-form-title'>Create account</h5>
           <div className='input-fields'>
             <label htmlFor='email'></label>
-            <TextField label='Email' type='email' id='email' onChange={this.handleChange} variant='outlined'></TextField>
+            <input label='Email' type='email' id='email' onChange={this.handleChange} variant='outlined'></input>
           </div>
           <div className='input-fields'>
             <label htmlFor='password'></label>
-            <TextField label='Password' type='password' id='password' onChange={this.handleChange} variant='outlined'></TextField>
+            <input label='Password' type='password' id='password' onChange={this.handleChange} variant='outlined'></input>
           </div>
           <div className='input-fields'>
             <label htmlFor='firstName'></label>
-            <TextField label='First Name' type='text' id='firstName' onChange={this.handleChange} variant='outlined'></TextField>
+            <input label='First Name' type='text' id='firstName' onChange={this.handleChange} variant='outlined'></input>
           </div>
           <div className='input-fields'>
             <label htmlFor='lastName'></label>
-            <TextField label='Last Name' type='text' id='lastName' onChange={this.handleChange} variant='outlined'></TextField>
+            <input label='Last Name' type='text' id='lastName' onChange={this.handleChange} variant='outlined'></input>
           </div>
           <div className='input-fields'>
             <button className='signup-btn'>Sign Up</button>

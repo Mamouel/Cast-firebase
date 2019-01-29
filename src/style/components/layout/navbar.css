@@ -2,6 +2,7 @@
   width: 100%; }
   .nav-wrapper .nav-container {
     display: flex;
-    justify-content: space-between; }
+    justify-content: space-between;
+    background-color: #FFB166; }
     .nav-wrapper .nav-container .home-button {
       height: 100%; }

@@ -1,9 +1,11 @@
+@import '../../variables';
 
 .nav-wrapper {
   width: 100%;
   .nav-container {
     display: flex;
     justify-content: space-between;
+    background-color: $primaryLight;
     .home-button {
       height: 100%;
     }

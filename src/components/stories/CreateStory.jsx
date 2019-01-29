@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { createStory } from '../../store/actions/storyActions';
 import { Redirect } from 'react-router-dom';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
 import firebase from '../../config/fbConfig';
 
 import '../../style/components/stories/create-story.css'
@@ -80,11 +78,11 @@ class CreateStory extends Component {
           </div>
 
           <div className='input-fields'>
-            <TextField className='input-field-title' label='Title' type='text' id='title' onChange={this.handleChange} variant='outlined'></TextField>
+            <input className='input-field-title' label='Title' type='text' id='title' onChange={this.handleChange} variant='outlined'></input>
           </div>
 
           <div className='input-fields'>
-            <TextField className='input-field-content' label='Content' multiline type='text' id='content' onChange={this.handleChange} variant='outlined'></TextField>
+            <input className='input-field-content' label='Content' multiline type='text' id='content' onChange={this.handleChange} variant='outlined'></input>
           </div>
 
           <div>
@@ -97,11 +95,11 @@ class CreateStory extends Component {
 
           </div>
           {this.state.img !== '' && (
-          <Button className='removeImage' onClick={this.removeImage}>Remove image</Button>
+          <button className='removeImage' onClick={this.removeImage}>Remove image</button>
           )}
           
           <div className='btn-ctn'>
-            <Button className='create-story-btn' onClick={this.handleSubmit}>Create</Button>
+            <button className='create-story-btn' onClick={this.handleSubmit}>Create</button>
             <div id='create-error'></div>
           </div>
         </form>

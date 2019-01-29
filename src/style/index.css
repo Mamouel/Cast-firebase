@@ -70,10 +70,10 @@ body {
       color: #ffffff;
       text-decoration: none; }
     body a:visited {
-      color: #ffffff;
+      color: #F28014;
       text-decoration: none; }
     body a:hover {
-      color: #ffffff;
+      color: #FFB166;
       text-decoration: none; }
     body a:active {
       color: #ffffff;
@@ -85,11 +85,8 @@ body {
     -o-transition: all 0.25s ease;
     transition: all 0.25s ease; }
   body button {
-    border-radius: 10px;
     border-style: solid 2px #F28014;
-    margin: 0.5em 0;
-    padding: 0.7em 1em;
-    background-color: #F28014;
+    background-color: #FFB166;
     color: #F28014;
     border: none; }
     body button:hover, body button:focus {

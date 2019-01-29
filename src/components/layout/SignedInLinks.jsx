@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { signOut } from '../../store/actions/authActions';
 import { search } from '../../store/actions/searchActions';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
 import { NavLink } from 'react-router-dom';
 
 
@@ -14,14 +12,14 @@ class SignedInLinks extends Component {
     super(props);
     this.state = {
       filtered: [],
-      searchInput: ""
+      searchInput: ''
     };
   }
 
   handleSubmit = e => {
     e.preventDefault();
     this.props.search(this.state.filtered)
-    this.props.history.push("/search")
+    this.props.history.push('/search')
   }
 
   handleChange = (e) => {
@@ -32,10 +30,9 @@ class SignedInLinks extends Component {
   }
 
   performSearch = (searchTerm) => {
-    console.log(searchTerm)
     let currentList = [];
     let newList = [];
-    if (searchTerm !== "") {
+    if (searchTerm !== '') {
       currentList = this.props.stories;
       newList = currentList.filter(story => {
         const titleMatch = story.title.toLowerCase();
@@ -57,26 +54,25 @@ class SignedInLinks extends Component {
 
 
   render() {
-    console.log(this.state)
     const { profile, signOut } = this.props
     return (
       <div className='navlinks'>
         <form className='search-form' onSubmit={this.handleSubmit}>
-            <TextField
-              id="outlined-search"
-              label="Search  ..."
-              type="search"
-              className="search-input"
-              margin="normal"
-              variant="outlined"
+            <input
+              id='outlined-search'
+              placeholder='Search...'
+              type='search'
+              className='search-input'
+              margin='normal'
+              variant='outlined'
               onChange={this.handleChange}
             />
-          <Button className="search-btn" onClick={this.handleSubmit}>SEARCH</Button>
+          <button className='search-btn' onClick={this.handleSubmit}>SEARCH</button>
         </form>
-        <NavLink to='/stories'><Button className='nav-btn'>All Stories</Button></NavLink>
-        <NavLink to='/create'><Button className='nav-btn'>New Story</Button></NavLink>
-        <Button className='nav-btn' onClick={signOut} >Log Out</Button>
-        <NavLink to='/profile'><Button className='avatar'>{profile.initials ? profile.initials : 'Guest'}</Button></NavLink>
+        <NavLink to='/stories'><button className='nav-btn'>All Stories</button></NavLink>
+        <NavLink to='/create'><button className='nav-btn'>New Story</button></NavLink>
+        <button className='nav-btn' onClick={signOut} >Log Out</button>
+        <NavLink to='/profile'><button className='avatar'>{profile.initials ? profile.initials : 'Guest'}</button></NavLink>
       </div>
     )
   }

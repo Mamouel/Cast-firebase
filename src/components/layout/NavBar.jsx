@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import SignedInLinks from './SignedInLinks';
 import SignedOutLinks from './SignedOutLinks';
 import { connect } from 'react-redux';
-import Button from '@material-ui/core/Button';
 import { withRouter } from 'react-router'
 
 import '../../style/components/layout/navbar.css';
@@ -15,7 +14,7 @@ const Navbar = (props) => {
   return (
     <nav className='nav-wrapper'>
       <div className='nav-container'>
-        <Link to='/'><Button className='home-button'>CAST</Button></Link>
+        <Link to='/'><button className='home-button'>CAST</button></Link>
         {links}
       </div>
     </nav>

@@ -12,10 +12,16 @@ const StoryDetails = (props) => {
   
   const { story, auth } = props;
   const storageRef = firebase.storage().ref();
-  const storyImgRef = () => storageRef.child(story.img).getDownloadURL().then((url) => {
-    var img = document.getElementById('story-img');
-    img.src = url;
-  });
+  const storyImgRef = async () => { 
+    try {
+      await storageRef.child(story.img).getDownloadURL().then((url) => {
+        var img = document.getElementById('story-img');
+        img.src = url;
+      });
+    } catch(err) {
+      console.log(err)
+    }
+  }
 
   if(story) {
     storyImgRef();

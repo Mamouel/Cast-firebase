@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import StorySummary from './StorySummary';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { firestoreConnect } from 'react-redux-firebase';
-import { compose } from 'redux';
-import { Link } from 'react-router-dom';
-
 
 import '../../style/components/home/home.css';
 
@@ -29,7 +25,6 @@ class SearchResults extends Component {
   render() {
     
     const { auth, search } = this.props;
-    console.log(this.props)
     if (!auth.uid) return <Redirect to='/signin'/>
     return(
       (!this.state.isLoading) ?

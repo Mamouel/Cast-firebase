@@ -3,15 +3,14 @@ import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
 import { Redirect } from 'react-router-dom';
-import Typist from 'react-typist';
 
 
 import '../../style/components/home/home.css';
 
 class Home extends Component {
   render() {
-    const { stories, auth } = this.props
-    if (!auth.uid) return <Redirect to='/signin'/>
+    const { auth } = this.props
+    if (!auth.uid) return <Redirect to='/signup'/>
 
     return(
       <div className='home-container'>

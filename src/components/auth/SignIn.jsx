@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { signIn } from '../../store/actions/authActions';
 import { Redirect, Link } from 'react-router-dom';
-import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
 
 
 
@@ -34,10 +32,10 @@ class SignIn extends Component {
         <form className='signin-form-container' onSubmit={this.handleSubmit}>
           <h5 className='signin-form-title'>Sign In</h5>
           <div className='input-fields'>
-            <TextField className='input-fields-email' label='Email' type='email' id='email' onChange={this.handleChange} variant='outlined'></TextField>
+            <input className='input-fields-email' label='Email' type='email' id='email' onChange={this.handleChange} variant='outlined'></input>
           </div>
           <div className='input-fields'>
-            <TextField label='Password' type='password' id='password' onChange={this.handleChange} variant='outlined'></TextField>
+            <input label='Password' type='password' id='password' onChange={this.handleChange} variant='outlined'></input>
           </div>
           <div className='input-fields'>
             <button className='login-btn'>Login</button>
@@ -45,10 +43,10 @@ class SignIn extends Component {
           </div>
           <div className='login-links'>
             <Link to='/signup'>
-              <Button >Create new account</Button>
+              <button >Create new account</button>
             </Link>
             <Link to='/'>
-              <Button>Forgot password ?</Button>
+              <button>Forgot password ?</button>
             </Link>
           </div>
         </form>

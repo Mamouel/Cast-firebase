@@ -3,13 +3,13 @@
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 10px;
-  width: 250px;
-  max-width: 250px;
-  min-height: 300px;
-  margin: 20px 10px;
+  width: 300px;
+  max-width: 300px;
+  min-height: 350px;
+  margin: 10px;
   position: relative; }
   .story-summary-container .story-summary-title {
-    padding: 20px;
+    padding: 10px;
     font-size: 24px;
     background-color: white;
     white-space: nowrap;
@@ -17,7 +17,7 @@
     text-overflow: ellipsis;
     width: 80%;
     position: absolute;
-    top: 25%;
+    top: 5%;
     left: 0%;
     z-index: 5; }
   .story-summary-container .story-summary-author {
@@ -27,7 +27,7 @@
     text-overflow: ellipsis;
     font-size: 12px;
     position: absolute;
-    top: 5%;
+    top: 85%;
     left: 5%; }
   .story-summary-container .story-summary-date {
     font-size: 20px;
@@ -36,5 +36,5 @@
     text-overflow: ellipsis;
     font-size: 12px;
     position: absolute;
-    top: 15%;
+    top: 90%;
     left: 5%; }
