@@ -50,10 +50,8 @@ class SignIn extends Component {
             <Link to='/'>
               <Button>Forgot password ?</Button>
             </Link>
-
           </div>
         </form>
-        
       </div>
     )
   }
