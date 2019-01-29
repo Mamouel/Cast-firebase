@@ -5,7 +5,6 @@ import { Redirect } from 'react-router-dom';
 import firebase from '../../config/fbConfig';
 
 import '../../style/components/stories/create-story.css'
-import { all } from 'rsvp';
 
 const storageRef = firebase.storage().ref();
 
@@ -59,9 +58,9 @@ class CreateStory extends Component {
   }
 
   checkStateValues = (stateValues) => {
-    console.log(stateValues)
     const allFieldsFilled = stateValues.filter(element => {
-      if(element != '') return element;
+      if(element !== '') return element;
+      return null;
     })
     return allFieldsFilled.length;
   }

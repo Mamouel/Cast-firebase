@@ -29,6 +29,8 @@ class Profile extends Component {
                   <StorySummary story={story} />
                 </Link>
               )
+            } else {
+              return null;
             }
           }) : <div>No story to show</div>}
         </div>
