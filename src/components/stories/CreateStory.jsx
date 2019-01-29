@@ -5,6 +5,7 @@ import { Redirect } from 'react-router-dom';
 import firebase from '../../config/fbConfig';
 
 import '../../style/components/stories/create-story.css'
+import { all } from 'rsvp';
 
 const storageRef = firebase.storage().ref();
 
@@ -26,7 +27,7 @@ class CreateStory extends Component {
     e.preventDefault();
     if(this.state.title !== '' && this.state.content !== '') {
       this.props.createStory(this.state);
-      this.props.history.push('/');
+      this.props.history.push('/stories');
     } else {
       document.getElementById('create-error').innerHTML = 'All fields are mandatory'
     }
@@ -57,9 +58,20 @@ class CreateStory extends Component {
     }
   }
 
+  checkStateValues = (stateValues) => {
+    console.log(stateValues)
+    const allFieldsFilled = stateValues.filter(element => {
+      if(element != '') return element;
+    })
+    return allFieldsFilled.length;
+  }
+
   render() {
     const { auth } = this.props;
 
+    const stateValues = Object.values(this.state);
+    const filledFields = this.checkStateValues(stateValues);
+    
     if (!auth.uid) return <Redirect to='/signin'/>
 
     return (
@@ -99,8 +111,16 @@ class CreateStory extends Component {
           )}
           
           <div className='btn-ctn'>
-            <button className='create-story-btn' onClick={this.handleSubmit}>Create</button>
-            <div id='create-error'></div>
+
+            { 
+              filledFields === 4 ?
+              <div>
+                <button className='create-story-btn' onClick={this.handleSubmit}>Create</button>
+                <div id='create-error'></div>
+              </div> :
+              <button className='create-story-btn disabled' disabled>Create</button>
+            }
+
           </div>
         </form>
         

@@ -33,4 +33,8 @@
     padding-right: 20px;
     padding-top: 5px;
     padding-bottom: 5px;
-    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.5); }
+    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.5);
+    cursor: pointer; }
+    .create-story-container .create-story-form .create-story-btn.disabled {
+      border: 1px solid #8d8786;
+      color: #8d8786; }

@@ -1,9 +1,5 @@
 const initialState = {
-  stories: [
-    {id: '1', title: 'help me find peach', content: 'blah blah blah'},
-    {id: '2', title: 'collect all the stars', content: 'blah blah blah'},
-    {id: '3', title: 'egg hunt with yoshi', content: 'blah blah blah'}
-  ]
+  stories: []
 };
 
 const storyReducer = (state = initialState, action) => {
@@ -15,8 +11,9 @@ const storyReducer = (state = initialState, action) => {
       console.log('Story create error', action.err);
       return state;
     case 'DELETE_STORY':
-      console.log('Story deleted', action);
-      return null;
+      console.log('Story deleted', action, state);
+      const storyContent = action.story.content;
+      return state.stories.filter(story => story.content !== storyContent);
     case 'DELETE_STORY_ERROR':
       console.log('Story delete error', action.err);
       return state;

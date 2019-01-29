@@ -4,6 +4,9 @@ import './style/index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+
+import promise from "redux-promise";
+import { logger } from "redux-logger";
 import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
@@ -16,7 +19,7 @@ import fbConfig from './config/fbConfig';
 
 const store = createStore(rootReducer,
   compose(
-    applyMiddleware(thunk.withExtraArgument({ getFirebase, getFirestore })),
+    applyMiddleware(...[thunk.withExtraArgument({ getFirebase, getFirestore }), promise, logger]),
     reduxFirestore(fbConfig),
     reactReduxFirebase(fbConfig, { useFirestoreForProfile: true, userProfile: 'users', attachAuthIsReady: true })
   )

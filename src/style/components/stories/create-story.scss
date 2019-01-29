@@ -44,7 +44,11 @@
       padding-top: 5px;
       padding-bottom: 5px;
       box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.5);
-
+      cursor: pointer;
+      &.disabled {
+        border: 1px solid $grayDark;
+        color: $grayDark;
+      }
     }
   }
 }
