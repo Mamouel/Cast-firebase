@@ -17,13 +17,8 @@ class Home extends Component {
       <div className='home-container'>
         <div className='banner' >
           <div className="home-title">
-
                 Stories... and more
-
           </div>
-        </div>
-        <div>
-          
         </div>
       </div>
     )

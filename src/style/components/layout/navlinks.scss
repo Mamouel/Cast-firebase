@@ -5,16 +5,18 @@
   list-style:none;
   input {
     color: white;
-
   }
-  .search-input {
-    width: 50%;
-    color: white;
-   
+  .search-form {
 
-  }
-  .search-btn {
-    margin-right: 100px;
+    .search-input {
+      width: 50%;
+      color: white;
+     
+  
+    }
+    .search-btn {
+      margin-right: 100px;
+    }
   }
   .nav-btn {
     height: 100%;

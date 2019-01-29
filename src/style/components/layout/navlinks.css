@@ -5,10 +5,10 @@
   list-style: none; }
   .navlinks input {
     color: white; }
-  .navlinks .search-input {
+  .navlinks .search-form .search-input {
     width: 50%;
     color: white; }
-  .navlinks .search-btn {
+  .navlinks .search-form .search-btn {
     margin-right: 100px; }
   .navlinks .nav-btn {
     height: 100%;
