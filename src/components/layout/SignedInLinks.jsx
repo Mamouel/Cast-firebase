@@ -73,7 +73,11 @@ class SignedInLinks extends Component {
         />
         <Button className="search-btn" onClick={this.handleSubmit}>SEARCH</Button>
       </form>
-        <NavLink to='/create'><Button className='nav-btn'>New Article</Button></NavLink>
+      <NavLink to='/stories'><Button className='nav-btn'>All Stories</Button></NavLink>
+      <NavLink to='/create'><Button className='nav-btn'>New Story</Button></NavLink>
+
+      
+
         <Button className='nav-btn' onClick={signOut} >Log Out</Button>
         <NavLink to='/profile'><Button className='avatar'>{profile.initials ? profile.initials : 'Guest'}</Button></NavLink>
       </div>

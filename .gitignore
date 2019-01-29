@@ -4,6 +4,8 @@
 /node_modules
 /.pnp
 .pnp.js
+/dist
+/functions
 
 # testing
 /coverage
@@ -12,6 +14,7 @@
 /build
 /dist
 /functions
+
 
 # misc
 .DS_Store
