@@ -17,9 +17,7 @@ class Home extends Component {
       <div className='home-container'>
         <div className='banner' >
           <div className="home-title">
-            <Typist speed={50}>
-                Stories... <Typist.Delay ms={500} /> and more
-            </Typist>
+                Stories... and more
           </div>
         </div>
       </div>

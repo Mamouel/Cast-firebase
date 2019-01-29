@@ -28,7 +28,7 @@ class SignedInLinks extends Component {
     this.setState({
       searchInput: e.target.value
     });
-    this.performSearch(this.state.searchInput)
+    this.performSearch(this.state.searchInput.toLowerCase())
   }
 
   performSearch = (searchTerm) => {
@@ -61,18 +61,23 @@ class SignedInLinks extends Component {
     const { profile, signOut } = this.props
     return (
       <div className='navlinks'>
-      <TextField
-        id="outlined-search"
-        label="Search  ..."
-        type="search"
-        className="search-input"
-        margin="normal"
-        variant="outlined"
-        onChange={this.handleChange}
-      />
+      <form className='search-form' onSubmit={this.handleSubmit}>
+        <TextField
+          id="outlined-search"
+          label="Search  ..."
+          type="search"
+          className="search-input"
+          margin="normal"
+          variant="outlined"
+          onChange={this.handleChange}
+        />
         <Button className="search-btn" onClick={this.handleSubmit}>SEARCH</Button>
-        <NavLink to='/stories'><Button className='nav-btn'>All Stories</Button></NavLink>
-        <NavLink to='/create'><Button className='nav-btn'>New Story</Button></NavLink>
+      </form>
+      <NavLink to='/stories'><Button className='nav-btn'>All Stories</Button></NavLink>
+      <NavLink to='/create'><Button className='nav-btn'>New Story</Button></NavLink>
+
+      
+
         <Button className='nav-btn' onClick={signOut} >Log Out</Button>
         <NavLink to='/profile'><Button className='avatar'>{profile.initials ? profile.initials : 'Guest'}</Button></NavLink>
       </div>

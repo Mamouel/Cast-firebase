@@ -13,14 +13,14 @@
 
   .story-summary-title {
     padding: 20px;
-    font-size: 36px;
+    font-size: 24px;
     background-color: white;
     white-space: nowrap; 
     overflow: hidden;
     text-overflow: ellipsis;
-    width: 100%;
+    width: 80%;
     position: absolute;
-    top: 75%;
+    top: 25%;
     left: 0%;
     z-index: 5;
   }
