@@ -14,7 +14,8 @@ class CreateStory extends Component {
   state = {
     title: '',
     content: '',
-    img: ''
+    img: '',
+    category: ''
   };
 
   handleChange = (e) => {
@@ -67,27 +68,33 @@ class CreateStory extends Component {
       <div className='create-story-container'>
         <form className='create-story-form' onSubmit={this.handleSubmit}>
           <h5>Create new story</h5>
+
+          <div className='categories-input'>
+            <p>Categorie</p>
+            <select type="text" name="categories" id='category' onChange={this.handleChange}>
+              <option value=''></option>
+              <option value='Party'>Party</option>
+              <option value='Party'>Party</option>
+              <option value='X'>X</option>
+            </select>
+          </div>
+
           <div className='input-fields'>
             <TextField className='input-field-title' label='Title' type='text' id='title' onChange={this.handleChange} variant='outlined'></TextField>
           </div>
+
           <div className='input-fields'>
             <TextField className='input-field-content' label='Content' multiline type='text' id='content' onChange={this.handleChange} variant='outlined'></TextField>
           </div>
 
           <div>
             <label htmlFor="file" className="label-file">Add image ...</label>
-            <input
-              className='input-image'
-              name='image'
-              id='file'
-              type='file'
-              onChange={this.handleImageChange}
-            />
+            <input className='input-image' name='image' id='file' type='file' onChange={this.handleImageChange} />
             
             {this.state.img !== '' && (
               <p>Image successfully uploaded!</p>
             )}
-            
+
           </div>
           {this.state.img !== '' && (
           <Button className='removeImage' onClick={this.removeImage}>Remove image</Button>

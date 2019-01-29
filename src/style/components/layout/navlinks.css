@@ -1,15 +1,17 @@
 .navlinks {
-  width: 70%;
+  width: 80%;
   display: flex;
   justify-content: flex-end;
   list-style: none; }
-  .navlinks input {
-    color: white; }
-  .navlinks .search-form .search-input {
-    width: 50%;
-    color: white; }
-  .navlinks .search-form .search-btn {
-    margin-right: 100px; }
+  .navlinks .search-form {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; }
+    .navlinks .search-form .search-input {
+      width: 70%;
+      color: white; }
+    .navlinks .search-form .search-btn {
+      margin-right: 100px; }
   .navlinks .nav-btn {
     height: 100%;
     min-height: 45px;

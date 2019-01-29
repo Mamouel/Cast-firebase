@@ -1,21 +1,20 @@
 .navlinks {
-  width: 70%;
+  width: 80%;
   display: flex;
   justify-content: flex-end;
   list-style:none;
-  input {
-    color: white;
-  }
   .search-form {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 
     .search-input {
-      width: 50%;
+      width: 70%;
       color: white;
-     
-  
     }
     .search-btn {
       margin-right: 100px;
+
     }
   }
   .nav-btn {
