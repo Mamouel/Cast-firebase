@@ -1,3 +1,9 @@
 .home-container {
   margin: auto;
   text-align: center; }
+  .home-container .banner .home-title {
+    position: absolute;
+    top: 25%;
+    left: 5%;
+    font-size: 72px;
+    font-weight: 800; }

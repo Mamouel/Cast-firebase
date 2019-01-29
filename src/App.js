@@ -8,6 +8,8 @@ import SignUp from './components/auth/SignUp';
 import CreateStory from './components/stories/CreateStory';
 import Profile from './components/profile/Profile';
 import SearchResults from './components/stories/SearchResults';
+import StoriesLibrary from './components/stories/StoriesLibrary';
+
 
 import createBrowserHistory from 'history/createBrowserHistory';
 const history = createBrowserHistory();
@@ -21,6 +23,7 @@ class App extends Component {
           <Switch>
             <Route exact path='/' component={Home} />
             <Route path='/story/:id' component={StoryDetails} />
+            <Route path='/stories' component={StoriesLibrary} />
             <Route path='/signin' component={SignIn} />
             <Route path='/signup' component={SignUp} />
             <Route path='/create' component={CreateStory} />

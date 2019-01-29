@@ -61,19 +61,20 @@ class SignedInLinks extends Component {
     const { profile, signOut } = this.props
     return (
       <div className='navlinks'>
-      <form className='search-form' onSubmit={this.handleSubmit}>
-        <TextField
-          id="outlined-search"
-          label="Search  ..."
-          type="search"
-          className="search-input"
-          margin="normal"
-          variant="outlined"
-          onChange={this.handleChange}
-        />
-        <Button className="search-btn" onClick={this.handleSubmit}>SEARCH</Button>
-      </form>
-        <NavLink to='/create'><Button className='nav-btn'>New Article</Button></NavLink>
+        <form className='search-form' onSubmit={this.handleSubmit}>
+            <TextField
+              id="outlined-search"
+              label="Search  ..."
+              type="search"
+              className="search-input"
+              margin="normal"
+              variant="outlined"
+              onChange={this.handleChange}
+            />
+          <Button className="search-btn" onClick={this.handleSubmit}>SEARCH</Button>
+        </form>
+        <NavLink to='/stories'><Button className='nav-btn'>All Stories</Button></NavLink>
+        <NavLink to='/create'><Button className='nav-btn'>New Story</Button></NavLink>
         <Button className='nav-btn' onClick={signOut} >Log Out</Button>
         <NavLink to='/profile'><Button className='avatar'>{profile.initials ? profile.initials : 'Guest'}</Button></NavLink>
       </div>
