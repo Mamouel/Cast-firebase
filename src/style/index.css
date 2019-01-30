@@ -129,23 +129,27 @@ body {
     -ms-transition: all 0.25s ease;
     -o-transition: all 0.25s ease;
     transition: all 0.25s ease; }
-  body input {
+  body input, body textarea {
     box-shadow: none;
+    border-radius: 8px;
     background-color: #ffffff;
     border: 2px solid #e5760d;
     font-family: "Raleway", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 1.3em;
-    margin: 0;
     letter-spacing: 0.05em;
     padding: 0;
+    color: #262424;
     outline: none;
-    height: 50px; }
-    body input:focus, body input:active {
+    height: 50px;
+    margin: 10px auto;
+    padding: 20px;
+    width: 80%; }
+    body input:focus, body input:active, body textarea:focus, body textarea:active {
       letter-spacing: 0;
       outline: none; }
-      body input:focus::placeholder, body input:active::placeholder {
+      body input:focus::placeholder, body input:active::placeholder, body textarea:focus::placeholder, body textarea:active::placeholder {
         color: #FFB166; }
-    body input::placeholder {
+    body input::placeholder, body textarea::placeholder {
       color: #d1cfcf; }
   body button {
     border: none;
@@ -158,6 +162,60 @@ body {
     body button:active {
       box-shadow: 0 2px 4px 2px rgba(54, 39, 28, 0); }
     body button:focus {
+      outline: #262424 !important; }
+    body button.primary-btn {
+      border-radius: 8px;
+      margin: 20px auto;
+      font-size: 24px;
+      background-color: #FEFDD9;
+      color: #e5760d;
+      -webkit-transition: all 0.25s ease-out;
+      -moz-transition: all 0.25s ease-out;
+      -ms-transition: all 0.25s ease-out;
+      -o-transition: all 0.25s ease-out;
+      transition: all 0.25s ease-out; }
+      body button.primary-btn:hover {
+        transform: scale(1.1); }
+      body button.primary-btn.disabled {
+        border: 1px solid #8d8786;
+        color: #8d8786;
+        cursor: auto; }
+    body button.nav-btn {
+      height: 100%;
+      font-size: 14px;
+      font-weight: bold;
+      margin: 0px 10px; }
+  body textarea {
+    width: 80%;
+    height: 50vh; }
+  body select {
+    width: 80%;
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -webkit-padding-end: 20px;
+    -moz-padding-end: 20px;
+    -webkit-padding-start: 2px;
+    -moz-padding-start: 2px;
+    background-color: #ff9f43;
+    /* fallback color if gradients are not supported */
+    background-position: center right;
+    background-repeat: no-repeat;
+    border: 1px solid #ff9f43;
+    border-radius: 8px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    color: #262424;
+    font-size: inherit;
+    margin: 0;
+    overflow: hidden;
+    padding: 10px; }
+    body select:hover, body select:focus {
+      background-color: #FFB166;
+      color: #f4f3f2; }
+    body select:active {
+      box-shadow: 0 2px 4px 2px rgba(54, 39, 28, 0); }
+    body select:focus {
       outline: #262424 !important; }
   body .banner {
     position: relative;

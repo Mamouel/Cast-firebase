@@ -31,22 +31,20 @@ class SignIn extends Component {
       <div className='signin-container'>
         <form className='signin-form-container' onSubmit={this.handleSubmit}>
           <h5 className='signin-form-title'>Sign In</h5>
-          <div className='input-fields'>
-            <input className='input-fields-email' label='Email' type='email' id='email' onChange={this.handleChange} variant='outlined'></input>
+          <div className='input-fields-ctn'>
+            <input className='input-fields' type='email' id='email' onChange={this.handleChange} placeholder='Email'></input>
           </div>
-          <div className='input-fields'>
-            <input label='Password' type='password' id='password' onChange={this.handleChange} variant='outlined'></input>
+          <div className='input-fields-ctn'>
+            <input className='input-fields' type='password' id='password' onChange={this.handleChange} placeholder='Password'></input>
           </div>
-          <div className='input-fields'>
-            <button className='login-btn'>Login</button>
-            <div className='login-error'>{authError ? <p>{authError}</p> : null}</div>
-          </div>
+          <button className='primary-btn'>Login</button>
+          <div className='login-error'>{authError ? <p>{authError}</p> : null}</div>
           <div className='login-links'>
             <Link to='/signup'>
-              <button >Create new account</button>
+              <button className='primary-btn' >Create new account</button>
             </Link>
             <Link to='/'>
-              <button>Forgot password ?</button>
+              <button className='primary-btn' >Forgot password ?</button>
             </Link>
           </div>
         </form>

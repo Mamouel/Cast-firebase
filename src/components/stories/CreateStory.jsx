@@ -9,12 +9,15 @@ import '../../style/components/stories/create-story.css'
 const storageRef = firebase.storage().ref();
 
 class CreateStory extends Component {
+
+
   state = {
     title: '',
     content: '',
     img: '',
     category: ''
   };
+
 
   handleChange = (e) => {
     this.setState({
@@ -24,7 +27,9 @@ class CreateStory extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    if(this.state.title !== '' && this.state.content !== '') {
+    const stateValues = Object.values(this.state);
+    const filledFields = this.checkStateValues(stateValues);
+    if(filledFields === 4) {
       this.props.createStory(this.state);
       this.props.history.push('/stories');
     } else {
@@ -50,7 +55,7 @@ class CreateStory extends Component {
   removeImage = async () => {
     try {
      await storageRef.child(this.state.img).delete().then(() => {
-        this.setState({ img: '' })
+        this.setState({ ...this.state, img: '' })
       });
     } catch(err) {
       console.log(err)
@@ -65,59 +70,81 @@ class CreateStory extends Component {
     return allFieldsFilled.length;
   }
 
+  getUploadedImg = async () => {
+    try {
+      await storageRef.child(this.state.img).getDownloadURL().then((url) => {
+        var img = document.getElementById('uploaded-img');
+        img.src = url;
+      });
+    } catch(err) {
+      console.log(err)
+    }
+  }
+
   render() {
     const { auth } = this.props;
-
+    console.log(this.state)
     const stateValues = Object.values(this.state);
     const filledFields = this.checkStateValues(stateValues);
-    
+
+    const uploadedImg = this.getUploadedImg();
+
     if (!auth.uid) return <Redirect to='/signin'/>
 
     return (
       <div className='create-story-container'>
         <form className='create-story-form' onSubmit={this.handleSubmit}>
-          <h5>Create new story</h5>
+          <h5 className='create-story-title'>Create new story</h5>
 
-          <div className='categories-input'>
-            <p>Categorie</p>
-            <select type="text" name="categories" id='category' onChange={this.handleChange}>
-              <option value=''></option>
+          <div className='categories-input-ctn'>
+            <select type='text' name='categories' defaultValue='Choose a category...' id='category' onChange={this.handleChange}>
+              <option value=''>Choose a category...</option>
               <option value='Party'>Party</option>
               <option value='Party'>Party</option>
               <option value='X'>X</option>
             </select>
           </div>
 
-          <div className='input-fields'>
-            <input className='input-field-title' type='text' id='title' onChange={this.handleChange}></input>
+          <div className='input-fields-ctn'>
+            <input className='input-fields' type='text' id='title' placeholder='Title' onChange={this.handleChange}></input>
           </div>
 
-          <div className='input-fields'>
-            <input className='input-field-content' id='content' onChange={this.handleChange}></input>
+          <div className='input-fields-ctn'>
+            <textarea className='input-fields' id='content' placeholder='Content' rows='100' cols='40' onChange={this.handleChange} required></textarea>
           </div>
 
-          <div>
-            <label htmlFor="file" className="label-file">Add image ...</label>
-            <input className='input-image' name='image' id='file' type='file' onChange={this.handleImageChange} />
+          <div className='img-input-ctn'>
             
-            {this.state.img !== '' && (
-              <p>Image successfully uploaded!</p>
-            )}
+            <div className='input-image-infos'>
+              { this.state.img !== '' ? 
+              <div className='image-upload'>
+                <p className='image-upload-infos'>Image successfully uploaded!</p>
+                <p className='label-file remove-btn' onClick={this.removeImage}>Remove image</p>
+                <img id='uploaded-img' className='uploaded-img'/>
+              </div>
+              :
+              <div className='image-upload'>
+                <label htmlFor='file' className='label-file'>Add image</label>
+                <input className='input-image' name='image' id='file' type='file' onChange={this.handleImageChange} />
+                <p className='image-upload-infos'>Image needed</p>
+              </div> }
+            </div>
 
           </div>
-          {this.state.img !== '' && (
-          <button className='removeImage' onClick={this.removeImage}>Remove image</button>
-          )}
+          
           
           <div className='btn-ctn'>
 
             { 
               filledFields === 4 ?
               <div>
-                <button className='create-story-btn' onClick={this.handleSubmit}>Create</button>
+                <button className='primary-btn' onClick={this.handleSubmit}>Create</button>
                 <div id='create-error'></div>
               </div> :
-              <button className='create-story-btn disabled' disabled>Create</button>
+              <div>
+                <button className='primary-btn disabled' disabled>Create</button>
+                <div id='create-error'></div>
+              </div>
             }
 
           </div>

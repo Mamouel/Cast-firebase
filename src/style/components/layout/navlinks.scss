@@ -13,8 +13,10 @@
     .search-input {
       width: 80%;
       height: 100%;
+      margin: 0;
       border: none;
       padding: 10px;
+      border-radius: 0%;
 
     }
     .search-btn {
@@ -23,18 +25,11 @@
       padding: 20px;
     }
   }
-  .nav-btn {
-    height: 100%;
-    font-size: 14px;
-    font-weight: bold;
-    margin: 0px 10px;
-
-  }
   .avatar {
     height: 50px;
     width: 50px;
-    padding: 10px;
-    font-size: 24px;
+    font-size: 16px;
+    font-weight: bold;
     border-radius: 50%;
     margin: 10px;
     background-color: white;

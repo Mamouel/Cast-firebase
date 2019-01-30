@@ -5,10 +5,10 @@ import '../../style/components/layout/navlinks.css';
 
 const SignedOutLinks = () => {
   return (
-    <ul className='navlinks'>
-      <li><NavLink to='/signup'>Signup</NavLink></li>
-      <li><NavLink to='/signin'>Login</NavLink></li>
-    </ul>
+    <div className='navlinks'>
+      <NavLink to='/signup'><button className='nav-btn'>Signup</button></NavLink>
+      <NavLink to='/signin'><button className='nav-btn'>Login</button></NavLink>
+    </div>
   )
 }
 

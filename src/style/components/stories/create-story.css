@@ -7,34 +7,31 @@
   padding: 25px;
   box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.5);
   text-decoration: none; }
-  .create-story-container .create-story-form .input-fields {
-    margin: 45px auto;
-    width: 100%; }
-    .create-story-container .create-story-form .input-fields .input-field-title {
-      width: 100%; }
-    .create-story-container .create-story-form .input-fields .input-field-content {
-      width: 100%; }
-  .create-story-container .create-story-form .label-file {
-    cursor: pointer;
-    color: #00b1ca;
-    font-weight: bold; }
-    .create-story-container .create-story-form .label-file:hover {
-      color: pink; }
-  .create-story-container .create-story-form .input-image {
-    display: none; }
-  .create-story-container .create-story-form .create-story-btn {
-    border-radius: 8px;
-    margin: 30px auto;
-    font-size: 20px;
-    background-color: #FEFDD9;
-    border: 1px solid #e5760d;
-    color: #e5760d;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.5);
-    cursor: pointer; }
-    .create-story-container .create-story-form .create-story-btn.disabled {
-      border: 1px solid #8d8786;
-      color: #8d8786; }
+  .create-story-container .create-story-form .create-story-title {
+    margin: 40px auto;
+    font-size: 36px; }
+  .create-story-container .create-story-form .categories-input-ctn {
+    margin: 20px auto; }
+  .create-story-container .create-story-form .img-input-ctn {
+    display: flex;
+    flex-direction: column; }
+    .create-story-container .create-story-form .img-input-ctn .input-image-infos {
+      margin-top: 20px; }
+      .create-story-container .create-story-form .img-input-ctn .input-image-infos .image-upload .label-file {
+        cursor: pointer;
+        color: #ff9f43;
+        font-weight: bold;
+        font-size: 24px;
+        margin: 30px; }
+        .create-story-container .create-story-form .img-input-ctn .input-image-infos .image-upload .label-file:hover {
+          color: #e5760d; }
+        .create-story-container .create-story-form .img-input-ctn .input-image-infos .image-upload .label-file.remove-btn {
+          font-size: 16px; }
+      .create-story-container .create-story-form .img-input-ctn .input-image-infos .image-upload .input-image {
+        display: none; }
+      .create-story-container .create-story-form .img-input-ctn .input-image-infos .image-upload .uploaded-img {
+        margin: auto;
+        width: 60%; }
+      .create-story-container .create-story-form .img-input-ctn .input-image-infos .image-upload .image-upload-infos {
+        color: green;
+        margin: 30px; }

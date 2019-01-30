@@ -33,31 +33,26 @@ class SignUp extends Component {
 
   render() {
     const { auth, authError } = this.props;
-    console.log(authError)
     if (auth.uid) return <Redirect to='/' />
 
     return (
       <div className='signup-container'>
         <form className='signup-form-container' onSubmit={this.handleSubmit}>
           <h5 className='signup-form-title'>Create account</h5>
-          <div className='input-fields'>
-            <label htmlFor='email'></label>
-            <input label='Email' type='email' id='email' onChange={this.handleChange} variant='outlined'></input>
+          <div className='input-fields-ctn'>
+            <input className='input-fields' type='email' id='email' onChange={this.handleChange} placeholder='Email'></input>
           </div>
-          <div className='input-fields'>
-            <label htmlFor='password'></label>
-            <input label='Password' type='password' id='password' onChange={this.handleChange} variant='outlined'></input>
+          <div className='input-fields-ctn'>
+            <input className='input-fields' type='password' id='password' onChange={this.handleChange} placeholder='Password'></input>
           </div>
-          <div className='input-fields'>
-            <label htmlFor='firstName'></label>
-            <input label='First Name' type='text' id='firstName' onChange={this.handleChange} variant='outlined'></input>
+          <div className='input-fields-ctn'>
+            <input className='input-fields' type='text' id='firstName' onChange={this.handleChange} placeholder='First Name'></input>
           </div>
-          <div className='input-fields'>
-            <label htmlFor='lastName'></label>
-            <input label='Last Name' type='text' id='lastName' onChange={this.handleChange} variant='outlined'></input>
+          <div className='input-fields-ctn'>
+            <input className='input-fields' type='text' id='lastName' onChange={this.handleChange} placeholder='Last Name'></input>
           </div>
-          <div className='input-fields'>
-            <button className='signup-btn'>Sign Up</button>
+          <div className='signup-btn-ctn'>
+            <button className='primary-btn'>Sign Up</button>
             <div id='signup-error' className='signup-error'>{authError ? <p>{authError}</p> : null}</div>
           </div>
         </form>
