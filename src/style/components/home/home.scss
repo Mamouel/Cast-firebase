@@ -1,14 +1,26 @@
+@import '../../variables';
+
+
+
 .home-container {
   margin: auto;
-  text-align: center;
+  text-align: left;
+      position: relative;
   .banner {
-    .home-title {
+    position: relative;
+    .home-title-ctn {
       position: absolute;
-      top: 25%;
+      top: 15%;
       left: 5%;
-      font-size: 72px;
+      font-size: 122px;
       font-weight: 800;
-
+      color: $blackest;
+      .second-home-title {
+        margin-left: 200px;
+      }
+      .third-home-title {
+        margin-left: 400px;  
+      }
     }
   }
 }

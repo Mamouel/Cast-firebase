@@ -4,6 +4,8 @@ import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
 import { Redirect } from 'react-router-dom';
 
+import bannerImg from '../../style/images/banner.png'
+
 
 import '../../style/components/home/home.css';
 
@@ -14,9 +16,18 @@ class Home extends Component {
 
     return(
       <div className='home-container'>
-        <div className='banner' >
-          <div className="home-title">
-                Stories... and more
+        <div className='banner'>
+          <img src={bannerImg} alt='' className='banner-img' />
+          <div className='home-title-ctn'>
+            <div className='first-home-title'>
+              Stories
+            </div>
+            <div className='second-home-title'>
+              Goodies
+            </div>
+            <div className='third-home-title'>
+              Anecdotes
+            </div>  
           </div>
         </div>
       </div>

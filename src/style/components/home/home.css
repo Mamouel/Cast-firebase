@@ -1,9 +1,17 @@
 .home-container {
   margin: auto;
-  text-align: center; }
-  .home-container .banner .home-title {
-    position: absolute;
-    top: 25%;
-    left: 5%;
-    font-size: 72px;
-    font-weight: 800; }
+  text-align: left;
+  position: relative; }
+  .home-container .banner {
+    position: relative; }
+    .home-container .banner .home-title-ctn {
+      position: absolute;
+      top: 15%;
+      left: 5%;
+      font-size: 122px;
+      font-weight: 800;
+      color: #000000; }
+      .home-container .banner .home-title-ctn .second-home-title {
+        margin-left: 200px; }
+      .home-container .banner .home-title-ctn .third-home-title {
+        margin-left: 400px; }

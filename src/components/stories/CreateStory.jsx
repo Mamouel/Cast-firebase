@@ -87,7 +87,7 @@ class CreateStory extends Component {
     const stateValues = Object.values(this.state);
     const filledFields = this.checkStateValues(stateValues);
 
-    const uploadedImg = this.getUploadedImg();
+    this.getUploadedImg();
 
     if (!auth.uid) return <Redirect to='/signin'/>
 
@@ -123,7 +123,7 @@ class CreateStory extends Component {
               <div className='image-upload'>
                 <p className='image-upload-infos'>Image successfully uploaded!</p>
                 <p className='label-file remove-btn' onClick={this.removeImage}>Remove image</p>
-                <img id='uploaded-img' className='uploaded-img'/>
+                <img id='uploaded-img' className='uploaded-img' alt='preview'/>
               </div>
               :
               <div className='image-upload'>
