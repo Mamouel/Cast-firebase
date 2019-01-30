@@ -4,10 +4,14 @@
   width: 100%;
   .nav-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     background-color: $primaryLight;
     .home-button {
       height: 100%;
+      padding: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      margin: auto;
     }
   }
 }

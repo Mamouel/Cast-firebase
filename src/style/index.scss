@@ -1,6 +1,8 @@
 @import "./fonts.scss";
 @import "./variables.scss";
 @import "./mixins.scss";
+@import "./reset.scss";
+
 
 
 body {
@@ -23,7 +25,7 @@ body {
       text-decoration: none;
     }
     &:visited {
-      color: $primaryDark;
+      color: $primaryLight;
       text-decoration: none;
     }
     &:hover {
@@ -40,13 +42,37 @@ body {
     @include transition (all, 0.25s, ease);
   }
 
+  input {
+    box-shadow: none;
+    background-color: $white;
+    border: 2px solid $primaryDarker;
+    font-family: $sans-font;
+    font-size: 1.3em;
+    margin: 0;
+    letter-spacing: 0.05em;
+    padding: 0;
+    outline: none;
+    height: 50px;
+    &:focus, &:active {
+      letter-spacing: 0;
+      outline: none;
+
+      &::placeholder {
+        color: $primaryLight;
+      }
+    }
+    &::placeholder {
+      color: $grayMed;
+    }
+  }
+
   button {
-    border-style: solid 2px $primaryDark;
+    border: none;
     background-color: $primaryLight;
     color: $primaryDark;
-    border: none;
+    cursor: pointer;
       &:hover, &:focus {
-        background-color: $primaryDarker;
+        background-color: $primaryLight;
         color: $grayLight;
       }
       &:active {
@@ -54,29 +80,6 @@ body {
       }
       &:focus {
         outline: $black !important;
-      }
-      &.secondaryBtn {
-        background-color: $black;
-        display: block;
-        &:hover {
-          box-shadow: 0 2px 4px 2px rgba(54, 39, 28, 0);
-          background-color: $blackest;
-          color: $grayLight;
-        }
-        &:hover {
-          background-color: $blackest;
-          color: $primaryDark;
-        }
-      }
-      &.tertiaryBtn {
-        background-color: $grayLight;
-        color: $black;
-        &:hover {
-          background-color: $grayMed;
-        }
-        &:focus {
-          color: $blackest;
-        }
       }
   }
 

@@ -1,5 +1,5 @@
 .navlinks {
-  width: 80%;
+  width: 90%;
   display: flex;
   justify-content: flex-end;
   list-style: none;
@@ -7,13 +7,14 @@
   .navlinks .search-form {
     display: flex;
     justify-content: flex-start;
-    width: 100%;
-    font-size: 12px; }
+    font-size: 12px;
+    width: 100%; }
     .navlinks .search-form .search-input {
-      width: 70%;
-      font-size: 12px; }
+      width: 80%;
+      height: 100%;
+      border: none;
+      padding: 10px; }
     .navlinks .search-form .search-btn {
-      margin-right: 100px;
       font-size: 14px;
       font-weight: bold;
       padding: 20px; }
@@ -21,7 +22,7 @@
     height: 100%;
     font-size: 14px;
     font-weight: bold;
-    padding: 20px; }
+    margin: 0px 10px; }
   .navlinks .avatar {
     height: 50px;
     width: 50px;

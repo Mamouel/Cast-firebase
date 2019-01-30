@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { signOut } from '../../store/actions/authActions';
 import { search } from '../../store/actions/searchActions';
 import { NavLink } from 'react-router-dom';
-
+import { FaSearch } from 'react-icons/fa'
 
 import '../../style/components/layout/navlinks.css';
 
@@ -47,7 +47,7 @@ class SignedInLinks extends Component {
       newList = this.props.stories;
     }
     this.setState({
-      filtered: newList
+      filtered: newList,
     });
   }
 
@@ -58,16 +58,13 @@ class SignedInLinks extends Component {
     return (
       <div className='navlinks'>
         <form className='search-form' onSubmit={this.handleSubmit}>
-            <input
-              id='outlined-search'
-              placeholder='Search...'
-              type='search'
-              className='search-input'
-              margin='normal'
-              variant='outlined'
-              onChange={this.handleChange}
-            />
-          <button className='search-btn' onClick={this.handleSubmit}>SEARCH</button>
+          <input
+            placeholder='Search...'
+            type='search'
+            className='search-input'
+            onChange={this.handleChange}
+          />
+          <button className='search-btn' onClick={this.handleSubmit}><FaSearch /></button>
         </form>
         <NavLink to='/stories'><button className='nav-btn'>All Stories</button></NavLink>
         <NavLink to='/create'><button className='nav-btn'>New Story</button></NavLink>

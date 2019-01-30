@@ -1,8 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600|Source+Serif+Pro:400,600');
-@import url('https://fonts.googleapis.com/css?family=Lato:300,400,500,800i,900');
+
 @import './variables.scss';
 
-$sans-font: Lato, "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$sans-font: 'Raleway', "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $serif-font: "Source Serif Pro", Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif !default;
 
 h1, h2, h3, h4, h5, h6 {
