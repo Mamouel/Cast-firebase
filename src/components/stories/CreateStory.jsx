@@ -100,7 +100,10 @@ class CreateStory extends Component {
             <select type='text' name='categories' defaultValue='Choose a category...' id='category' onChange={this.handleChange}>
               <option value=''>Choose a category...</option>
               <option value='Party'>Party</option>
-              <option value='Party'>Party</option>
+              <option value='Weekend'>Weekend</option>
+              <option value='Anecdote'>Anecdote</option>
+              <option value='Story'>Story</option>
+              <option value='Goodies'>Goodies</option>
               <option value='X'>X</option>
             </select>
           </div>

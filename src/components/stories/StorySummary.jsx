@@ -12,13 +12,15 @@ class StorySummary extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      imageUrl : ''
+      imageUrl : '',
+      categoryColor: ''
     };
   }
 
   componentDidMount = () => {
     this._isMounted = true;
     this.getStoryImg();
+    this.getStoryCategoryColor(this.props.story);
   }
 
   componentWillUnmount = () => {
@@ -35,14 +37,33 @@ class StorySummary extends Component {
     }
   }
 
+  getStoryCategoryColor = (story) => {
+      switch(story.category) {
+        case 'Party':
+          return this.setState({ categoryColor: 'red' })
+        case 'Weekend':
+          return this.setState({ categoryColor: 'blue' })
+        case 'Anecdote':
+          return this.setState({ categoryColor: 'green' })
+        case 'Story':
+          return this.setState({ categoryColor: 'yellow' })
+        case 'Goodies':
+        return this.setState({ categoryColor: 'pink' })
+        default:
+          return this.setState({ categoryColor: 'grey' })
+
+      }
+  }
+  
+
   render() {
     const { story } = this.props
     return (
       this.state.imageUrl !== '' && (
       <div  >
-        <div className='story-summary-container' style={{ backgroundImage: `url(${this.state.imageUrl})` }}>
+        <div className='story-summary-container' style={{ backgroundImage: `url(${this.state.imageUrl})`, border: `3px solid ${this.state.categoryColor}` }}>
           <div>
-            <div className='story-summary-title'>
+            <div id='story-title' className='story-summary-title' style={{ border: `1px solid ${this.state.categoryColor}` }}>
               {story.title}
             </div>
             <div className=''>
