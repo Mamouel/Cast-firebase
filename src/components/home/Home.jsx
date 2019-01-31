@@ -97,6 +97,6 @@ export default compose(
   connect(mapStateToProps),
   firestoreConnect([
     { collection: 'stories', limit: 10, orderBy: ['createdAt', 'desc'] },
-    { collection: 'notifications', limit: 5, orderBy: ['time', 'desc'] }
+    { collection: 'notifications', limit: 5, orderBy: ['createdAt', 'desc'] }
   ])
 )(Home);
