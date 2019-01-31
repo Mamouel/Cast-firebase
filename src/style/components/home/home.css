@@ -23,5 +23,42 @@
       margin-left: 400px;
       margin-top: 90px; }
   .home-container .home-section-ctn {
-    height: 100vh;
-    background-color: #FFB166; }
+    min-height: 100vh;
+    background-color: #FFB166;
+    width: 100%; }
+    .home-container .home-section-ctn .first-home-section {
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      padding-top: 25vh;
+      padding-bottom: 25vh; }
+      .home-container .home-section-ctn .first-home-section .first-home-section-img {
+        width: 40vw;
+        height: 50vh;
+        background-color: white; }
+      .home-container .home-section-ctn .first-home-section .first-home-section-infos {
+        width: 40vw;
+        height: 50vh;
+        background-color: white; }
+    .home-container .home-section-ctn .second-home-section {
+      width: 100%;
+      padding-top: 5vh; }
+      .home-container .home-section-ctn .second-home-section .second-home-section-img {
+        width: 40vw;
+        height: 50vh;
+        background-color: white; }
+      .home-container .home-section-ctn .second-home-section .second-home-section-buttons {
+        display: flex;
+        justify-content: flex-start; }
+        .home-container .home-section-ctn .second-home-section .second-home-section-buttons .home-btn-ctn {
+          height: 300px;
+          background-repeat: no-repeat;
+          background-size: cover; }
+          .home-container .home-section-ctn .second-home-section .second-home-section-buttons .home-btn-ctn.home-btn-ctn1 {
+            flex-grow: 2;
+            z-index: 4; }
+          .home-container .home-section-ctn .second-home-section .second-home-section-buttons .home-btn-ctn.home-btn-ctn2 {
+            flex-grow: 3;
+            z-index: 3; }
+          .home-container .home-section-ctn .second-home-section .second-home-section-buttons .home-btn-ctn.home-btn-ctn3 {
+            flex-grow: 1; }

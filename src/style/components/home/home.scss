@@ -36,7 +36,57 @@
     }
   }
   .home-section-ctn {
-    height: 100vh;
+    min-height: 100vh;
     background-color: $primaryLight;
+    width: 100%;
+    .first-home-section {
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      padding-top: 25vh;
+      padding-bottom: 25vh;
+
+      .first-home-section-img {
+        width: 40vw;
+        height: 50vh;
+        background-color: white;
+      }
+      .first-home-section-infos {
+        width: 40vw;
+        height: 50vh;
+        background-color: white;
+
+      }
+    }
+    .second-home-section {
+      width: 100%;
+      padding-top: 5vh;
+
+      .second-home-section-img {
+        width: 40vw;
+        height: 50vh;
+        background-color: white;
+      }
+      .second-home-section-buttons {
+        display: flex;
+        justify-content: flex-start;
+        .home-btn-ctn {
+          height: 300px;
+          background-repeat: no-repeat;
+          background-size: cover;
+          &.home-btn-ctn1 {
+            flex-grow: 2;
+            z-index: 4;
+          }
+          &.home-btn-ctn2 {
+            flex-grow: 3;
+            z-index: 3;
+          }
+          &.home-btn-ctn3 {
+            flex-grow: 1;  
+          }
+        }
+      }
+    }
   }
 }

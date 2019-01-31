@@ -2,9 +2,15 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
-import { Redirect } from 'react-router-dom';
+import { Redirect, NavLink } from 'react-router-dom';
 
 import bannerImg from '../../style/images/banner.png'
+import dikkenek from '../../style/images/dikkenek.jpg'
+
+import oss from '../../style/images/oss.jpg'
+
+import workaholic from '../../style/images/workaholic.jpg'
+
 
 
 import '../../style/components/home/home.css';
@@ -32,9 +38,32 @@ class Home extends Component {
         </div>
         <div className='home-section-ctn'>
           <div className='first-home-section'>
+            <div className='first-home-section-img'>
 
+            </div>
+            <div className='first-home-section-infos'>
+
+            </div>
           </div>
 
+        </div>
+        <div className='home-section-ctn'>
+          <div className='second-home-section'>
+            <div className='second-home-section-img'>
+
+            </div>
+            <div className='second-home-section-buttons'>
+              <div className='home-btn-ctn home-btn-ctn1' style={{ backgroundImage: `url(${dikkenek})` }}>
+                <NavLink to='/stories'><div>Stories</div></NavLink>
+              </div>
+              <div className='home-btn-ctn home-btn-ctn2' style={{ backgroundImage: `url(${oss})` }}>
+                <NavLink to='/create'><div>Stories</div></NavLink>
+              </div>
+              <div className='home-btn-ctn home-btn-ctn1' style={{ backgroundImage: `url(${workaholic})` }}>
+                <NavLink to='/'><div>Stories</div></NavLink>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     )
