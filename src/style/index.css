@@ -103,7 +103,7 @@ body {
   background-size: 100%;
   min-height: 100vh; }
   body a {
-    color: #ffffff;
+    color: #ff9f43;
     text-decoration: none;
     cursor: pointer;
     -webkit-transition: all 0.25s ease;
@@ -112,7 +112,7 @@ body {
     -o-transition: all 0.25s ease;
     transition: all 0.25s ease; }
     body a:link {
-      color: #ffffff;
+      color: #ff9f43;
       text-decoration: none; }
     body a:visited {
       color: #ff9f43;

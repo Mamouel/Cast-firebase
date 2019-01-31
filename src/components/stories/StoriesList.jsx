@@ -8,7 +8,7 @@ const storyList = ({ stories }) => {
   return (
     <div className='story-list'>
       {stories && stories.map(story => {
-        return(
+        return (
           <Link className='story-link' to={'/story/' + story.id} key={story.id}>
             <StorySummary story={story} />
           </Link>

@@ -16,12 +16,12 @@ body {
   background-size: 100%;
   min-height: 100vh;
   a {
-    color: $white;
+    color: $primary;
     text-decoration: none;
     cursor: pointer;
     @include transition (all, 0.25s, ease);
     &:link {
-      color: $white;
+      color: $primary;
       text-decoration: none;
     }
     &:visited {

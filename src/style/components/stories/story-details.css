@@ -1,14 +1,14 @@
 .stories-details-container {
   width: 100%;
   margin: auto; }
-  .stories-details-container .stories-details .banner {
+  .stories-details-container .stories-details .secondary-banner {
     position: relative;
     padding: 100px; }
-    .stories-details-container .stories-details .banner .stories-details-title {
+    .stories-details-container .stories-details .secondary-banner .stories-details-title {
       width: 60%;
       font-size: 72px;
       margin: auto; }
-    .stories-details-container .stories-details .banner .stories-details-img {
+    .stories-details-container .stories-details .secondary-banner .stories-details-img {
       max-height: 450px;
       max-width: 40%;
       margin: auto;

@@ -6,7 +6,7 @@ import { Redirect, Link } from 'react-router-dom';
 import StorySummary from '../stories/StorySummary';
 
 
-import '../../style/components/profile/profile.css';
+import '../../style/components/profile/profile.scss';
 
 class Profile extends Component {
   render() {
@@ -15,7 +15,7 @@ class Profile extends Component {
 
     return(
       <div className='profile-container'>
-        <div className='banner'>
+        <div className='secondary-banner'>
           <div className='profile-infos'>
             <div>{profile.firstName}</div>
           </div>

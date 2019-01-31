@@ -27,24 +27,30 @@
     border-bottom-right-radius: 10px;
     
   }
-  .story-summary-author {
-    font-size: 20px;
-    white-space: nowrap; 
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-size: 12px;
+  .story-summary-infos {
+    display: flex;
+    background-color: $white;
+    justify-content: space-evenly;
     position: absolute;
-    top: 85%;
-    left: 5%;
-  }
-  .story-summary-date {
-    font-size: 20px;
-    white-space: nowrap; 
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-size: 12px;
-    position: absolute;
-    top: 90%;
-    left: 5%;
+    top: 20%;
+    left: 0%;
+    font-size: 10px;
+    width: 80%;
+
+
+    .story-summary-author {
+      font-size: 20px;
+      white-space: nowrap; 
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 12px;
+    }
+    .story-summary-date {
+      font-size: 20px;
+      white-space: nowrap; 
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 12px;
+    }
   }
 }

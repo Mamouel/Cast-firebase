@@ -77,7 +77,7 @@ class CreateStory extends Component {
         img.src = url;
       });
     } catch(err) {
-      console.log(err)
+      return <Redirect to='/stories'/>
     }
   }
 

@@ -61,22 +61,21 @@ class StorySummary extends Component {
     return (
       this.state.imageUrl !== '' && (
       <div  >
-        <div className='story-summary-container' style={{ backgroundImage: `url(${this.state.imageUrl})`, border: `3px solid ${this.state.categoryColor}` }}>
-          <div>
-            <div id='story-title' className='story-summary-title' style={{ border: `1px solid ${this.state.categoryColor}` }}>
-              {story.title}
-            </div>
-            <div className=''>
+        <div className='story-summary-container' style={{ backgroundImage: `url(${this.state.imageUrl})` }}>
+            
+          <div id='story-title' className='story-summary-title' style={{ backgroundColor: `${this.state.categoryColor}` }}>
+            {story.title}
+          </div>
 
-              <div className='story-summary-author'>
-                Posted by { story.authorFirstName } {story.authorLastName}
-              </div>
-              <div className='story-summary-date'>
-                {moment(story.createdAt.toDate().toISOString()).calendar()}
-              </div>
-              {}
+          <div className='story-summary-infos'>
+            <div className='story-summary-author'>
+              By { story.authorFirstName } {story.authorLastName}
+            </div>
+            <div className='story-summary-date'>
+              {moment(story.createdAt.toDate().toISOString()).calendar()}
             </div>
           </div>
+
         </div>
       </div> 
       )

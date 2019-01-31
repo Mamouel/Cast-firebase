@@ -21,7 +21,7 @@
 .env.test.local
 .env.production.local
 
-**/*.scss
+src/style/**.scss
 
 npm-debug.log*
 yarn-debug.log*

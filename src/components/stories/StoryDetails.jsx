@@ -52,7 +52,7 @@ const StoryDetails = (props) => {
     return(
       <div className='stories-details-container'>
         <div className='stories-details'>
-          <div className='banner'>
+          <div className='secondary-banner'>
             <span className='stories-details-title'>{ story.title }</span>
             <img className='stories-details-img' id='story-img' alt='story-img' />
           </div>

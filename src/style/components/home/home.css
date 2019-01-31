@@ -9,19 +9,18 @@
     background-size: cover; }
   .home-container .banner .home-title-ctn {
     position: absolute;
-    top: 5%;
+    top: 20%;
     left: 5%;
     font-size: 140px;
-    font-weight: 800;
+    font-weight: 900;
     color: white; }
     .home-container .banner .home-title-ctn .first-home-title {
-      margin-top: 90px; }
+      padding-bottom: 50px; }
     .home-container .banner .home-title-ctn .second-home-title {
       margin-left: 200px;
-      margin-top: 90px; }
+      padding-bottom: 50px; }
     .home-container .banner .home-title-ctn .third-home-title {
-      margin-left: 400px;
-      margin-top: 90px; }
+      margin-left: 400px; }
   .home-container .home-section-ctn {
     min-height: 100vh;
     background-color: #FFB166;
@@ -43,10 +42,12 @@
     .home-container .home-section-ctn .second-home-section {
       width: 100%;
       padding-top: 5vh; }
-      .home-container .home-section-ctn .second-home-section .second-home-section-img {
-        width: 40vw;
-        height: 50vh;
-        background-color: white; }
+      .home-container .home-section-ctn .second-home-section .second-home-section-slider {
+        width: 90%;
+        margin: 50px auto;
+        display: flex;
+        flex-wrap: nowrap;
+        overflow: overlay; }
       .home-container .home-section-ctn .second-home-section .second-home-section-buttons {
         display: flex;
         justify-content: flex-start; }
@@ -60,5 +61,3 @@
           .home-container .home-section-ctn .second-home-section .second-home-section-buttons .home-btn-ctn.home-btn-ctn2 {
             flex-grow: 3;
             z-index: 3; }
-          .home-container .home-section-ctn .second-home-section .second-home-section-buttons .home-btn-ctn.home-btn-ctn3 {
-            flex-grow: 1; }

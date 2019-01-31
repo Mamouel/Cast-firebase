@@ -2,22 +2,30 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
-import { Redirect, NavLink } from 'react-router-dom';
+import { Redirect, NavLink, Link } from 'react-router-dom';
 
-import bannerImg from '../../style/images/banner.png'
-import dikkenek from '../../style/images/dikkenek.jpg'
+import StorySummary from '../stories/StorySummary';
 
-import oss from '../../style/images/oss.jpg'
+import bannerImg from '../../style/images/banner.png';
+import dikkenek from '../../style/images/dikkenek.jpg';
 
-import workaholic from '../../style/images/workaholic.jpg'
+import oss from '../../style/images/oss.jpg';
+
+import workaholic from '../../style/images/workaholic.jpg';
 
 
 
 import '../../style/components/home/home.css';
 
 class Home extends Component {
+
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+
   render() {
-    const { auth } = this.props
+    const { auth, stories } = this.props;
+    console.log(stories)
     if (!auth.uid) return <Redirect to='/signup'/>
 
     return(
@@ -49,8 +57,14 @@ class Home extends Component {
         </div>
         <div className='home-section-ctn'>
           <div className='second-home-section'>
-            <div className='second-home-section-img'>
-
+            <div className='second-home-section-slider'>
+              {stories && stories.map(story => {
+                return (
+                  <Link className='story-link' to={'/story/' + story.id} key={story.id}>
+                    <StorySummary story={story} />
+                  </Link>
+                )
+              })}
             </div>
             <div className='second-home-section-buttons'>
               <div className='home-btn-ctn home-btn-ctn1' style={{ backgroundImage: `url(${dikkenek})` }}>
@@ -80,6 +94,6 @@ const mapStateToProps = (state) => {
 export default compose(
   connect(mapStateToProps),
   firestoreConnect([
-    { collection: 'stories' }
+    { collection: 'stories', limit: 10, orderBy: ['createdAt', 'desc'] }
   ])
 )(Home);
