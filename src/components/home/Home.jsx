@@ -5,6 +5,7 @@ import { compose } from 'redux';
 import { Redirect, NavLink, Link } from 'react-router-dom';
 
 import StorySummary from '../stories/StorySummary';
+import Notifications from './Notifications';
 
 import bannerImg from '../../style/images/banner.png';
 import dikkenek from '../../style/images/dikkenek.jpg';
@@ -24,7 +25,7 @@ class Home extends Component {
   }
 
   render() {
-    const { auth, stories } = this.props;
+    const { auth, stories, notifications } = this.props;
     console.log(stories)
     if (!auth.uid) return <Redirect to='/signup'/>
 
@@ -47,7 +48,7 @@ class Home extends Component {
         <div className='home-section-ctn'>
           <div className='first-home-section'>
             <div className='first-home-section-img'>
-
+              <Notifications notifications={notifications} />
             </div>
             <div className='first-home-section-infos'>
 
@@ -87,13 +88,15 @@ class Home extends Component {
 const mapStateToProps = (state) => {
   return {
     stories: state.firestore.ordered.stories,
-    auth: state.firebase.auth
+    auth: state.firebase.auth,
+    notifications: state.firestore.ordered.notifications
   }
 };
 
 export default compose(
   connect(mapStateToProps),
   firestoreConnect([
-    { collection: 'stories', limit: 10, orderBy: ['createdAt', 'desc'] }
+    { collection: 'stories', limit: 10, orderBy: ['createdAt', 'desc'] },
+    { collection: 'notifications', limit: 5, orderBy: ['time', 'desc'] }
   ])
 )(Home);
