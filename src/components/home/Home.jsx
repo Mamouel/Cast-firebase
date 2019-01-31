@@ -57,10 +57,10 @@ class Home extends Component {
                 <NavLink to='/stories'><div>Stories</div></NavLink>
               </div>
               <div className='home-btn-ctn home-btn-ctn2' style={{ backgroundImage: `url(${oss})` }}>
-                <NavLink to='/create'><div>Stories</div></NavLink>
+                <NavLink to='/create'><div>Create your own</div></NavLink>
               </div>
               <div className='home-btn-ctn home-btn-ctn1' style={{ backgroundImage: `url(${workaholic})` }}>
-                <NavLink to='/'><div>Stories</div></NavLink>
+                <NavLink to='/'><div>About</div></NavLink>
               </div>
             </div>
           </div>
