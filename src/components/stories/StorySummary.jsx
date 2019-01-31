@@ -40,15 +40,17 @@ class StorySummary extends Component {
   getStoryCategoryColor = (story) => {
       switch(story.category) {
         case 'Party':
-          return this.setState({ categoryColor: 'red' })
+          return this.setState({ categoryColor: '#404040' })
         case 'Weekend':
-          return this.setState({ categoryColor: 'blue' })
+          return this.setState({ categoryColor: '#4cc3d9' })
         case 'Anecdote':
-          return this.setState({ categoryColor: 'green' })
+          return this.setState({ categoryColor: '#7bc8a4' })
         case 'Story':
-          return this.setState({ categoryColor: 'yellow' })
+          return this.setState({ categoryColor: '#ffc65d' })
         case 'Goodies':
-        return this.setState({ categoryColor: 'pink' })
+        return this.setState({ categoryColor: '#93648d' })
+        case 'X':
+        return this.setState({ categoryColor: '#f16745' })
         default:
           return this.setState({ categoryColor: 'grey' })
 
@@ -63,11 +65,11 @@ class StorySummary extends Component {
       <div  >
         <div className='story-summary-container' style={{ backgroundImage: `url(${this.state.imageUrl})` }}>
             
-          <div id='story-title' className='story-summary-title' style={{ backgroundColor: `${this.state.categoryColor}` }}>
-            {story.title}
-          </div>
 
           <div className='story-summary-infos'>
+            <div id='story-title' className='story-summary-title' style={{ backgroundColor: `${this.state.categoryColor}` }}>
+              {story.title}
+            </div>
             <div className='story-summary-author'>
               By { story.authorFirstName } {story.authorLastName}
             </div>

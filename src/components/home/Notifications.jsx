@@ -4,6 +4,7 @@ import moment from 'moment';
 
 const Notifications = (props) => {
   const { notifications } = props;
+  console.log(notifications)
   return(
     <div className='notifications-ctn'>
       <div className='notifications-card'>

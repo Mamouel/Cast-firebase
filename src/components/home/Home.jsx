@@ -5,16 +5,11 @@ import { compose } from 'redux';
 import { Redirect, NavLink, Link } from 'react-router-dom';
 
 import StorySummary from '../stories/StorySummary';
-import Notifications from './Notifications';
 
 import bannerImg from '../../style/images/banner.png';
 import dikkenek from '../../style/images/dikkenek.jpg';
-
 import oss from '../../style/images/oss.jpg';
-
 import workaholic from '../../style/images/workaholic.jpg';
-
-
 
 import '../../style/components/home/home.css';
 
@@ -41,14 +36,13 @@ class Home extends Component {
               Goodies
             </div>
             <div className='third-home-title'>
-              Anecdotes
+              Slipbardages
             </div>  
           </div>
         </div>
         <div className='home-section-ctn'>
           <div className='first-home-section'>
             <div className='first-home-section-img'>
-              <Notifications notifications={notifications} />
             </div>
             <div className='first-home-section-infos'>
 
@@ -97,6 +91,6 @@ export default compose(
   connect(mapStateToProps),
   firestoreConnect([
     { collection: 'stories', limit: 10, orderBy: ['createdAt', 'desc'] },
-    { collection: 'notifications', limit: 5, orderBy: ['createdAt', 'desc'] }
+    { collection: 'notifications', limit: 5, orderBy: ['time', 'desc'] }
   ])
 )(Home);

@@ -53,13 +53,16 @@ const StoryDetails = (props) => {
       <div className='stories-details-container'>
         <div className='stories-details'>
           <div className='secondary-banner'>
-            <span className='stories-details-title'>{ story.title }</span>
-            <img className='stories-details-img' id='story-img' alt='story-img' />
+            <div className='stories-details-title-ctn'>
+              <span className='stories-details-title'>{ story.title }</span>
+            </div>
+            <div className='stories-details-infos'>
+              <div className='stories-details-author'>Posted by { story.authorFirstName } { story.authorLastName }</div>
+              <div className='stories-details-date'>{moment(story.createdAt.toDate().toISOString()).calendar()}</div>
+            </div>
           </div>
-
-          <div className='stories-details-infos'>
-            <div className='stories-details-author'>Posted by { story.authorFirstName } { story.authorLastName }</div>
-            <div className='stories-details-date'>{moment(story.createdAt.toDate().toISOString()).calendar()}</div>
+          <div className='stories-details-img-ctn'>
+            <img className='stories-details-img' id='story-img' alt='story-img' />
           </div>
           
 

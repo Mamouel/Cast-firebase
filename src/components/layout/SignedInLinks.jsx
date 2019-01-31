@@ -59,7 +59,7 @@ class SignedInLinks extends Component {
       <div className='navlinks'>
         <form className='search-form' onSubmit={this.handleSubmit}>
           <input
-            placeholder='Search...'
+            placeholder='Search username, title, keyword...'
             type='search'
             className='search-input'
             onChange={this.handleChange}

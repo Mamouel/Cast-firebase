@@ -228,7 +228,8 @@ body {
   body .secondary-banner {
     width: 100%;
     height: 300px;
-    background-color: #FFB166; }
+    background-color: #FFB166;
+    position: unset; }
 
 /* SCROLLBAR */
 /* width */

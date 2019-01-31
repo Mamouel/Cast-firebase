@@ -4,49 +4,52 @@
   .stories-details {
 
     .secondary-banner {
-    position: relative;
-    padding: 100px;
-
-      .stories-details-title {
-        width: 60%;
-        font-size: 72px;
-        margin: auto;
+      .stories-details-title-ctn {
+        line-height: 180px; 
+        text-align: center;
+        vertical-align: middle;
+        height: 180px;
+        .stories-details-title {
+          width: 60%;
+          font-size: 92px;
+          margin: auto;
+        }
       }
+      .stories-details-infos {
+        width: 40%;
+        font-size: 20px;
+
+  
+        .stories-details-author {
+          color: blue;
+        }
+        .stories-details-date {
+          color: red;
+        }
+      }
+    }
+    .stories-details-img-ctn {
+      width: 100%;
+      margin: auto;
+      text-align: center;
+
       .stories-details-img {
-        max-height: 450px;
-        max-width: 40%;
-        margin: auto;
-        position: absolute;
-        top: 80%;
-        left: 10%;
+        min-width: 50%;
+        max-width: 70%;
+        margin: -60px auto 40px auto;
+        box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.4);
       }
     }
-    .stories-details-infos {
-      width: 40%;
-      float: right;
-      margin: 50px;
 
-      .stories-details-author {
-        padding-top :30px;
-        font-size: 30px;
-      }
-      .stories-details-date {
-        padding-top :30px;
-        padding-bottom :30px;
-
-        font-size: 30px;
-      }
-    }
     .stories-details-content {
       background-color: white;
+      box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.4);
+
       width: 60%;
-      margin: 450px auto 100px auto;
+      margin: 50px auto;
       padding: 50px;
       font-size: 18px;
-
-
     }
-    
   }
 }
 
