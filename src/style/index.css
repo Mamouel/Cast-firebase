@@ -179,6 +179,8 @@ body {
       body button.primary-btn.disabled {
         color: #8d8786;
         cursor: auto; }
+        body button.primary-btn.disabled:hover {
+          transform: none; }
     body button.nav-btn {
       height: 100%;
       font-size: 14px;
@@ -219,15 +221,14 @@ body {
   body .banner {
     position: relative;
     width: 100%;
-    height: 400px;
-    max-height: 400px;
+    height: 93vh;
     margin: auto;
-    background-color: beige;
+    background-color: #FFB166;
     align-content: center; }
-    body .banner .banner-img {
-      width: 100%;
-      background-repeat: no-repeat;
-      background-size: cover; }
+  body .secondary-banner {
+    width: 100%;
+    height: 300px;
+    background-color: #FFB166; }
 
 /* SCROLLBAR */
 /* width */

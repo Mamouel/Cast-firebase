@@ -2,39 +2,49 @@
   width: 100%;
   margin: auto;
   .stories-details {
-    position: relative;
+
     .banner {
+    position: relative;
+    padding: 100px;
+
+      .stories-details-title {
+        width: 60%;
+        font-size: 72px;
+        margin: auto;
+      }
       .stories-details-img {
-        width: 40%;
+        max-height: 450px;
+        max-width: 40%;
         margin: auto;
         position: absolute;
         top: 80%;
         left: 10%;
       }
-      .stories-details-title {
-        width: 60%;
-        position: absolute;
-        top: 15%;
-        left: 20%;
-        font-size: 72px;
-      }
     }
     .stories-details-infos {
-      position: absolute;
-      top: 100%;
-      right: 15%;
+      width: 40%;
+      float: right;
+      margin: 50px;
+
       .stories-details-author {
-        background-color: blue;
+        padding-top :30px;
+        font-size: 30px;
       }
       .stories-details-date {
-        background-color: red;
+        padding-top :30px;
+        padding-bottom :30px;
+
+        font-size: 30px;
       }
     }
     .stories-details-content {
       background-color: white;
-      width: 40%;
-      float: right;
-      margin: 50px;
+      width: 60%;
+      margin: 450px auto 100px auto;
+      padding: 50px;
+      font-size: 18px;
+
+
     }
     
   }

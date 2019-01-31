@@ -98,6 +98,9 @@ body {
       &.disabled {
         color: $grayDark;
         cursor: auto;
+        &:hover {
+          transform: none;
+        }
       }
     }
     &.nav-btn {
@@ -154,16 +157,16 @@ body {
   .banner {
     position: relative;
     width: 100%;
-    height: 400px;
-    max-height: 400px;
+    height: 93vh;
     margin: auto;
-    background-color: beige;
+    background-color: $primaryLight;
     align-content: center;
-    .banner-img {
-      width: 100%;
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
+  }
+  .secondary-banner {
+    width: 100%;
+    height: 300px;
+    background-color: $primaryLight;
+
   }
 }
 

@@ -19,7 +19,9 @@
     position: absolute;
     top: 8%;
     left: 0%;
-    z-index: 5; }
+    z-index: 5;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px; }
   .story-summary-container .story-summary-author {
     font-size: 20px;
     white-space: nowrap;

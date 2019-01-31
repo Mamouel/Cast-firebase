@@ -5,22 +5,38 @@
 .home-container {
   margin: auto;
   text-align: left;
-      position: relative;
+  position: relative;
   .banner {
-    position: relative;
+    .banner-img {
+      width: 100%;
+      height: 93vh;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
     .home-title-ctn {
       position: absolute;
-      top: 15%;
+      top: 5%;
       left: 5%;
-      font-size: 122px;
+      font-size: 140px;
       font-weight: 800;
-      color: $blackest;
+      color: white;
+      .first-home-title {
+        margin-top: 90px;
+      }
       .second-home-title {
         margin-left: 200px;
+        margin-top: 90px;
+
       }
       .third-home-title {
         margin-left: 400px;  
+        margin-top: 90px;
+
       }
     }
+  }
+  .home-section-ctn {
+    height: 100vh;
+    background-color: $primaryLight;
   }
 }

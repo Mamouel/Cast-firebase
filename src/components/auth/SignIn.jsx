@@ -41,10 +41,10 @@ class SignIn extends Component {
           <div className='login-error'>{authError ? <p>{authError}</p> : null}</div>
           <div className='login-links'>
             <Link to='/signup'>
-              <button className='primary-btn' >Create new account</button>
+              <button className='nav-btn' >Create new account</button>
             </Link>
             <Link to='/'>
-              <button className='primary-btn' >Forgot password ?</button>
+              <button className='nav-btn' >Forgot password ?</button>
             </Link>
           </div>
         </form>

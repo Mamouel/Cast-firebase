@@ -30,6 +30,12 @@ class Home extends Component {
             </div>  
           </div>
         </div>
+        <div className='home-section-ctn'>
+          <div className='first-home-section'>
+
+          </div>
+
+        </div>
       </div>
     )
   }
