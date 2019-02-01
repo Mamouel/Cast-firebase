@@ -5,8 +5,6 @@ import { compose } from 'redux';
 import { Redirect, Link } from 'react-router-dom';
 import StorySummary from '../stories/StorySummary';
 
-import LoadingAnimation from '../layout/LoadingAnimation';
-
 import '../../style/components/profile/profile.scss';
 
 class Profile extends Component {
@@ -40,7 +38,6 @@ class Profile extends Component {
 
 
     const userStories = this.getUserStories(stories, auth);
-    console.log(userStories)
     if(userStories.length === 0) { 
       return (
         <div className='profile-container'>

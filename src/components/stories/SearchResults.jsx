@@ -29,8 +29,6 @@ class SearchResults extends Component {
     const { auth, search } = this.props;
     if (!auth.uid) return <Redirect to='/signin'/>
     if (search === undefined) return <Redirect to='/'/>
-
-    console.log(search)
     return(
       (!this.state.isLoading) ?
       <div className='story-list'>
@@ -48,7 +46,6 @@ class SearchResults extends Component {
 };
 
 const mapStateToProps = (state) => {
-  console.log(state)
   return {
     auth: state.firebase.auth,
     search: state.search
