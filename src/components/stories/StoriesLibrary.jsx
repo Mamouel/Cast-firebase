@@ -8,8 +8,6 @@ import { Redirect } from 'react-router-dom';
 import Notifications from '../layout/Notifications';
 import LoadingAnimation from '../layout/LoadingAnimation';
 
-import '../../style/components/home/home.css';
-
 class StoriesLibrary extends Component {
 
   componentDidMount() {
@@ -23,8 +21,8 @@ class StoriesLibrary extends Component {
       return <LoadingAnimation />
     } else{
       return(
-        <div className='home-container'>
-          <div className='secondary-banner' >
+        <div>
+          <div >
             <Notifications notifications={notifications} />
           </div>
           <div>

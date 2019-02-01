@@ -20,7 +20,7 @@
       left: 5%;
       font-size: 10em;;
       font-weight: 900;
-      color: $black;
+      color: $primaryDarker;
       width: 80%;
       .first-home-title {
         padding-bottom: 50px;
@@ -36,15 +36,14 @@
     }
   }
   .home-section-ctn {
-    min-height: 100vh;
     background-color: $primaryLight;
     width: 100%;
     .first-home-section {
       width: 100%;
       display: flex;
       justify-content: space-evenly;
-      padding-top: 25vh;
-      padding-bottom: 25vh;
+      padding-top: 10vh;
+      padding-bottom: 10vh;
 
       .first-home-section-img {
         width: 40vw;
@@ -62,30 +61,35 @@
     .second-home-section {
       width: 100%;
       padding-top: 5vh;
+      height: 100%;
+
+      .second-home-section-title {
+        text-align: center;
+        font-size: 50px;
+      }
 
       .second-home-section-slider {
         width: 90%;
-        margin: 50px auto;
+        margin: 200px auto;
         display: flex;
-        flex-wrap: nowrap;
-        overflow: overlay;
-
+        flex-wrap: wrap;
+        justify-content: center;
       }
-      .second-home-section-buttons {
-        display: flex;
-        justify-content: flex-start;
-        .home-btn-ctn {
-          height: 300px;
-          background-repeat: no-repeat;
-          background-size: cover;
-          &.home-btn-ctn1 {
-            flex-grow: 2;
-            z-index: 4;
-          }
-          &.home-btn-ctn2 {
-            flex-grow: 3;
-            z-index: 3;
-          }
+    }
+    .second-home-section-buttons {
+      display: flex;
+      justify-content: flex-start;
+      .home-btn-ctn {
+        height: 300px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        &.home-btn-ctn1 {
+          flex-grow: 2;
+          z-index: 4;
+        }
+        &.home-btn-ctn2 {
+          flex-grow: 3;
+          z-index: 3;
         }
       }
     }

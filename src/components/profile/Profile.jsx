@@ -14,7 +14,7 @@ class Profile extends Component {
 
   render() {
 
-    const { stories, auth, profile, users } = this.props
+    const { stories, auth, profile } = this.props
     if (!auth.uid) return <Redirect to='/signin'/>
 
 
@@ -37,7 +37,7 @@ class Profile extends Component {
                 </Link>
               )
             } else {
-              return <LoadingAnimation />;
+              return <LoadingAnimation key={story.id} />;
             }
           }) : <LoadingAnimation /> }
         </div>

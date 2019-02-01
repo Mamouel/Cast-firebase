@@ -72,11 +72,11 @@ body {
 
   button {
     border: none;
-    background-color: $primary;
-    color: $primaryDark;
+    background-color: $primaryDark;
+    color: $primaryLight;
     cursor: pointer;
     &:hover, &:focus {
-      background-color: $primary;
+      background-color: $primaryDark;
       color: $grayLight;
     }
     &:active {
@@ -187,7 +187,7 @@ body {
 /* width */
 ::-webkit-scrollbar {
   width: 12px;
-  height: 8px;
+  height: 12px;
 }
 /* Track */
 ::-webkit-scrollbar-track {

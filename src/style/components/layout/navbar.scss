@@ -7,11 +7,11 @@
   .nav-container {
     display: flex;
     justify-content: space-evenly;
-    background-color: $primary;
+    background-color: $primaryDark;
+    height: 100%;
     .home-button {
       height: 100%;
-      padding: 20px;
-      font-size: 18px;
+      font-size: 50px;
       font-weight: bold;
       margin: auto;
     }

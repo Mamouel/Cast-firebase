@@ -5,10 +5,10 @@
   .nav-wrapper .nav-container {
     display: flex;
     justify-content: space-evenly;
-    background-color: #ff9f43; }
+    background-color: #F28014;
+    height: 100%; }
     .nav-wrapper .nav-container .home-button {
       height: 100%;
-      padding: 20px;
-      font-size: 18px;
+      font-size: 50px;
       font-weight: bold;
       margin: auto; }

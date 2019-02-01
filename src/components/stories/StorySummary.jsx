@@ -70,6 +70,9 @@ class StorySummary extends Component {
             <div id='story-title' className='story-summary-title' style={{ backgroundColor: `${this.state.categoryColor}` }}>
               {story.title}
             </div>
+            <div className='story-summary-category'>
+              {story.category}
+            </div>
             <div className='story-summary-author'>
               By { story.authorFirstName } {story.authorLastName}
             </div>

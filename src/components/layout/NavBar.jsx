@@ -10,9 +10,10 @@ import '../../style/components/layout/navbar.css';
 const Navbar = (props) => {
   const { auth, profile, stories, history } = props;
 
+
   const links = auth.uid ? <SignedInLinks profile={profile} stories={stories} history={history}/> : <SignedOutLinks />;
   return (
-    <nav className='nav-wrapper'>
+    <nav id='navbar' className='nav-wrapper'>
       <div className='nav-container'>
         <Link to='/'><button className='home-button'>CAST</button></Link>
         {links}

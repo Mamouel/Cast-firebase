@@ -6,7 +6,7 @@ import { Redirect, NavLink, Link } from 'react-router-dom';
 
 import StorySummary from '../stories/StorySummary';
 
-import bannerImg from '../../style/images/banner.png';
+import bannerImg from '../../style/images/banner.jpg';
 import dikkenek from '../../style/images/dikkenek.jpg';
 import oss from '../../style/images/oss.jpg';
 import workaholic from '../../style/images/workaholic.jpg';
@@ -52,6 +52,7 @@ class Home extends Component {
         </div>
         <div className='home-section-ctn'>
           <div className='second-home-section'>
+            <div className='second-home-section-title'>10 latest</div>
             <div className='second-home-section-slider'>
               {stories && stories.map(story => {
                 return (
@@ -61,16 +62,16 @@ class Home extends Component {
                 )
               })}
             </div>
-            <div className='second-home-section-buttons'>
-              <div className='home-btn-ctn home-btn-ctn1' style={{ backgroundImage: `url(${dikkenek})` }}>
-                <NavLink to='/stories'><div>Stories</div></NavLink>
-              </div>
-              <div className='home-btn-ctn home-btn-ctn2' style={{ backgroundImage: `url(${oss})` }}>
-                <NavLink to='/create'><div>Create your own</div></NavLink>
-              </div>
-              <div className='home-btn-ctn home-btn-ctn1' style={{ backgroundImage: `url(${workaholic})` }}>
-                <NavLink to='/'><div>About</div></NavLink>
-              </div>
+          </div>
+          <div className='second-home-section-buttons'>
+            <div className='home-btn-ctn home-btn-ctn1' style={{ backgroundImage: `url(${dikkenek})` }}>
+              <NavLink to='/stories'><div>Stories</div></NavLink>
+            </div>
+            <div className='home-btn-ctn home-btn-ctn2' style={{ backgroundImage: `url(${oss})` }}>
+              <NavLink to='/create'><div>Create your own</div></NavLink>
+            </div>
+            <div className='home-btn-ctn home-btn-ctn1' style={{ backgroundImage: `url(${workaholic})` }}>
+              <NavLink to='/'><div>About</div></NavLink>
             </div>
           </div>
         </div>
