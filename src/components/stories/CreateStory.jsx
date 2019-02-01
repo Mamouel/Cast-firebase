@@ -97,8 +97,8 @@ class CreateStory extends Component {
           <h5 className='create-story-title'>Create new story</h5>
 
           <div className='categories-input-ctn'>
-            <select type='text' name='categories' defaultValue='Choose a category...' id='category' onChange={this.handleChange}>
-              <option value=''>Choose a category...</option>
+            <select type='text' name='categories'  id='category' onChange={this.handleChange} >
+              <option defaultValue='Choose category'>Choose category</option>
               <option value='Party'>Party</option>
               <option value='Weekend'>Weekend</option>
               <option value='Anecdote'>Anecdote</option>
@@ -129,17 +129,16 @@ class CreateStory extends Component {
               <div className='image-upload'>
                 <label htmlFor='file' className='label-file'>Add image</label>
                 <input className='input-image' name='image' id='file' type='file' onChange={this.handleImageChange} />
-                <p className='image-upload-infos'>Image needed</p>
               </div> }
             </div>
 
           </div>
           
           
-          <div className='btn-ctn'>
+          <div className='create-btn-ctn'>
 
             { 
-              filledFields === 4 ?
+              filledFields === 4 && this.state.category !== 'Choose category' ?
               <div>
                 <button className='primary-btn' onClick={this.handleSubmit}>Create</button>
                 <div id='create-error'></div>

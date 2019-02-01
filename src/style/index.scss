@@ -46,7 +46,7 @@ body {
     box-shadow: none;
     border-radius: 8px;
     background-color: $white;
-    border: 2px solid $primaryDarker;
+    border: 1px solid $primary;
     font-family: $sans-font;
     font-size: 1.3em;
     letter-spacing: 0.05em;
@@ -117,40 +117,55 @@ body {
   }
 
   select {
-    width: 80%;
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -webkit-padding-end: 20px;
-    -moz-padding-end: 20px;
-    -webkit-padding-start: 2px;
-    -moz-padding-start: 2px;
-    background-color: $primary; /* fallback color if gradients are not supported */
-    // background-image: url(../images/select-arrow.png), -webkit-linear-gradient(top, #E5E5E5, #F4F4F4); /* For Chrome and Safari */
-    // background-image: url(../images/select-arrow.png), -moz-linear-gradient(top, #E5E5E5, #F4F4F4); /* For old Fx (3.6 to 15) */
-    // background-image: url(../images/select-arrow.png), -ms-linear-gradient(top, #E5E5E5, #F4F4F4); /* For pre-releases of IE 10*/
-    // background-image: url(../images/select-arrow.png), -o-linear-gradient(top, #E5E5E5, #F4F4F4); /* For old Opera (11.1 to 12.0) */ 
-    // background-image: url(../images/select-arrow.png), linear-gradient(to bottom, #E5E5E5, #F4F4F4); /* Standard syntax; must be last */
-    background-position: center right;
-    background-repeat: no-repeat;
-    border: 1px solid $primary;
+    // width: 80%;
+    // -webkit-appearance: button;
+    // -moz-appearance: button;
+    // -webkit-user-select: none;
+    // -moz-user-select: none;
+    // -webkit-padding-end: 20px;
+    // -moz-padding-end: 20px;
+    // -webkit-padding-start: 2px;
+    // -moz-padding-start: 2px;
+    // background-color: $primary; /* fallback color if gradients are not supported */
+    // // background-image: url(../images/select-arrow.png), -webkit-linear-gradient(top, #E5E5E5, #F4F4F4); /* For Chrome and Safari */
+    // // background-image: url(../images/select-arrow.png), -moz-linear-gradient(top, #E5E5E5, #F4F4F4); /* For old Fx (3.6 to 15) */
+    // // background-image: url(../images/select-arrow.png), -ms-linear-gradient(top, #E5E5E5, #F4F4F4); /* For pre-releases of IE 10*/
+    // // background-image: url(../images/select-arrow.png), -o-linear-gradient(top, #E5E5E5, #F4F4F4); /* For old Opera (11.1 to 12.0) */ 
+    // // background-image: url(../images/select-arrow.png), linear-gradient(to bottom, #E5E5E5, #F4F4F4); /* Standard syntax; must be last */
+    // background-position: center right;
+    // background-repeat: no-repeat;
+    // border: 1px solid $primary;
+    // border-radius: 8px;
+    // box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    // color: $black;
+    // font-size: inherit;
+    // margin: 0;
+    // overflow: hidden;
+    // padding: 10px;
+    box-shadow: none;
     border-radius: 8px;
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    background-color: $white;
+    border: 1px solid $primary;
+    font-family: $sans-font;
+    font-size: 1.3em;
+    letter-spacing: 0.05em;
+    padding: 0;
     color: $black;
-    font-size: inherit;
-    margin: 0;
-    overflow: hidden;
-    padding: 10px;
-    &:hover, &:focus {
-      background-color: $primaryLight;
-      color: $grayLight;
+    outline: none;
+    height: 50px;
+    margin: 10px auto;
+    padding-left: 20px;
+    width: 80%;
+    &:focus, &:active {
+      letter-spacing: 0;
+      outline: none;
+
+      &::placeholder {
+        color: $primaryLight;
+      }
     }
-    &:active {
-      box-shadow: 0 2px 4px 2px rgba(54, 39, 28, 0);
-    }
-    &:focus {
-      outline: $black !important;
+    &::placeholder {
+      color: $grayMed;
     }
 }
 

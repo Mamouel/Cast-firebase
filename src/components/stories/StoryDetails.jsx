@@ -30,11 +30,21 @@ const StoryDetails = (props) => {
     }
   }
 
+  const removeImage = async () => {
+    try {
+     await storageRef.child(story.img).delete().then(() => {
+        console.log('img deleted')
+      });
+    } catch(err) {
+      console.log(err)
+    }
+  }
 
   const alertUserBeforeDelete = (story, storyId) => {
     console.log(storyId)
     let answer = window.confirm("Do you really want to delete this story?");
     if(answer) {
+      removeImage();
       props.deleteStory(story, storyId)
       props.history.push("/stories")
     } else {

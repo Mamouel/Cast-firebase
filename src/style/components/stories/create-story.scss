@@ -4,7 +4,7 @@
   .create-story-form {
     width: 60%;
     text-align: center;
-    background-color: #FEFDD9;
+    background-color: $primaryLight;
     border-radius: 8px;
     margin: 50px auto;
     padding: 25px;
@@ -51,6 +51,9 @@
         }
         
       }
+    }
+    .create-btn-ctn {
+      
     }
   }
 }
