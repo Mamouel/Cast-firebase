@@ -5,27 +5,36 @@ import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
 import { Redirect } from 'react-router-dom';
 
-import Notifications from './../home/Notifications';
+import Notifications from '../layout/Notifications';
+import LoadingAnimation from '../layout/LoadingAnimation';
 
 import '../../style/components/home/home.css';
 
 class StoriesLibrary extends Component {
+
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   render() {
     const { stories, auth, notifications } = this.props
     if (!auth.uid) return <Redirect to='/signin'/>
-
-    return(
-      <div className='home-container'>
-        <div className='secondary-banner' >
-          <Notifications notifications={notifications} />
-        </div>
-        <div>
-          <div className='left'>
-            <StoriesList stories={stories} />
+    if (stories && stories.length === 0) {
+      return <LoadingAnimation />
+    } else{
+      return(
+        <div className='home-container'>
+          <div className='secondary-banner' >
+            <Notifications notifications={notifications} />
+          </div>
+          <div>
+            <div className='left'>
+              <StoriesList stories={stories} />
+            </div>
           </div>
         </div>
-      </div>
-    )
+      )
+    }
   }
 };
 

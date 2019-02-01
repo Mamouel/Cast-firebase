@@ -4,6 +4,7 @@ import { Redirect, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import '../../style/components/home/home.css';
+import LoadingAnimation from '../layout/LoadingAnimation';
 
 class SearchResults extends Component {
 
@@ -15,11 +16,12 @@ class SearchResults extends Component {
   }
 
   componentDidMount() {
-    this.setState({ isLoading: false })
+    window.scrollTo(0, 0);
+    this.setState({ isLoading: false });
   }
 
   componentWillUnmount() {
-    this.setState({ isLoading: true })
+    this.setState({ isLoading: true });
   }
 
   render() {
@@ -36,7 +38,7 @@ class SearchResults extends Component {
           </Link>
         )
       })}
-      </div> : null
+      </div> : <div><LoadingAnimation /></div>
     )
   }
 

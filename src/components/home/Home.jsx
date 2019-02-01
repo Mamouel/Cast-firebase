@@ -20,7 +20,7 @@ class Home extends Component {
   }
 
   render() {
-    const { auth, stories, notifications } = this.props;
+    const { auth, stories } = this.props;
     console.log(stories)
     if (!auth.uid) return <Redirect to='/signup'/>
 
@@ -82,15 +82,13 @@ class Home extends Component {
 const mapStateToProps = (state) => {
   return {
     stories: state.firestore.ordered.stories,
-    auth: state.firebase.auth,
-    notifications: state.firestore.ordered.notifications
+    auth: state.firebase.auth
   }
 };
 
 export default compose(
   connect(mapStateToProps),
   firestoreConnect([
-    { collection: 'stories', limit: 10, orderBy: ['createdAt', 'desc'] },
-    { collection: 'notifications', limit: 5, orderBy: ['time', 'desc'] }
+    { collection: 'stories', limit: 10, orderBy: ['createdAt', 'desc'] }
   ])
 )(Home);

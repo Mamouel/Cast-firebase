@@ -1,0 +1,50 @@
+
+@import '../../variables';
+
+
+.notifications-ctn {
+  width: 100%;
+  margin: auto;
+  background-color: $primaryLight;
+  padding: 30px;
+  .notifications-card {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    .notifications-title {
+      font-size: 70px;
+    }
+    .notifications-list {
+      width: 100%;
+      margin: 50px auto;
+      .notification-ctn {
+        padding: 10px;
+        width: 40%;
+        margin: 10px auto;
+        background-color: $primary;
+        border-radius: 10px;
+        display: flex;
+        justify-content: flex-start;
+        .notification-infos {
+          margin: auto;
+          .notification-user {
+            font-weight: bold;
+            margin: 5px;
+            text-align: left;
+          }
+          .notification-content {
+            margin: 5px;
+          }
+        }
+        .notification-date {
+          margin: 5px;
+          font-size: 12px;
+          text-align: right;
+          float: right;
+          flex-grow: 2;
+
+        }
+      }
+    }
+  }
+}

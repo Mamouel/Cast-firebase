@@ -8,6 +8,8 @@ import firebase from '../../config/fbConfig';
 
 import { deleteStory } from '../../store/actions/storyActions';
 
+import LoadingAnimation from '../layout/LoadingAnimation';
+
 
 import '../../style/components/stories/story-details.css';
 
@@ -41,6 +43,7 @@ const StoryDetails = (props) => {
 }
 
   if(story) {
+    window.scrollTo(0, 0);
     storyImgRef();
   } else {
     return <Redirect to='/' />
@@ -77,7 +80,7 @@ const StoryDetails = (props) => {
     )
   } else {
     return(
-      <div><p>Loading story...</p></div>
+      <div><LoadingAnimation /></div>
     )
   }
 }
