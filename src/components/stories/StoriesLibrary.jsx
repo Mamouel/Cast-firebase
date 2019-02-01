@@ -19,7 +19,7 @@ class StoriesLibrary extends Component {
   render() {
     const { stories, auth, notifications } = this.props
     if (!auth.uid) return <Redirect to='/signin'/>
-    if (stories && stories.length === 0) {
+    if (stories && stories.length === 0 && notifications && notifications.length === 0) {
       return <LoadingAnimation />
     } else{
       return(

@@ -54,7 +54,7 @@ class SignedInLinks extends Component {
 
 
   render() {
-    const { profile, signOut } = this.props
+    const { profile, signOut, auth } = this.props
     return (
       <div className='navlinks'>
         <form className='search-form' onSubmit={this.handleSubmit}>
@@ -69,11 +69,17 @@ class SignedInLinks extends Component {
         <NavLink to='/stories'><button className='nav-btn'>All Stories</button></NavLink>
         <NavLink to='/create'><button className='nav-btn'>New Story</button></NavLink>
         <button className='nav-btn' onClick={signOut} >Log Out</button>
-        <NavLink to='/profile'><button className='avatar'>{profile.initials ? profile.initials : 'Guest'}</button></NavLink>
+        <NavLink to={'/profile/'+ auth.uid}><button className='avatar'>{profile.initials ? profile.initials : 'Guest'}</button></NavLink>
       </div>
     )
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    auth: state.firebase.auth
+  }
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -82,4 +88,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(null, mapDispatchToProps)(SignedInLinks);
+export default connect(mapStateToProps, mapDispatchToProps)(SignedInLinks);
