@@ -30,7 +30,7 @@ class SignIn extends Component {
     return (
       <div className='signin-container'>
         <form className='signin-form-container' onSubmit={this.handleSubmit}>
-          <h5 className='signin-form-title'>Sign In</h5>
+          <h5 className='signin-form-title'>Connect to your account</h5>
           <div className='input-fields-ctn'>
             <input className='input-fields' type='email' id='email' onChange={this.handleChange} placeholder='Email'></input>
           </div>
@@ -41,10 +41,10 @@ class SignIn extends Component {
           <div className='login-error'>{authError ? <p>{authError}</p> : null}</div>
           <div className='login-links'>
             <Link to='/signup'>
-              <button className='nav-btn' >Create new account</button>
+              <button className='primary-btn special-btn' >Create new account</button>
             </Link>
             <Link to='/'>
-              <button className='nav-btn' >Forgot password ?</button>
+              <button className='primary-btn special-btn' >Forgot password ?</button>
             </Link>
           </div>
         </form>

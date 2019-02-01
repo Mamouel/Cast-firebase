@@ -87,7 +87,7 @@ body {
     }
     &.primary-btn {
       border-radius: 8px;
-      margin: 20px auto;
+      margin: 10px auto;
       font-size: 24px;
       background-color: #FEFDD9;
       color: $primaryDarker;
@@ -98,6 +98,14 @@ body {
       &.disabled {
         color: $grayDark;
         cursor: auto;
+        &:hover {
+          transform: none;
+        }
+      }
+      &.special-btn {
+        color: $grayDark;
+
+        font-size: 14px;
         &:hover {
           transform: none;
         }

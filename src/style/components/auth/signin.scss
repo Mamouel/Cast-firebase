@@ -13,7 +13,7 @@
   .signin-form-container {
     width: 35%;
     text-align: center;
-    background-color: #FEFDD9;
+    background-color: $white;
     border-radius: 8px;
     margin: 50px auto;
     box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.5);
@@ -21,13 +21,13 @@
     .signin-form-title {
       margin: auto;
       font-size: 36px;
-      padding: 20px;
+      padding: 40px;
     }
     .login-btn {
       border-radius: 8px;
       margin: auto;
       font-size: 24px;
-      background-color: #FEFDD9;
+      background-color: $white;
       color: $primaryDarker;
       @include transition (all, 0.25s, ease-out);
       &:hover {
@@ -39,11 +39,10 @@
       color: $error-dark;
     }
     .login-links {
-      padding-top: 50px;
       width: 100%;
-      margin: auto;
+      margin: auto 20x;
       display: flex;
-      flex-direction: column;
+      justify-content: center;
     }
   }
 }

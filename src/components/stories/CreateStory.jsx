@@ -83,7 +83,6 @@ class CreateStory extends Component {
 
   render() {
     const { auth } = this.props;
-    console.log(this.state)
     const stateValues = Object.values(this.state);
     const filledFields = this.checkStateValues(stateValues);
 

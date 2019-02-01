@@ -21,7 +21,6 @@ class Home extends Component {
 
   render() {
     const { auth, stories } = this.props;
-    console.log(stories)
     if (!auth.uid) return <Redirect to='/signup'/>
 
     return(
@@ -54,7 +53,7 @@ class Home extends Component {
           <div className='second-home-section'>
             <div className='second-home-section-title'>10 latest</div>
             <div className='second-home-section-slider'>
-              {stories && stories.map(story => {
+              {stories && stories.slice(0, 10).map(story => {
                 return (
                   <Link className='story-link' to={'/story/' + story.id} key={story.id}>
                     <StorySummary story={story} />
@@ -64,15 +63,21 @@ class Home extends Component {
             </div>
           </div>
           <div className='second-home-section-buttons'>
-            <div className='home-btn-ctn home-btn-ctn1' style={{ backgroundImage: `url(${dikkenek})` }}>
-              <NavLink to='/stories'><div>Stories</div></NavLink>
+          <NavLink to='/stories' className='home-btn-links home-btn-ctn1'>
+            <div className='home-btn-ctn ' style={{ backgroundImage: `url(${dikkenek})` }}>
+              <div className='buttons-label'>Stories</div>
             </div>
-            <div className='home-btn-ctn home-btn-ctn2' style={{ backgroundImage: `url(${oss})` }}>
-              <NavLink to='/create'><div>Create your own</div></NavLink>
+          </NavLink>
+          <NavLink to='/create' className='home-btn-links home-btn-ctn2'>
+            <div className='home-btn-ctn' style={{ backgroundImage: `url(${oss})` }}>
+             <div className='buttons-label'>Create your own</div>
             </div>
-            <div className='home-btn-ctn home-btn-ctn1' style={{ backgroundImage: `url(${workaholic})` }}>
-              <NavLink to='/'><div>About</div></NavLink>
+          </NavLink>
+          <NavLink to='/' className='home-btn-links home-btn-ctn1'>
+            <div className='home-btn-ctn' style={{ backgroundImage: `url(${workaholic})` }}>
+              <div className='buttons-label'>About</div>
             </div>
+          </NavLink>
           </div>
         </div>
       </div>
@@ -90,6 +95,6 @@ const mapStateToProps = (state) => {
 export default compose(
   connect(mapStateToProps),
   firestoreConnect([
-    { collection: 'stories', limit: 10, orderBy: ['createdAt', 'desc'] }
+    { collection: 'stories', orderBy: ['createdAt', 'desc'] }
   ])
 )(Home);

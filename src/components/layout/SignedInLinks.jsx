@@ -38,9 +38,12 @@ class SignedInLinks extends Component {
         const titleMatch = story.title.toLowerCase();
         const firstNameMatch = story.authorFirstName.toLowerCase();
         const lastNameMatch = story.authorLastName.toLowerCase();
+        const categoryMatch = story.category.toLowerCase();
         return titleMatch.includes(searchTerm) 
           || firstNameMatch.includes(searchTerm) 
-          || lastNameMatch.includes(searchTerm);
+          || lastNameMatch.includes(searchTerm)
+          || categoryMatch.includes(searchTerm);
+
       });
 
     } else {

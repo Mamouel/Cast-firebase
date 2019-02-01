@@ -3,7 +3,7 @@ import StorySummary from './StorySummary';
 import { Redirect, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import '../../style/components/home/home.css';
+import '../../style/components/stories/stories-list.css';
 import LoadingAnimation from '../layout/LoadingAnimation';
 
 class SearchResults extends Component {
@@ -28,9 +28,12 @@ class SearchResults extends Component {
     
     const { auth, search } = this.props;
     if (!auth.uid) return <Redirect to='/signin'/>
+    if (search === undefined) return <Redirect to='/'/>
+
+    console.log(search)
     return(
       (!this.state.isLoading) ?
-      <div className='search-result-container'>
+      <div className='story-list'>
         {search && search.map(story => {
         return(
           <Link className='story-link' to={'/story/' + story.id} key={story.id}>

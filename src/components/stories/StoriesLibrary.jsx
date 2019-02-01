@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import StoriesList from './StoriesList';
 import { connect } from 'react-redux';
-import { firestoreConnect, populate } from 'react-redux-firebase';
+import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
 import { Redirect } from 'react-router-dom';
 
@@ -16,8 +16,7 @@ class StoriesLibrary extends Component {
 
   render() {
     const { stories, auth, notifications } = this.props
-    console.log('stories', stories)
-    console.log('notifications', notifications)
+
     if (!auth.uid) return <Redirect to='/signin'/>
     if (stories && stories.length === 0 && notifications && notifications.length === 0) {
       return <LoadingAnimation />
@@ -28,7 +27,7 @@ class StoriesLibrary extends Component {
             <Notifications notifications={notifications} />
           </div>
           <div>
-            <div className='left'>
+            <div>
               <StoriesList stories={stories} />
             </div>
           </div>
