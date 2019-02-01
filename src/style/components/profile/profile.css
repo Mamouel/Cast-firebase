@@ -3,7 +3,12 @@
   text-align: center; }
   .profile-container .profile-banner {
     height: 300px;
-    background-color: #FFB166; }
+    background-color: #FFB166;
+    line-height: 300px;
+    align-content: center; }
+    .profile-container .profile-banner .profile-infos {
+      font-size: 72px;
+      margin: auto; }
   .profile-container .profile-stories-title {
     font-size: 40px;
     padding: 50px; }
@@ -12,3 +17,6 @@
     overflow: overlay;
     width: 80%;
     margin: 50px auto; }
+  .profile-container .profile-stories-emptylist {
+    margin: 50px auto;
+    font-size: 24px; }

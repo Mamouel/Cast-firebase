@@ -7,8 +7,12 @@
   .profile-banner {
     height: 300px;
     background-color: $primaryLight;
+    line-height: 300px;
+    align-content: center;
     .profile-infos{
-      
+      font-size: 72px;
+      margin: auto;
+
     }
   }
   .profile-stories-title {
@@ -20,5 +24,10 @@
     overflow: overlay;
     width: 80%;
     margin: 50px auto;
+  }
+  .profile-stories-emptylist {
+    margin: 50px auto;
+    font-size: 24px;
+
   }
 }

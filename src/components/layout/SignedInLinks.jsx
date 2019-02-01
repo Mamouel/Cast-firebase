@@ -43,7 +43,6 @@ class SignedInLinks extends Component {
           || firstNameMatch.includes(searchTerm) 
           || lastNameMatch.includes(searchTerm)
           || categoryMatch.includes(searchTerm);
-
       });
 
     } else {

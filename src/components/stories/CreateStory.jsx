@@ -139,11 +139,11 @@ class CreateStory extends Component {
             { 
               filledFields === 4 && this.state.category !== 'Choose category' ?
               <div>
-                <button className='primary-btn' onClick={this.handleSubmit}>Create</button>
+                <button className='primary-btn create-btn' onClick={this.handleSubmit}>Publish this story</button>
                 <div id='create-error'></div>
               </div> :
               <div>
-                <button className='primary-btn disabled' disabled>Create</button>
+                <button className='primary-btn create-btn disabled' disabled>Publish this story</button>
                 <div id='create-error'></div>
               </div>
             }

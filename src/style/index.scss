@@ -89,23 +89,30 @@ body {
       border-radius: 8px;
       margin: 10px auto;
       font-size: 24px;
-      background-color: #FEFDD9;
+      background-color: $white;
       color: $primaryDarker;
       @include transition (all, 0.25s, ease-out);
       &:hover {
         transform: scale(1.1)
       }
-      &.disabled {
+      &.special-btn {
         color: $grayDark;
-        cursor: auto;
+        font-size: 14px;
         &:hover {
           transform: none;
         }
       }
-      &.special-btn {
+      &.create-btn {
+        background-color: $primaryLight;
+        font-size: 50px;
+        color: $primaryDarker;
+      }
+      &.create-btn-profile {
+        background-color: $primary;
+      }
+      &.disabled {
         color: $grayDark;
-
-        font-size: 14px;
+        cursor: auto;
         &:hover {
           transform: none;
         }

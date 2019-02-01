@@ -43,17 +43,17 @@ class Profile extends Component {
         <div className='profile-container'>
           <div className='profile-banner'>
             <div className='profile-infos'>
-              <div>{profile.firstName}</div>
+              <div>Hello {profile.firstName}!</div>
             </div>
           </div>
           <div className='profile-stories-title'>
             <p>Your stories</p>
           </div>
-          <div className='profile-stories-list'>
+          <div className='profile-stories-emptylist'>
             No story to show
           </div>
           <Link to='/create'>
-            <button className='primary-btn'>Let's create one!</button>
+            <button className='primary-btn create-btn create-btn-profile'>Let's create one!</button>
           </Link>
         </div>
       )

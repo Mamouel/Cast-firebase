@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import SignedInLinks from './SignedInLinks';
 import SignedOutLinks from './SignedOutLinks';
 import { connect } from 'react-redux';
@@ -10,6 +10,7 @@ import '../../style/components/layout/navbar.css';
 const Navbar = (props) => {
   const { auth, profile, stories, history } = props;
 
+  if (!auth.uid) return <Redirect to='/signin'/>
 
   const links = auth.uid ? <SignedInLinks profile={profile} stories={stories} history={history}/> : <SignedOutLinks />;
   return (

@@ -21,8 +21,11 @@
         cursor: pointer;
         color: #ff9f43;
         font-weight: bold;
-        font-size: 24px;
-        margin: 30px; }
+        font-size: 26px;
+        margin: 30px;
+        border-radius: 10px;
+        padding: 10px;
+        background-color: #ffffff; }
         .create-story-container .create-story-form .img-input-ctn .input-image-infos .image-upload .label-file:hover {
           color: #e5760d; }
         .create-story-container .create-story-form .img-input-ctn .input-image-infos .image-upload .label-file.remove-btn {
@@ -35,3 +38,5 @@
       .create-story-container .create-story-form .img-input-ctn .input-image-infos .image-upload .image-upload-infos {
         color: green;
         margin: 30px; }
+  .create-story-container .create-story-form .create-btn-ctn {
+    margin: 50px auto; }
