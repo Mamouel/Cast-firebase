@@ -10,7 +10,7 @@ import LoadingAnimation from './LoadingAnimation';
 
 const Notifications = (props) => {
   const { notifications } = props;
-
+  console.log(notifications)
   if (notifications && notifications.length !== 0) {
 
     return (
@@ -23,10 +23,19 @@ const Notifications = (props) => {
                 
                 <li className='notification-ctn' key={notification.id}>
                   <div className='notification-infos'>
-                    <Link to={'/profile/' + notification.authorId} className='notification-user-link' >
-                      <span className='notification-user'>{notification.user}</span>
-                    </Link>
-                    <span className='notification-content'>{notification.content}</span>
+                    { notification.authorId ?
+                      <div>
+                        <Link to={'/profile/' + notification.authorId} className='notification-user-link' >
+                          <span className='notification-user'>{notification.user}</span>
+                        </Link>
+                        <span className='notification-content'>{notification.content}</span>
+                      </div>
+                      :
+                      <div>
+                        <span className='notification-user'>{notification.user}</span>
+                        <span className='notification-content'>{notification.content}</span>
+                      </div>
+                    }
                   </div>
                   <div className='notification-date'>
                     {moment(notification.time.toDate()).fromNow()}

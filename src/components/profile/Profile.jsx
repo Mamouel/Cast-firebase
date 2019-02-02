@@ -75,7 +75,7 @@ class Profile extends Component {
             <div className='profile-stories-title'>
               <p>{ targetedUserInfos.firstName }'s Stories </p>
             </div>
-            <div className='profile-stories-emptylist'>
+            <div className='profile-stories-list'>
               {userTargetedStories && userTargetedStories.map(story => {
                 return (
                   <Link className='story-link' to={'/story/' + story.id} key={story.id}>
