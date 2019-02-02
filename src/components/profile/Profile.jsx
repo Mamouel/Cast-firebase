@@ -35,15 +35,13 @@ class Profile extends Component {
     const { stories, auth, profile } = this.props
     if (!auth.uid) return <Redirect to='/signin'/>
     if(!stories) return <Redirect to='/'/>
-
-
     const userStories = this.getUserStories(stories, auth);
     if(userStories.length === 0) { 
       return (
         <div className='profile-container'>
           <div className='profile-banner'>
             <div className='profile-infos'>
-              <div>Hello {profile.firstName}!</div>
+              <div>Hi {profile.firstName}!</div>
             </div>
           </div>
           <div className='profile-stories-title'>
@@ -62,7 +60,7 @@ class Profile extends Component {
         <div className='profile-container'>
           <div className='profile-banner'>
             <div className='profile-infos'>
-              <div>{profile.firstName}</div>
+              <div>Hi {profile.firstName}!</div>
             </div>
           </div>
           <div className='profile-stories-title'>

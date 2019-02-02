@@ -27,10 +27,14 @@
         justify-content: flex-start;
         .notification-infos {
           margin: auto;
-          .notification-user {
-            font-weight: bold;
-            margin: 5px;
-            text-align: left;
+          .notification-user-link {
+            color: black;
+
+            .notification-user {
+              font-weight: bold;
+              margin: 5px;
+              text-align: left;
+            }
           }
           .notification-content {
             margin: 5px;

@@ -22,10 +22,12 @@
         justify-content: flex-start; }
         .notifications-ctn .notifications-card .notifications-list .notification-ctn .notification-infos {
           margin: auto; }
-          .notifications-ctn .notifications-card .notifications-list .notification-ctn .notification-infos .notification-user {
-            font-weight: bold;
-            margin: 5px;
-            text-align: left; }
+          .notifications-ctn .notifications-card .notifications-list .notification-ctn .notification-infos .notification-user-link {
+            color: black; }
+            .notifications-ctn .notifications-card .notifications-list .notification-ctn .notification-infos .notification-user-link .notification-user {
+              font-weight: bold;
+              margin: 5px;
+              text-align: left; }
           .notifications-ctn .notifications-card .notifications-list .notification-ctn .notification-infos .notification-content {
             margin: 5px; }
         .notifications-ctn .notifications-card .notifications-list .notification-ctn .notification-date {
