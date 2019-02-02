@@ -40,9 +40,9 @@ class CreateStory extends Component {
 
   addImage = async img => {
     try {
-    const storyImgRef = storageRef.child('images/stories/' + img.name)
-    const snapshot = await storyImgRef.put(img);
-    this.setState({ img: snapshot.metadata.fullPath });
+      const storyImgRef = storageRef.child('images/stories/' + img.name)
+      const snapshot = await storyImgRef.put(img);
+      this.setState({ img: snapshot.metadata.fullPath });
     } 
     catch(err) {
       console.log(err)

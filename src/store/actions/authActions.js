@@ -33,6 +33,7 @@ export const signUp = (newUser) => {
       newUser.password
     ).then((response) => {
       return firestore.collection('users').doc(response.user.uid).set({
+        id: response.user.uid,
         firstName: newUser.firstName,
         lastName: newUser.lastName,
         initials: newUser.firstName[0].toUpperCase() + newUser.lastName[0].toUpperCase()

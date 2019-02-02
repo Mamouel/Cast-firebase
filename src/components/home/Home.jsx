@@ -25,7 +25,6 @@ class Home extends Component {
   render() {
     const { auth, stories, notifications } = this.props;
     if (!auth.uid) return <Redirect to='/signup'/>
-
     return(
       <div className='home-container'>
         <div className='banner'>

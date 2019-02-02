@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux';
 import { signIn } from '../../store/actions/authActions';
 import { Redirect, Link } from 'react-router-dom';
