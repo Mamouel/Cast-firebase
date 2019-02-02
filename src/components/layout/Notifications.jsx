@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 import { Link } from 'react-router-dom';
 
@@ -9,8 +10,6 @@ import LoadingAnimation from './LoadingAnimation';
 
 const Notifications = (props) => {
   const { notifications } = props;
-
-  console.log(notifications)
 
   if (notifications && notifications.length !== 0) {
 
@@ -46,6 +45,10 @@ const Notifications = (props) => {
     )
   }
 }
+
+Notifications.propTypes = {
+  notifications: PropTypes.array
+};
 
 export default Notifications;
 

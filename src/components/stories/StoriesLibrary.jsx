@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import StoriesList from './StoriesList';
 import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
@@ -35,6 +36,12 @@ class StoriesLibrary extends Component {
       )
     }
   }
+};
+
+StoriesLibrary.propTypes = {
+  stories: PropTypes.array,
+  auth: PropTypes.object.isRequired,
+  notifications: PropTypes.array
 };
 
 const mapStateToProps = (state) => {

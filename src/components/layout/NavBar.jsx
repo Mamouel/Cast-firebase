@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import { Link } from 'react-router-dom';
 import SignedInLinks from './SignedInLinks';
 import SignedOutLinks from './SignedOutLinks';
@@ -20,6 +22,13 @@ const Navbar = (props) => {
     </nav>
   )
 }
+
+Navbar.propTypes = {
+  auth: PropTypes.object.isRequired,
+  profile: PropTypes.object,
+  stories: PropTypes.array
+};
+
 
 const mapStateToProps = (state, props) => {
   return {

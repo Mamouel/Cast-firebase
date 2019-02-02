@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { signUp } from '../../store/actions/authActions';
@@ -60,6 +61,11 @@ class SignUp extends Component {
       </div>
     );
   };
+};
+
+SignUp.propTypes = {
+  auth: PropTypes.object,
+  authError: PropTypes.string
 };
 
 const mapStateToProps = (state) => {

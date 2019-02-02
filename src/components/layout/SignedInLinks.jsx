@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { signOut } from '../../store/actions/authActions';
 import { search } from '../../store/actions/searchActions';
@@ -76,6 +77,12 @@ class SignedInLinks extends Component {
     )
   }
 }
+
+SignedInLinks.propTypes = {
+  auth: PropTypes.object.isRequired,
+  profile: PropTypes.object,
+  signOut: PropTypes.func
+};
 
 const mapStateToProps = (state) => {
   return {

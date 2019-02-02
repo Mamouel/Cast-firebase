@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
@@ -46,7 +47,7 @@ class Profile extends Component {
     return targetedUser;
   }
 
-  render(props) {
+  render() {
 
     const { stories, auth, profile, users } = this.props;
     const targetedUserId = this.props.match.params.id;
@@ -134,6 +135,13 @@ class Profile extends Component {
       )
     }
   }
+};
+
+Profile.propTypes = {
+  auth: PropTypes.object,
+  profile: PropTypes.object,
+  stories: PropTypes.array,
+  users: PropTypes.array
 };
 
 const mapStateToProps = (state) => {

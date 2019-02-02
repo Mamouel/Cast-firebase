@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 import firebase from '../../config/fbConfig';
 
@@ -87,5 +88,9 @@ class StorySummary extends Component {
     )
   }
 }
+
+StorySummary.propTypes = {
+  story: PropTypes.object
+};
 
 export default StorySummary;

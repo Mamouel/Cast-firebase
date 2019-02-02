@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { signIn } from '../../store/actions/authActions';
 import { Redirect, Link } from 'react-router-dom';
@@ -52,6 +53,11 @@ class SignIn extends Component {
     )
   }
 }
+
+SignIn.propTypes = {
+  authError: PropTypes.string,
+  auth: PropTypes.object
+};
 
 const mapStateToProps = (state) => {
   return {

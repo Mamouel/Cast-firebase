@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
@@ -83,6 +85,11 @@ class Home extends Component {
       </div>
     )
   }
+};
+
+Home.propTypes = {
+  stories: PropTypes.array,
+  auth: PropTypes.object.isRequired
 };
 
 const mapStateToProps = (state) => {

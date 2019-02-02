@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import StorySummary from './StorySummary';
 import { Link } from 'react-router-dom';
 
 import '../../style/components/stories/stories-list.css';
 
-const storyList = ({ stories }) => {
+const StoryList = ({ stories }) => {
   return (
     <div className='story-list'>
       {stories && stories.map(story => {
@@ -18,4 +19,8 @@ const storyList = ({ stories }) => {
   )
 };
 
-export default storyList;
+StoryList.propTypes = {
+  stories: PropTypes.array
+}
+
+export default StoryList;

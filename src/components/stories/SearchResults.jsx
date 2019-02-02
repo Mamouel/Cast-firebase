@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import StorySummary from './StorySummary';
 import { Redirect, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -28,7 +29,7 @@ class SearchResults extends Component {
     
     const { auth, search } = this.props;
     if (!auth.uid) return <Redirect to='/signin'/>
-    if (search === undefined) return <Redirect to='/'/>
+    if (!search) return <Redirect to='/'/>
     return(
       (!this.state.isLoading) ?
       <div className='story-list'>
@@ -43,6 +44,11 @@ class SearchResults extends Component {
     )
   }
 
+};
+
+SearchResults.propTypes = {
+  auth: PropTypes.object,
+  search: PropTypes.array
 };
 
 const mapStateToProps = (state) => {

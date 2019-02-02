@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
@@ -94,6 +95,11 @@ const StoryDetails = (props) => {
     )
   }
 }
+
+StoryDetails.propTypes = {
+  story: PropTypes.array,
+  auth: PropTypes.object.isRequired,
+};
 
 const mapStateToProps = (state, ownProps) => {
   const id = ownProps.match.params.id;
