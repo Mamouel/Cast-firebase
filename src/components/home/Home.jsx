@@ -32,6 +32,7 @@ class Home extends Component {
           <div className="first-home-section">
             <div className="first-home-section-img">
               <Notifications notifications={notifications} />
+
             </div>
             <div className="first-home-section-infos" />
           </div>
