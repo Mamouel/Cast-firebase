@@ -113,7 +113,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    deleteStory: (story, storyId) => dispatch(deleteStory(story, storyId))
+    deleteStory: (story, storyId) => dispatch(deleteStory(story, storyId)),
+    commentStory: (state, storyId) => dispatch(commentStory(state, storyId))
   }
 };
 

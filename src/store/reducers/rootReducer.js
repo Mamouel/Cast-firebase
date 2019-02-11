@@ -1,6 +1,8 @@
 import authReducer from './authReducer';
 import storyReducer from './storyReducer';
 import searchReducer from './searchReducer';
+import commentReducer from './commentReducer';
+
 
 
 import { combineReducers } from 'redux';
@@ -13,7 +15,8 @@ const rootReducer = combineReducers({
   story: storyReducer,
   search: searchReducer,
   firestore: firestoreReducer,
-  firebase: firebaseReducer
+  firebase: firebaseReducer,
+  comments: commentReducer
 })
 
 export default rootReducer;
