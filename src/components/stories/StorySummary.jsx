@@ -1,3 +1,4 @@
+// @flow
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
@@ -7,7 +8,16 @@ import '../../style/components/stories/story-summary.css';
 
 const storageRef = firebase.storage().ref();
 
-class StorySummary extends Component {
+type Props = {
+  story: object
+}
+
+type State = {
+  imageUrl : string,
+  categoryColor: string
+}
+
+class StorySummary extends Component<Props, State> {
   _isMounted = false;
 
   constructor(props) {

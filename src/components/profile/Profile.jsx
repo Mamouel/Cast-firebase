@@ -1,3 +1,4 @@
+// @flow
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -9,7 +10,15 @@ import StorySummary from '../stories/StorySummary';
 import '../../style/components/profile/profile.scss';
 import LoadingAnimation from '../layout/LoadingAnimation';
 
-class Profile extends Component {
+type Props = {
+  auth: object,
+  profile: object,
+  stories: array,
+  users: array
+};
+
+
+class Profile extends Component<Props> {
 
 
   getUserStories = (stories, id) => {

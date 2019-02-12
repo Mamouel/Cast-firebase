@@ -1,3 +1,4 @@
+// @flow
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import StorySummary from './StorySummary';
@@ -7,7 +8,16 @@ import { connect } from 'react-redux';
 import '../../style/components/stories/stories-list.css';
 import LoadingAnimation from '../layout/LoadingAnimation';
 
-class SearchResults extends Component {
+type Props = {
+  auth: object,
+  search: array
+};
+
+type State = {
+  isLoading: boolean
+};
+
+class SearchResults extends Component<Props, State> {
 
   constructor() {
     super();

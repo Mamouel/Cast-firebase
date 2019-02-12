@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -14,7 +15,14 @@ import LoadingAnimation from '../layout/LoadingAnimation';
 
 import '../../style/components/stories/story-details.css';
 
-const StoryDetails = (props) => {
+type Props = {
+  story: object,
+  auth: object,
+  deleteStory: func
+};
+
+
+const StoryDetails = (props: Props) => {
   
   const { story, auth } = props;
   const storyId = props.match.params.id;

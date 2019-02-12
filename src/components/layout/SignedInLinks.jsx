@@ -1,3 +1,5 @@
+// @flow
+
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -8,7 +10,19 @@ import { FaSearch } from 'react-icons/fa'
 
 import '../../style/components/layout/navlinks.css';
 
-class SignedInLinks extends Component {
+type Props = {
+  auth: object,
+  profile: object,
+  signOut: func,
+  search: func
+};
+
+type State = {
+  filtered: array,
+  searchInput: string
+};
+
+class SignedInLinks extends Component<Props, State> {
   constructor(props) {
     super(props);
     this.state = {

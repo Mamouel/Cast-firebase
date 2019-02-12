@@ -1,14 +1,23 @@
+// @flow
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux';
 import { signIn } from '../../store/actions/authActions';
 import { Redirect, Link } from 'react-router-dom';
 
-
-
 import '../../style/components/auth/signin.css';
 
-class SignIn extends Component {
+type Props = {
+  authError: string,
+  auth: object
+};
+
+type State = {
+  email: string,
+  password: string
+};
+
+class SignIn extends Component<Props, State> {
   state = {
     email: '',
     password: ''
@@ -27,6 +36,7 @@ class SignIn extends Component {
 
   render() {
     const { authError, auth } = this.props;
+    
     if (auth.uid) return <Redirect to='/' />
     return (
       <div className='signin-container'>

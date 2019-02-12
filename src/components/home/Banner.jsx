@@ -1,9 +1,14 @@
-import React, { Component } from "react";
+// @flow
+import React from "react";
 import PropTypes from "prop-types";
 
 import bannerImg from "../../style/images/banner.jpg";
 
-const Banner = props => {
+type Props = {
+  labels: array
+};
+
+const Banner = (props: Props) => {
   return (
     <div style={{ position: "relative" }}>
       <div style={{ position: "absolute", top: 0, left: 0, zIndex: 10 }}>

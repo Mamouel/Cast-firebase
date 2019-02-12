@@ -1,3 +1,4 @@
+// @flow
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
@@ -7,7 +8,19 @@ import { signUp } from '../../store/actions/authActions';
 
 import '../../style/components/auth/signup.css';
 
-class SignUp extends Component {
+type Props = {
+  authError: string,
+  auth: object
+};
+
+type State = {
+  email: string,
+  password: string,
+  firstName: string,
+  lastName: string
+};
+
+class SignUp extends Component<Props, State> {
   state = {
     email: '',
     password: '',

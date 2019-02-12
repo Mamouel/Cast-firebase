@@ -1,3 +1,4 @@
+// @flow
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
@@ -9,15 +10,20 @@ import { Redirect, NavLink, Link } from "react-router-dom";
 import StorySummary from "../stories/StorySummary";
 import Notifications from "../layout/Notifications";
 import Banner from "./Banner";
-
-import bannerImg from "../../style/images/banner.jpg";
 import dikkenek from "../../style/images/dikkenek.jpg";
 import oss from "../../style/images/oss.jpg";
 import workaholic from "../../style/images/workaholic.jpg";
 
 import "../../style/components/home/home.css";
 
-class Home extends Component {
+type Props = {
+  stories: array,
+  auth: object,
+  notifications: array
+};
+
+class Home extends Component<Props> {
+  
   componentDidMount() {
     window.scrollTo(0, 0);
   }

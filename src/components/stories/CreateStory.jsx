@@ -1,3 +1,4 @@
+// @flow
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -9,8 +10,18 @@ import '../../style/components/stories/create-story.css'
 
 const storageRef = firebase.storage().ref();
 
-class CreateStory extends Component {
+type Props = {
+  auth: object
+};
 
+type State = {
+  title: string,
+  content: string,
+  img: string,
+  category: string
+};
+
+class CreateStory extends Component<Props, State> {
 
   state = {
     title: '',
