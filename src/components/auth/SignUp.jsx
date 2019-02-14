@@ -10,7 +10,7 @@ import '../../style/components/auth/signup.css';
 
 type Props = {
   authError: string,
-  auth: object
+  // auth: object
 };
 
 type State = {

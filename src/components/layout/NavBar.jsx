@@ -12,14 +12,15 @@ import { withRouter } from 'react-router'
 import '../../style/components/layout/navbar.css';
 
 type Props = {
-  auth: object,
-  profile: object,
-  stories: array
+  // auth: object,
+  // profile: object,
+  // stories: Array<Story>
 };
 
 
 const Navbar = (props: Props) => {
   const { auth, profile, stories, history } = props;
+  console.log(props)
 
   const links = auth.uid ? <SignedInLinks profile={profile} stories={stories} history={history}/> : <SignedOutLinks />;
   return (

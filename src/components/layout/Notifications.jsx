@@ -10,7 +10,7 @@ import '../../style/components/layout/notifications.css';
 import LoadingAnimation from './LoadingAnimation';
 
 type Props = {
-  notifications: array
+  // notifications: Array<Notification>
 };
 
 

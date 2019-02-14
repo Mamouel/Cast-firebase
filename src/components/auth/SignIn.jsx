@@ -9,7 +9,7 @@ import '../../style/components/auth/signin.css';
 
 type Props = {
   authError: string,
-  auth: object
+  // auth: object
 };
 
 type State = {

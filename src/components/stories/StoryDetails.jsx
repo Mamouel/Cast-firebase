@@ -16,9 +16,9 @@ import LoadingAnimation from '../layout/LoadingAnimation';
 import '../../style/components/stories/story-details.css';
 
 type Props = {
-  story: object,
-  auth: object,
-  deleteStory: func
+  // story: object,
+  // auth: object,
+  // deleteStory: func
 };
 
 

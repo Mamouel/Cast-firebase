@@ -9,7 +9,7 @@ import '../../style/components/stories/story-summary.css';
 const storageRef = firebase.storage().ref();
 
 type Props = {
-  story: object
+  // story: any
 }
 
 type State = {
@@ -20,7 +20,7 @@ type State = {
 class StorySummary extends Component<Props, State> {
   _isMounted = false;
 
-  constructor(props) {
+  constructor(props: Props) {
     super(props);
     this.state = {
       imageUrl : '',

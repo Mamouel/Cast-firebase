@@ -14,7 +14,11 @@ import StoriesLibrary from './components/stories/StoriesLibrary';
 import createBrowserHistory from 'history/createBrowserHistory';
 const history = createBrowserHistory();
 
-class App extends Component {
+type Props = {
+  history: object
+}
+
+class App extends Component<Props> {
   render() {
     return (
       <Router history={history}>

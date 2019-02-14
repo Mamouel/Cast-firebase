@@ -11,10 +11,10 @@ import '../../style/components/profile/profile.scss';
 import LoadingAnimation from '../layout/LoadingAnimation';
 
 type Props = {
-  auth: object,
-  profile: object,
-  stories: array,
-  users: array
+  // auth: object,
+  // profile: object,
+  // stories: array,
+  // users: array
 };
 
 

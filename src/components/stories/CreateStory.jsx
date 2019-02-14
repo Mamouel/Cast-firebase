@@ -11,7 +11,9 @@ import '../../style/components/stories/create-story.css'
 const storageRef = firebase.storage().ref();
 
 type Props = {
-  auth: object
+  // auth: object,
+  // createStory: func,
+  // history: object
 };
 
 type State = {

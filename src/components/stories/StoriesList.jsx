@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import '../../style/components/stories/stories-list.css';
 
 type Props = {
-  stories: array,
+  // stories: array,
 };
 
 const StoryList = (props: Props) => {

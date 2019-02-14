@@ -9,8 +9,8 @@ import '../../style/components/stories/stories-list.css';
 import LoadingAnimation from '../layout/LoadingAnimation';
 
 type Props = {
-  auth: object,
-  search: array
+  // auth: object,
+  // search: array
 };
 
 type State = {
