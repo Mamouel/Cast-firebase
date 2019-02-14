@@ -10,7 +10,9 @@ import '../../style/components/auth/signup.css';
 
 type Props = {
   authError: string,
-  // auth: object
+  auth: Object,
+  history: Object,
+  signUp: (state: State) => void
 };
 
 type State = {
@@ -28,13 +30,13 @@ class SignUp extends Component<Props, State> {
     lastName: ''
   }
 
-  handleChange = (e) => {
+  handleChange = (e: SyntheticInputEvent<HTMLElement>) => {
     this.setState({
       [e.target.id]: e.target.value
     });
   };
 
-  handleSubmit = (e) => {
+  handleSubmit = (e: SyntheticEvent<HTMLButtonElement>) => {
     e.preventDefault();
     if(this.state.email !== '' && this.state.password !== '' && this.state.firstName !== '' && this.state.lastName !== '') {
       this.props.signUp(this.state);

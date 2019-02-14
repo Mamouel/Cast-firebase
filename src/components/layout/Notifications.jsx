@@ -10,13 +10,14 @@ import '../../style/components/layout/notifications.css';
 import LoadingAnimation from './LoadingAnimation';
 
 type Props = {
-  // notifications: Array<Notification>
+  notifications: Array<Object>
 };
 
 
 
 const Notifications = (props: Props) => {
   const { notifications } = props;
+  console.log(props)
 
   if (notifications && notifications.length !== 0) {
 

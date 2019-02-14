@@ -9,7 +9,8 @@ import '../../style/components/auth/signin.css';
 
 type Props = {
   authError: string,
-  // auth: object
+  auth: Object,
+  signIn: (state: State) => void
 };
 
 type State = {
@@ -23,13 +24,13 @@ class SignIn extends Component<Props, State> {
     password: ''
   }
 
-  handleChange = (e) => {
+  handleChange = (e: SyntheticInputEvent<HTMLElement>) => {
     this.setState({
       [e.target.id]: e.target.value
     })
   }
 
-  handleSubmit = (e) => {
+  handleSubmit = (e: SyntheticEvent<HTMLButtonElement>) => {
     e.preventDefault();
     this.props.signIn(this.state);
   }

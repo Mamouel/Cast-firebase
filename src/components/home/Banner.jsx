@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import bannerImg from "../../style/images/banner.jpg";
 
 type Props = {
-  // labels: Array<Label>
+  labels: Array<string>
 };
 
 const Banner = (props: Props) => {

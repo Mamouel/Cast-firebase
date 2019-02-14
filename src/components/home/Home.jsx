@@ -17,9 +17,9 @@ import workaholic from "../../style/images/workaholic.jpg";
 import "../../style/components/home/home.css";
 
 type Props = {
-  // stories: Array<Story>,
-  // auth: object,
-  // notifications: Array<Notifications>
+  stories: Array<Object>,
+  auth: Object,
+  notifications: Array<Object>
 };
 
 class Home extends Component<Props> {

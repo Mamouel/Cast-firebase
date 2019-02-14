@@ -16,9 +16,11 @@ import LoadingAnimation from '../layout/LoadingAnimation';
 import '../../style/components/stories/story-details.css';
 
 type Props = {
-  // story: object,
-  // auth: object,
-  // deleteStory: func
+  story: Object,
+  auth: Object,
+  history: Object,
+  match: Object,
+  deleteStory: (story: Object, storyId: string) => void
 };
 
 
@@ -31,7 +33,7 @@ const StoryDetails = (props: Props) => {
   const storyImgRef = async () => { 
     try {
       await storageRef.child(story.img).getDownloadURL().then((url) => {
-        var img = document.getElementById('story-img');
+        var img: ?HTMLElement = document.getElementById('story-img');
         img.src = url;
       });
     } catch(err) {

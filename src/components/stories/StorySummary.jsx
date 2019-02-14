@@ -9,7 +9,7 @@ import '../../style/components/stories/story-summary.css';
 const storageRef = firebase.storage().ref();
 
 type Props = {
-  // story: any
+  story: Object
 }
 
 type State = {
@@ -48,7 +48,7 @@ class StorySummary extends Component<Props, State> {
     }
   }
 
-  getStoryCategoryColor = (story) => {
+  getStoryCategoryColor = (story: Object) => {
       switch(story.category) {
         case 'Party':
           return this.setState({ categoryColor: '#404040' })

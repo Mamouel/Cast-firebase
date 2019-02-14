@@ -1,4 +1,32 @@
-export const createStory = (story) => {
+// @flow
+
+import type { Stories, Story } from "../../../types/StoriesTypes";
+
+export type CREATE_STORY = "CREATE_STORY";
+export type CREATE_STORY_ERROR = "CREATE_STORY_ERROR";
+export type DELETE_STORY = "DELETE_STORY";
+export type DELETE_STORY_ERROR = "DELETE_STORY_ERROR";
+
+
+export type Action = {
+  type:
+    | CREATE_STORY
+    | CREATE_STORY_ERROR
+    | DELETE_STORY
+    | DELETE_STORY_ERROR,
+  payload?: Stories,
+  story?: Story,
+  timestamp?: number,
+  title?: string,
+  id?: number,
+  err?: string
+};
+
+
+
+type CreateStory = (story: Story) => Action;
+
+export const createStory: CreateStory = (story: Story) => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
     //make async call to database
     const firestore = getFirestore();
@@ -18,8 +46,9 @@ export const createStory = (story) => {
   };
 };
 
+type DeleteStory = (story: Story, storyId: string) => Action;
 
-export const deleteStory = (story, storyId) => {
+export const deleteStory: DeleteStory = (story: Story, storyId: string) => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
     //make async call to database
     const firestore = getFirestore();

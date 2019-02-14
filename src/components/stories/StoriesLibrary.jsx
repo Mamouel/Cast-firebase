@@ -11,9 +11,9 @@ import Notifications from '../layout/Notifications';
 import LoadingAnimation from '../layout/LoadingAnimation';
 
 type Props = {
-  // stories: array,
-  // auth: object,
-  // notifications: array
+  stories: Array<Object>,
+  auth: Object,
+  notifications: Array<Object>
 };
 
 

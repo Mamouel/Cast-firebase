@@ -11,17 +11,18 @@ import '../../style/components/profile/profile.scss';
 import LoadingAnimation from '../layout/LoadingAnimation';
 
 type Props = {
-  // auth: object,
-  // profile: object,
-  // stories: array,
-  // users: array
+  auth: Object,
+  profile: Object,
+  stories: Array<Object>,
+  users: Array<Object>,
+  match: Object
 };
 
 
 class Profile extends Component<Props> {
 
 
-  getUserStories = (stories, id) => {
+  getUserStories = (stories: Array<Object>, id: number ) => {
     let currentList = [];
     let newList = [];
     if (stories && id) {
@@ -40,7 +41,7 @@ class Profile extends Component<Props> {
   }
 
 
-  getTargetedUser = (users, id) => { 
+  getTargetedUser = (users: Array<Object>, id: number) => { 
     let usersList = [];
     let targetedUser = [];
     let targetedUserId = id;
@@ -61,6 +62,7 @@ class Profile extends Component<Props> {
     const { stories, auth, profile, users } = this.props;
     const targetedUserId = this.props.match.params.id;
     const currentUserId = auth.uid;
+    console.log(targetedUserId)
 
     if (!auth.uid) return <Redirect to='/signin'/>
     if(!stories) return <Redirect to='/'/>
@@ -98,7 +100,7 @@ class Profile extends Component<Props> {
       } else {
         return <LoadingAnimation />
       }
-    } 
+    }
 
 
     if(userStories.length === 0 && profile) { 
