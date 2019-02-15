@@ -7,15 +7,14 @@ import { compose } from "redux";
 import { Redirect, NavLink, Link } from "react-router-dom";
 
 import StorySummary from "../stories/StorySummary";
-import Notifications from "../layout/Notifications";
+// import Notifications from "../layout/Notifications";
 import Banner from "./Banner";
 
-import bannerImg from "../../style/images/banner.jpg";
 import dikkenek from "../../style/images/dikkenek.jpg";
 import oss from "../../style/images/oss.jpg";
 import workaholic from "../../style/images/workaholic.jpg";
 
-import "../../style/components/home/home.css";
+import "../../style/components/home/home.scss";
 
 class Home extends Component {
   componentDidMount() {
@@ -23,7 +22,7 @@ class Home extends Component {
   }
 
   render() {
-    const { auth, stories, notifications } = this.props;
+    const { auth, stories } = this.props;
     if (!auth.uid) return <Redirect to="/signin" />;
     return (
       <div className="home-container">
@@ -31,7 +30,7 @@ class Home extends Component {
         <div className="home-section-ctn" style={{ paddingTop: 700 }}>
           <div className="first-home-section">
             <div className="first-home-section-img">
-              <Notifications notifications={notifications} />
+
 
             </div>
             <div className="first-home-section-infos" />
