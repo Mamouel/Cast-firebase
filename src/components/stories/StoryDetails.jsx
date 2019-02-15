@@ -12,10 +12,10 @@ import { commentStory } from '../../store/actions/commentsActions';
 
 
 import LoadingAnimation from '../layout/LoadingAnimation';
-// import CommentList from './CommentList';
+import CommentsList from './CommentsList';
 
 
-import '../../style/components/stories/story-details.css';
+import '../../style/components/stories/story-details.scss';
 
 const storageRef = firebase.storage().ref();
 
@@ -30,6 +30,10 @@ class StoryDetails extends Component {
     }
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   handleChange = (e) => {
     this.setState({
       commentContent: e.target.value,
@@ -40,11 +44,8 @@ class StoryDetails extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const comment = this.state;
-    const storyId = this.props.match.params.id;
     this.props.commentStory(comment);
-    this.props.history.push('/story/' + storyId);
-
-
+    this.setState({ commentContent: '', storyId: '' })
   };
 
 
@@ -82,23 +83,15 @@ class StoryDetails extends Component {
 
   render() {
 
-    const { story, auth, profile, comments } = this.props;
+    const { story, auth, comments } = this.props;
     const storyId = this.props.match.params.id;
-
-    
-    console.log(comments)
   
-    if(story) {
-      window.scrollTo(0, 0);
-      this.storyImgRef();
-    } else {
-      return <Redirect to='/' />
-    }
-  
+    if(!story) return <Redirect to='/' />
     if (!auth.uid) return <Redirect to='/signin'/>
     
-    if(story) {
-      return(
+    if(story && comments) {
+      this.storyImgRef();
+      return (
         <div className='stories-details-container'>
           <div className='stories-details'>
             <div className='secondary-banner'>
@@ -122,37 +115,22 @@ class StoryDetails extends Component {
               <button className='delete-story-btn' onClick={() => this.alertUserBeforeDelete(story, storyId)}>Delete this story</button>
             )}
           </div>
-          <div>
-            <h1>Comment this story</h1>
-            <form className="commentForm" onSubmit={this.handleSubmit}>
+          <div className="comment-form-ctn">
+            <form className="comment-form" onSubmit={this.handleSubmit}>
               <input
                 type="text"
-                placeholder="Say something..."
+                value={this.state.commentContent}
+                placeholder="Leave comment..."
                 onChange={this.handleChange}
               />
-              <input type="submit" value="Post" />
+              <button className="primary-btn" type="submit" value="Post">Post</button>
             </form>
           </div>
-          {/* <div><CommentList /></div> */}
-          <div>{comments && comments.map((comment, id) => {
-            if(comment.storyId === storyId) {
-              return (
-                <div>
-                  {comment.commentContent}
-                </div>
-              ) 
-            } else {
-              return (
-                null
-              )
-            }
-          })}
-          </div>
-
+          <div><CommentsList comments={comments} storyId={storyId}/></div>
         </div>
       )
     } else {
-      return(
+      return (
         <div><LoadingAnimation /></div>
       )
     }
@@ -163,7 +141,7 @@ StoryDetails.propTypes = {
   story: PropTypes.object,
   auth: PropTypes.object.isRequired,
   profile: PropTypes.object,
-  comments: PropTypes.object
+  comments: PropTypes.array
 };
 
 const mapStateToProps = (state, ownProps) => {

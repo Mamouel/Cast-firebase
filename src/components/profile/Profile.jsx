@@ -11,6 +11,10 @@ import LoadingAnimation from '../layout/LoadingAnimation';
 
 class Profile extends Component {
 
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+
 
   getUserStories = (stories, id) => {
     let currentList = [];
