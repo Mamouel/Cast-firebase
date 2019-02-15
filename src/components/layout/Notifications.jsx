@@ -10,7 +10,6 @@ import LoadingAnimation from './LoadingAnimation';
 
 const Notifications = (props) => {
   const { notifications } = props;
-  console.log(notifications)
   if (notifications && notifications.length !== 0) {
 
     return (
