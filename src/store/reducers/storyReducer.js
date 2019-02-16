@@ -26,6 +26,8 @@ const storyReducer: StoriesReducer = (
     case 'DELETE_STORY_ERROR':
       console.log('Story delete error', action.err);
       return state;
+    case 'COMMENT_STORY':
+      return state;
     default: 
       return state;
   }

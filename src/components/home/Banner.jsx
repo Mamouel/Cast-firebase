@@ -1,4 +1,5 @@
 // @flow
+
 import React from "react";
 import PropTypes from "prop-types";
 
@@ -15,6 +16,7 @@ const Banner = (props: Props) => {
         <img
           src={bannerImg}
           style={{ width: "100%", height: 700, opacity: 0.7 }}
+          alt="header-banner"
         />
       </div>
       <div
@@ -36,6 +38,7 @@ const Banner = (props: Props) => {
               marginTop: 40,
               textShadow: "2px 2px rgba(0,0,0,0.3)"
             }}
+            key={idx}
           >
             {l}
           </div>

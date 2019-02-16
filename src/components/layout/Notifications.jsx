@@ -17,7 +17,6 @@ type Props = {
 
 const Notifications = (props: Props) => {
   const { notifications } = props;
-  console.log(props)
 
   if (notifications && notifications.length !== 0) {
 
