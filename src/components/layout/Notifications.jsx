@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
@@ -7,8 +9,13 @@ import { Link } from 'react-router-dom';
 import '../../style/components/layout/notifications.css';
 import LoadingAnimation from './LoadingAnimation';
 
+type Props = {
+  notifications: Array<Object>
+};
 
-const Notifications = (props) => {
+
+
+const Notifications = (props: Props) => {
   const { notifications } = props;
   if (notifications && notifications.length !== 0) {
 
@@ -19,7 +26,7 @@ const Notifications = (props) => {
           <ul className='notifications-list'>
             {notifications && notifications.map(notification => {
               return (
-                
+              
                 <li className='notification-ctn' key={notification.id}>
                   <div className='notification-infos'>
                     { notification.authorId ?

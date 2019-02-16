@@ -1,32 +1,43 @@
+// @flow
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux';
 import { signIn } from '../../store/actions/authActions';
 import { Redirect, Link } from 'react-router-dom';
 
-
-
 import '../../style/components/auth/signin.css';
 
-class SignIn extends Component {
+type Props = {
+  authError: string,
+  auth: Object,
+  signIn: (state: State) => void
+};
+
+type State = {
+  email: string,
+  password: string
+};
+
+class SignIn extends Component<Props, State> {
   state = {
     email: '',
     password: ''
   }
 
-  handleChange = (e) => {
+  handleChange = (e: SyntheticInputEvent<HTMLElement>) => {
     this.setState({
       [e.target.id]: e.target.value
     })
   }
 
-  handleSubmit = (e) => {
+  handleSubmit = (e: SyntheticEvent<HTMLButtonElement>) => {
     e.preventDefault();
     this.props.signIn(this.state);
   }
 
   render() {
     const { authError, auth } = this.props;
+    
     if (auth.uid) return <Redirect to='/' />
     return (
       <div className='signin-container'>

@@ -1,3 +1,4 @@
+// @flow
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
@@ -7,7 +8,21 @@ import { signUp } from '../../store/actions/authActions';
 
 import '../../style/components/auth/signup.css';
 
-class SignUp extends Component {
+type Props = {
+  authError: string,
+  auth: Object,
+  history: Object,
+  signUp: (state: State) => void
+};
+
+type State = {
+  email: string,
+  password: string,
+  firstName: string,
+  lastName: string
+};
+
+class SignUp extends Component<Props, State> {
   state = {
     email: '',
     password: '',
@@ -15,13 +30,13 @@ class SignUp extends Component {
     lastName: ''
   }
 
-  handleChange = (e) => {
+  handleChange = (e: SyntheticInputEvent<HTMLElement>) => {
     this.setState({
       [e.target.id]: e.target.value
     });
   };
 
-  handleSubmit = (e) => {
+  handleSubmit = (e: SyntheticEvent<HTMLButtonElement>) => {
     e.preventDefault();
     if(this.state.email !== '' && this.state.password !== '' && this.state.firstName !== '' && this.state.lastName !== '') {
       this.props.signUp(this.state);

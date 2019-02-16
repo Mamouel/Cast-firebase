@@ -5,7 +5,12 @@ import { Link } from 'react-router-dom';
 
 import '../../style/components/stories/stories-list.css';
 
-const StoryList = ({ stories }) => {
+type Props = {
+  stories: Array<Object>,
+};
+
+const StoryList = (props: Props) => {
+  const { stories } = props
   return (
     <div className='story-list'>
       {stories && stories.map(story => {

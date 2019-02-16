@@ -1,8 +1,17 @@
-const initialState = {
+// @flow
+import type { StoriesState } from "../../../types/StoriesTypes";
+import type { Action } from "../actions/storyActions";
+
+const initialState: StoriesState = {
   stories: []
 };
 
-const storyReducer = (state = initialState, action) => {
+type StoriesReducer = (state: StoriesState, action: Action) => StoriesState;
+
+const storyReducer: StoriesReducer = (
+  state: StoriesState = initialState, 
+  action: Action
+) => {
   switch(action.type) {
     case 'CREATE_STORY':
       console.log('Story created', action);

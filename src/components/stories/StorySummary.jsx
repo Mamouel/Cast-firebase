@@ -1,3 +1,4 @@
+// @flow
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
@@ -7,10 +8,19 @@ import '../../style/components/stories/story-summary.css';
 
 const storageRef = firebase.storage().ref();
 
-class StorySummary extends Component {
+type Props = {
+  story: Object
+}
+
+type State = {
+  imageUrl : string,
+  categoryColor: string
+}
+
+class StorySummary extends Component<Props, State> {
   _isMounted = false;
 
-  constructor(props) {
+  constructor(props: Props) {
     super(props);
     this.state = {
       imageUrl : '',
@@ -38,7 +48,7 @@ class StorySummary extends Component {
     }
   }
 
-  getStoryCategoryColor = (story) => {
+  getStoryCategoryColor = (story: Object) => {
       switch(story.category) {
         case 'Party':
           return this.setState({ categoryColor: '#404040' })

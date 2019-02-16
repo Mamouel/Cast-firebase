@@ -1,3 +1,4 @@
+// @flow
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import StoriesList from './StoriesList';
@@ -9,7 +10,14 @@ import { Redirect } from 'react-router-dom';
 import Notifications from '../layout/Notifications';
 import LoadingAnimation from '../layout/LoadingAnimation';
 
-class StoriesLibrary extends Component {
+type Props = {
+  stories: Array<Object>,
+  auth: Object,
+  notifications: Array<Object>
+};
+
+
+class StoriesLibrary extends Component<Props> {
 
   componentDidMount() {
     window.scrollTo(0, 0);

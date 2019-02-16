@@ -1,3 +1,4 @@
+// @flow
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
@@ -8,24 +9,30 @@ import { Redirect, NavLink, Link } from "react-router-dom";
 
 import StorySummary from "../stories/StorySummary";
 import Banner from "./Banner";
-
 import dikkenek from "../../style/images/dikkenek.jpg";
 import oss from "../../style/images/oss.jpg";
 import workaholic from "../../style/images/workaholic.jpg";
 
 import "../../style/components/home/home.scss";
 
-class Home extends Component {
+type Props = {
+  stories: Array<Object>,
+  auth: Object,
+  notifications: Array<Object>
+};
+
+class Home extends Component<Props> {
+  
   componentDidMount() {
     window.scrollTo(0, 0);
   }
 
   render() {
-    const { auth, stories } = this.props;
+    const { auth, stories, notifications } = this.props;
     if (!auth.uid) return <Redirect to="/signin" />;
     return (
       <div className="home-container">
-        <Banner labels={["Stories", "Goodies", "Memories"]} />
+        <Banner labels={["Stories", "Goodies", "Slibardages"]} />
         <div className="home-section-ctn" style={{ paddingTop: 700 }}>
           <div className="first-home-section">
             <div className="first-home-section-infos" />
@@ -33,7 +40,7 @@ class Home extends Component {
           </div>
         </div>
         <div className="home-section-ctn">
-          <div className="second-home-section">
+          <div className="second-home-section"></div>
             <div className="second-home-section-title">10 latest</div>
             <div className="second-home-section-slider">
               {stories &&
@@ -49,7 +56,6 @@ class Home extends Component {
                   );
                 })}
             </div>
-          </div>
           <div className="second-home-section-buttons">
             <NavLink to="/stories" className="home-btn-links home-btn-ctn1">
               <div

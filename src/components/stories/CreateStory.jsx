@@ -1,3 +1,4 @@
+// @flow
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -9,8 +10,20 @@ import '../../style/components/stories/create-story.css'
 
 const storageRef = firebase.storage().ref();
 
-class CreateStory extends Component {
+type Props = {
+  auth: Object,
+  createStory: (state: State) => void,
+  history: Object
+};
 
+type State = {
+  title: string,
+  content: string,
+  img: string,
+  category: string
+};
+
+class CreateStory extends Component<Props, State> {
 
   state = {
     title: '',
@@ -20,13 +33,13 @@ class CreateStory extends Component {
   };
 
 
-  handleChange = (e) => {
+  handleChange = (e: SyntheticInputEvent<HTMLButtonElement>) => {
     this.setState({
       [e.target.id]: e.target.value
     });
   };
 
-  handleSubmit = (e) => {
+  handleSubmit = (e: SyntheticEvent<HTMLButtonElement>) => {
     e.preventDefault();
     const stateValues = Object.values(this.state);
     const filledFields = this.checkStateValues(stateValues);
@@ -38,7 +51,7 @@ class CreateStory extends Component {
     }
   };
 
-  addImage = async img => {
+  addImage = async (img: Object) => {
     try {
       const storyImgRef = storageRef.child('images/stories/' + img.name)
       const snapshot = await storyImgRef.put(img);
@@ -49,8 +62,9 @@ class CreateStory extends Component {
     }
   };
 
-  handleImageChange = event => {
-    this.addImage(event.target.files[0]);
+  handleImageChange = (e: SyntheticEvent<HTMLElement>) => {
+    console.log(e.target.files[0])
+    this.addImage(e.target.files[0]);
   };
 
   removeImage = async () => {
@@ -63,7 +77,7 @@ class CreateStory extends Component {
     }
   }
 
-  checkStateValues = (stateValues) => {
+  checkStateValues = (stateValues: Array<mixed>) => {
     const allFieldsFilled = stateValues.filter(element => {
       if(element !== '') return element;
       return null;

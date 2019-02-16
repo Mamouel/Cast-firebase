@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -9,7 +11,15 @@ import { withRouter } from 'react-router'
 
 import '../../style/components/layout/navbar.css';
 
-const Navbar = (props) => {
+type Props = {
+  auth: Object,
+  profile: Object,
+  stories: Array<Object>,
+  history: Object
+};
+
+
+const Navbar = (props: Props) => {
   const { auth, profile, stories, history } = props;
 
   const links = auth.uid ? <SignedInLinks profile={profile} stories={stories} history={history}/> : <SignedOutLinks />;

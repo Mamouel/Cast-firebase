@@ -1,3 +1,5 @@
+// @flow
+
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -8,8 +10,22 @@ import { FaSearch } from 'react-icons/fa'
 
 import '../../style/components/layout/navlinks.css';
 
-class SignedInLinks extends Component {
-  constructor(props) {
+type Props = {
+  auth: Object,
+  profile: Object,
+  stories: Array<Object>,
+  history: Object,
+  signOut: () => void,
+  search: (searchTerm?: string) => void
+};
+
+type State = {
+  filtered: Array<Object>,
+  searchInput: string
+};
+
+class SignedInLinks extends Component<Props, State> {
+  constructor(props: Props) {
     super(props);
     this.state = {
       filtered: [],
@@ -17,20 +33,20 @@ class SignedInLinks extends Component {
     };
   }
 
-  handleSubmit = e => {
+  handleSubmit = (e: SyntheticEvent<HTMLButtonElement>) => {
     e.preventDefault();
     this.props.search(this.state.filtered)
     this.props.history.push('/search')
   }
 
-  handleChange = (e) => {
+  handleChange = (e: SyntheticEvent<HTMLElement>) => {
     this.setState({
       searchInput: e.target.value
     });
     this.performSearch(this.state.searchInput.toLowerCase())
   }
 
-  performSearch = (searchTerm) => {
+  performSearch = (searchTerm: string) => {
     let currentList = [];
     let newList = [];
     if (searchTerm !== '') {

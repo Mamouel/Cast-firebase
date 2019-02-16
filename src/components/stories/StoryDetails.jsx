@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+// @flow
+import React, {Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
@@ -17,10 +18,20 @@ import CommentsList from './CommentsList';
 
 import '../../style/components/stories/story-details.scss';
 
+type Props = {
+  story: Object,
+  auth: Object,
+  history: Object,
+  match: Object,
+  deleteStory: (story: Object, storyId: string) => void
+};
+
+
+
 const storageRef = firebase.storage().ref();
 
 
-class StoryDetails extends Component {
+class StoryDetails extends Component<Props> {
 
   constructor(props) {
     super(props);
