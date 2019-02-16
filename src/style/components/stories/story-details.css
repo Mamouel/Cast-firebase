@@ -33,3 +33,9 @@
     margin: 50px auto;
     padding: 50px;
     font-size: 18px; }
+  .stories-details-container .comment-form-ctn {
+    width: 100%;
+    margin: auto; }
+    .stories-details-container .comment-form-ctn .comment-form {
+      display: flex;
+      flex-direction: column; }

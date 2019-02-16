@@ -1,0 +1,27 @@
+@import '../../variables';
+
+
+.comment-ctn {
+  width: 100%;
+  padding: 50px;
+  .comment-card {
+    width: 60%;
+    margin: 30px auto;
+
+    .comment-infos {
+      display: flex;
+      border: 1px solid $primaryDark;
+      background-color: $white;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: justify;
+      .comment-author {
+        font-weight: bold;
+        margin: 5px;
+      }
+      .comment-content {
+        margin: 5px;
+      }
+    }
+  }
+}

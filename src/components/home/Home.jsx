@@ -44,7 +44,7 @@ class Home extends Component<Props> {
           </div>
         </div>
         <div className="home-section-ctn">
-          <div className="second-home-section">
+          <div className="second-home-section"></div>
             <div className="second-home-section-title">10 latest</div>
             <div className="second-home-section-slider">
               {stories &&

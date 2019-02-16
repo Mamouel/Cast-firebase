@@ -1,0 +1,19 @@
+.comment-ctn {
+  width: 100%;
+  padding: 50px; }
+  .comment-ctn .comment-card {
+    width: 60%;
+    text-align: center;
+    margin: 30px auto; }
+    .comment-ctn .comment-card .comment-infos {
+      display: flex;
+      border: 1px solid #F28014;
+      background-color: #ffffff;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center; }
+      .comment-ctn .comment-card .comment-infos .comment-author {
+        font-weight: bold;
+        margin: 5px; }
+      .comment-ctn .comment-card .comment-infos .comment-content {
+        margin: 5px; }
