@@ -60,7 +60,6 @@ class Home extends Component<Props> {
                   );
                 })}
             </div>
-          </div>
           <div className="second-home-section-buttons">
             <NavLink to="/stories" className="home-btn-links home-btn-ctn1">
               <div

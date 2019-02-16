@@ -19,14 +19,11 @@ type Props = {
 };
 
 
-<<<<<<< HEAD
 class Profile extends Component<Props> {
-=======
   componentDidMount() {
     window.scrollTo(0, 0)
   }
 
->>>>>>> 570161300c279537c598219ba0b770e5a2e27f64
 
 
   getUserStories = (stories: Array<Object>, id: number ) => {

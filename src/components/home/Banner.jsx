@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 // @flow
-=======
->>>>>>> 570161300c279537c598219ba0b770e5a2e27f64
 import React from "react";
 import PropTypes from "prop-types";
 

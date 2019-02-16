@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 // @flow
-import React from 'react';
-=======
-import React, { Component } from 'react';
->>>>>>> 570161300c279537c598219ba0b770e5a2e27f64
+import React, {Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
