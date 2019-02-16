@@ -6,35 +6,6 @@
   margin: auto;
   text-align: left;
   position: relative;
-  .banner {
-    .banner-img {
-      width: 100%;
-      height: 93vh;
-      background-repeat: no-repeat;
-      background-size: cover;
-      box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.4);
-    }
-    .home-title-ctn {
-      position: absolute;
-      top: 20%;
-      left: 5%;
-      font-size: 10em;;
-      font-weight: 900;
-      color: $primaryDarker;
-      width: 80%;
-      .first-home-title {
-        padding-bottom: 50px;
-      }
-      .second-home-title {
-        margin-left: 10%;
-        padding-bottom: 50px;
-      }
-      .third-home-title {
-        margin-left: 20%;  
-
-      }
-    }
-  }
   .home-section-ctn {
     background-color: $primaryLight;
     width: 100%;

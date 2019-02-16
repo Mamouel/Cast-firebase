@@ -40,7 +40,7 @@ class Home extends Component<Props> {
           </div>
         </div>
         <div className="home-section-ctn">
-          <div className="second-home-section"></div>
+          <div className="second-home-section">
             <div className="second-home-section-title">10 latest</div>
             <div className="second-home-section-slider">
               {stories &&
@@ -55,6 +55,7 @@ class Home extends Component<Props> {
                     </Link>
                   );
                 })}
+              </div>
             </div>
           <div className="second-home-section-buttons">
             <NavLink to="/stories" className="home-btn-links home-btn-ctn1">
