@@ -18,13 +18,10 @@ type Props = {
   match: Object
 };
 
-
 class Profile extends Component<Props> {
   componentDidMount() {
     window.scrollTo(0, 0)
   }
-
-
 
   getUserStories = (stories: Array<Object>, id: number ) => {
     let currentList = [];
@@ -44,7 +41,6 @@ class Profile extends Component<Props> {
     return newList;
   }
 
-
   getTargetedUser = (users: Array<Object>, id: number) => { 
     let usersList = [];
     let targetedUser = [];
@@ -62,11 +58,9 @@ class Profile extends Component<Props> {
   }
 
   render() {
-
     const { stories, auth, profile, users } = this.props;
     const targetedUserId = this.props.match.params.id;
     const currentUserId = auth.uid;
-    console.log(targetedUserId)
 
     if (!auth.uid) return <Redirect to='/signin'/>
     if(!stories) return <Redirect to='/'/>
@@ -105,7 +99,6 @@ class Profile extends Component<Props> {
         return <LoadingAnimation />
       }
     }
-
 
     if(userStories.length === 0 && profile) { 
       return (

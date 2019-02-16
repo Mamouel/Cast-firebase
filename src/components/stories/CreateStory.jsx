@@ -10,17 +10,17 @@ import '../../style/components/stories/create-story.css'
 
 const storageRef = firebase.storage().ref();
 
-type Props = {
-  auth: Object,
-  createStory: (state: State) => void,
-  history: Object
-};
-
 type State = {
   title: string,
   content: string,
   img: string,
   category: string
+};
+
+type Props = {
+  auth: Object,
+  createStory: (state: State) => void,
+  history: Object
 };
 
 class CreateStory extends Component<Props, State> {
@@ -63,7 +63,6 @@ class CreateStory extends Component<Props, State> {
   };
 
   handleImageChange = (e: SyntheticEvent<HTMLElement>) => {
-    console.log(e.target.files[0])
     this.addImage(e.target.files[0]);
   };
 

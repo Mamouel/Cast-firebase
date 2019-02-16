@@ -8,18 +8,18 @@ import { signUp } from '../../store/actions/authActions';
 
 import '../../style/components/auth/signup.css';
 
-type Props = {
-  authError: string,
-  auth: Object,
-  history: Object,
-  signUp: (state: State) => void
-};
-
 type State = {
   email: string,
   password: string,
   firstName: string,
   lastName: string
+};
+
+type Props = {
+  authError: string,
+  auth: Object,
+  history: Object,
+  signUp: (state: State) => void
 };
 
 class SignUp extends Component<Props, State> {

@@ -7,15 +7,16 @@ import { Redirect, Link } from 'react-router-dom';
 
 import '../../style/components/auth/signin.css';
 
-type Props = {
-  authError: string,
-  auth: Object,
-  signIn: (state: State) => void
-};
 
 type State = {
   email: string,
   password: string
+};
+
+type Props = {
+  authError: string,
+  auth: Object,
+  signIn: (state: State) => void
 };
 
 class SignIn extends Component<Props, State> {

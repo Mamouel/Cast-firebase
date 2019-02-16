@@ -28,11 +28,11 @@ class Home extends Component<Props> {
   }
 
   render() {
-    const { auth, stories, notifications } = this.props;
+    const { auth, stories } = this.props;
     if (!auth.uid) return <Redirect to="/signin" />;
     return (
       <div className="home-container">
-        <Banner labels={["Stories", "Goodies", "Slibardages"]} />
+        <Banner labels={["Stories", "Goodies", "Memories"]} />
         <div className="home-section-ctn" style={{ paddingTop: 700 }}>
           <div className="first-home-section">
             <div className="first-home-section-infos" />

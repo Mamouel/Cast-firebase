@@ -7,7 +7,6 @@ import "../../style/components/stories/comments-list.scss";
 const CommentsList = (props) => {
 
   const { comments, storyId } = props;
-  console.log(comments)
   return (
     <div className="comment-ctn">
       <div className="comment-card">
