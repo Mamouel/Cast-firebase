@@ -7,7 +7,6 @@ import { compose } from "redux";
 import { Redirect, NavLink, Link } from "react-router-dom";
 
 import StorySummary from "../stories/StorySummary";
-// import Notifications from "../layout/Notifications";
 import Banner from "./Banner";
 
 import dikkenek from "../../style/images/dikkenek.jpg";
@@ -29,10 +28,7 @@ class Home extends Component {
         <Banner labels={["Stories", "Goodies", "Memories"]} />
         <div className="home-section-ctn" style={{ paddingTop: 700 }}>
           <div className="first-home-section">
-            <div className="first-home-section-img">
-
-
-            </div>
+            <div className="first-home-section-infos" />
             <div className="first-home-section-infos" />
           </div>
         </div>

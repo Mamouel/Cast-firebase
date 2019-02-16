@@ -111,9 +111,11 @@ class StoryDetails extends Component {
             <div className='stories-details-content'>
               <p>{ story.content }</p>
             </div>
-            {auth.uid === story.authorId && (
-              <button className='delete-story-btn' onClick={() => this.alertUserBeforeDelete(story, storyId)}>Delete this story</button>
-            )}
+            <div className='delete-btn-ctn'>
+              {auth.uid === story.authorId && (
+                <button className='primary-btn delete-story-btn' onClick={() => this.alertUserBeforeDelete(story, storyId)}>Delete this story</button>
+              )}
+            </div>
           </div>
           <div className="comment-form-ctn">
             <form className="comment-form" onSubmit={this.handleSubmit}>

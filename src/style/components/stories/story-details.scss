@@ -7,21 +7,21 @@
 
     .secondary-banner {
       .stories-details-title-ctn {
-        line-height: 400px; 
+        line-height: 200px; 
         text-align: center;
         vertical-align: middle;
-        height: 400px;
+        height: 200px;
         .stories-details-title {
           width: 60%;
           font-size: 92px;
-          margin: auto;
+          margin: 0 auto;
         }
       }
       .stories-details-infos {
-        width: 40%;
+        width: 100%;
         font-size: 20px;
 
-  
+        text-align: center;
         .stories-details-author {
           color: blue;
         }
@@ -53,11 +53,19 @@
       padding: 50px;
       font-size: 18px;
     }
+    .delete-btn-ctn{
+      width: 100%;
+      margin: auto;
+      text-align: center;
+      .delete-story-btn {
+        margin: 30px auto;
+        padding: 10px;
+      }
+    }
   }
   .comment-form-ctn {
     width: 70%;
     margin: auto;
-    border: 1px solid $primaryDarker;
     border-radius: 10px;
 
     .comment-form {
