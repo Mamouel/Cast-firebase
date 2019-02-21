@@ -2,17 +2,18 @@
   width: 100%;
   margin: auto; }
   .stories-details-container .stories-details .secondary-banner .stories-details-title-ctn {
-    line-height: 400px;
+    line-height: 200px;
     text-align: center;
     vertical-align: middle;
-    height: 400px; }
+    height: 200px; }
     .stories-details-container .stories-details .secondary-banner .stories-details-title-ctn .stories-details-title {
       width: 60%;
       font-size: 92px;
-      margin: auto; }
+      margin: 0 auto; }
   .stories-details-container .stories-details .secondary-banner .stories-details-infos {
-    width: 40%;
-    font-size: 20px; }
+    width: 100%;
+    font-size: 20px;
+    text-align: center; }
     .stories-details-container .stories-details .secondary-banner .stories-details-infos .stories-details-author {
       color: blue; }
     .stories-details-container .stories-details .secondary-banner .stories-details-infos .stories-details-date {
@@ -20,22 +21,33 @@
   .stories-details-container .stories-details .stories-details-img-ctn {
     width: 100%;
     margin: auto;
-    text-align: center; }
+    text-align: center;
+    border-radius: 10px; }
     .stories-details-container .stories-details .stories-details-img-ctn .stories-details-img {
       min-width: 50%;
       max-width: 70%;
-      margin: -60px auto 40px auto;
-      box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.4); }
+      margin: 60px auto 40px auto;
+      box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.4);
+      border-radius: 10px; }
   .stories-details-container .stories-details .stories-details-content {
     background-color: white;
     box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
     width: 60%;
     margin: 50px auto;
     padding: 50px;
     font-size: 18px; }
-  .stories-details-container .comment-form-ctn {
+  .stories-details-container .stories-details .delete-btn-ctn {
     width: 100%;
-    margin: auto; }
+    margin: auto;
+    text-align: center; }
+    .stories-details-container .stories-details .delete-btn-ctn .delete-story-btn {
+      margin: 30px auto;
+      padding: 10px; }
+  .stories-details-container .comment-form-ctn {
+    width: 70%;
+    margin: auto;
+    border-radius: 10px; }
     .stories-details-container .comment-form-ctn .comment-form {
       display: flex;
       flex-direction: column; }

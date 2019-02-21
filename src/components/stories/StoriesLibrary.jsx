@@ -35,9 +35,7 @@ class StoriesLibrary extends Component<Props> {
             <Notifications notifications={notifications} />
           </div>
           <div>
-            <div>
-              <StoriesList stories={stories} />
-            </div>
+            <StoriesList stories={stories} />
           </div>
         </div>
       )

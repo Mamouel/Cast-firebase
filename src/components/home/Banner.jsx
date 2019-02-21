@@ -2,7 +2,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import bannerImg from "../../style/images/banner.jpg";
+import bannerImg from "../../style/images/bannerTest.png";
 
 type Props = {
   labels: Array<string>
@@ -11,7 +11,7 @@ type Props = {
 const Banner = (props: Props) => {
   return (
     <div style={{ position: "relative" }}>
-      <div style={{ position: "absolute", top: 0, left: 0, zIndex: 10 }}>
+      <div className="animated fadeIn" style={{ position: "absolute", top: 0, left: 0, zIndex: 10, width: "100%" }}>
         <img
           src={bannerImg}
           style={{ width: "100%", height: 700, opacity: 0.7 }}
@@ -19,6 +19,7 @@ const Banner = (props: Props) => {
         />
       </div>
       <div
+        className="animated fadeInLeft delay-1s"
         style={{
           position: "absolute",
           top: 0,

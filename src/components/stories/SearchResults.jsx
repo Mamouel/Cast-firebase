@@ -10,7 +10,7 @@ import LoadingAnimation from '../layout/LoadingAnimation';
 
 type Props = {
   auth: Object,
-  search: Array<Object>
+  search: Object
 };
 
 type State = {
@@ -38,8 +38,9 @@ class SearchResults extends Component<Props, State> {
   render() {
     
     const { auth, search } = this.props;
+    console.log(search.storiesFound.length === 0)
     if (!auth.uid) return <Redirect to='/signin'/>
-    if (!search) return <Redirect to='/'/>
+    if (search.storiesFound.length === 0) return <Redirect to='/stories'/>
     return(
       (!this.state.isLoading) ?
       <div className='story-list'>

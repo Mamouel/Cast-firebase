@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
 import { Redirect, NavLink, Link } from "react-router-dom";
+import ScrollAnimation from 'react-animate-on-scroll';
 
 import StorySummary from "../stories/StorySummary";
 import Banner from "./Banner";
@@ -35,13 +36,20 @@ class Home extends Component<Props> {
         <Banner labels={["Stories", "Goodies", "Memories"]} />
         <div className="home-section-ctn" style={{ paddingTop: 700 }}>
           <div className="first-home-section">
-            <div className="first-home-section-infos" />
-            <div className="first-home-section-infos" />
+            <ScrollAnimation animateIn="fadeIn">
+              <div className="first-home-section-infos" />
+            </ScrollAnimation>
+            <ScrollAnimation animateIn="fadeIn">
+              <div className="first-home-section-infos" />
+            </ScrollAnimation>
           </div>
         </div>
+
         <div className="home-section-ctn">
           <div className="second-home-section">
-            <div className="second-home-section-title">10 latest</div>
+            <ScrollAnimation animateIn="fadeIn">
+              <div className="second-home-section-title">10 latest</div>
+            </ScrollAnimation>
             <div className="second-home-section-slider">
               {stories &&
                 stories.slice(0, 10).map(story => {
@@ -51,12 +59,15 @@ class Home extends Component<Props> {
                       to={"/story/" + story.id}
                       key={story.id}
                     >
-                      <StorySummary story={story} />
+                      <ScrollAnimation animateIn="fadeIn">
+                        <StorySummary story={story} />
+                      </ScrollAnimation>
                     </Link>
                   );
                 })}
-              </div>
             </div>
+          </div>
+
           <div className="second-home-section-buttons">
             <NavLink to="/stories" className="home-btn-links home-btn-ctn1">
               <div

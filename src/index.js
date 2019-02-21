@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './style/index.css';
+import './style/index.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
@@ -16,6 +16,8 @@ import { reactReduxFirebase, getFirebase } from 'react-redux-firebase';
 
 import rootReducer from './store/reducers/rootReducer';
 import fbConfig from './config/fbConfig';
+
+import "animate.css/animate.min.css";
 
 const store = createStore(rootReducer,
   compose(
