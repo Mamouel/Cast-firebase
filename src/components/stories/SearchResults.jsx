@@ -10,7 +10,7 @@ import LoadingAnimation from '../layout/LoadingAnimation';
 
 type Props = {
   auth: Object,
-  search: Object
+  search: Array<Object>
 };
 
 type State = {
@@ -22,27 +22,27 @@ class SearchResults extends Component<Props, State> {
   constructor() {
     super();
     this.state = {
-      isLoading: true
+      isLoading: false
     }
   }
 
   componentDidMount() {
     window.scrollTo(0, 0);
-    this.setState({ isLoading: false });
+    this.setState({ isLoading: true });
   }
 
   componentWillUnmount() {
-    this.setState({ isLoading: true });
+    this.setState({ isLoading: false });
   }
 
   render() {
     
     const { auth, search } = this.props;
-    console.log(search.storiesFound.length === 0)
+    console.log(search.length)
     if (!auth.uid) return <Redirect to='/signin'/>
-    if (search.storiesFound.length === 0) return <Redirect to='/stories'/>
+    if (!search || search.length === undefined) return <Redirect to='/stories'/>
     return(
-      (!this.state.isLoading) ?
+      (this.state.isLoading) ?
       <div className='story-list'>
         {search && search.map(story => {
         return(

@@ -16,7 +16,6 @@
     }
     .categories-input-ctn {
         margin: 20px auto;
-
     }
     .img-input-ctn {
       display: flex;
@@ -52,12 +51,11 @@
             margin: 30px;
           }
         }
-        
       }
     }
     .create-btn-ctn {
       margin: 50px auto;
-      background-color: $white!important;
+      background-color: $white;
     }
   }
 }
