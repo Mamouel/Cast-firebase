@@ -19,7 +19,7 @@
       margin-top: 20px; }
       .create-story-container .create-story-form .img-input-ctn .input-image-infos .image-upload .label-file {
         cursor: pointer;
-        color: #ff9f43;
+        color: #FF4F4F;
         font-weight: bold;
         font-size: 26px;
         margin: 30px;
@@ -40,4 +40,4 @@
         margin: 30px; }
   .create-story-container .create-story-form .create-btn-ctn {
     margin: 50px auto;
-    background-color: #ffffff !important; }
+    background-color: #ffffff; }

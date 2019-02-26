@@ -10,9 +10,7 @@ import ScrollAnimation from 'react-animate-on-scroll';
 
 import StorySummary from "../stories/StorySummary";
 import Banner from "./Banner";
-import dikkenek from "../../style/images/dikkenek.jpg";
-import oss from "../../style/images/oss.jpg";
-import workaholic from "../../style/images/workaholic.jpg";
+import logo from "../../style/images/logoCastWhite.png"
 
 import "../../style/components/home/home.scss";
 
@@ -34,25 +32,12 @@ class Home extends Component<Props> {
     return (
       <div className="home-container">
         <Banner labels={["Stories", "Goodies", "Memories"]} />
-        <div className="home-section-ctn" style={{ paddingTop: 700 }}>
-          <div className="first-home-section">
-            <ScrollAnimation animateIn="fadeIn">
-              <div className="first-home-section-infos" />
-            </ScrollAnimation>
-            <ScrollAnimation animateIn="fadeIn">
-              <div className="first-home-section-infos" />
-            </ScrollAnimation>
-          </div>
-        </div>
 
         <div className="home-section-ctn">
-          <div className="second-home-section">
-            <ScrollAnimation animateIn="fadeIn">
-              <div className="second-home-section-title">10 latest</div>
-            </ScrollAnimation>
-            <div className="second-home-section-slider">
+          <div className="first-home-section">
+            <div className="first-home-section-slider">
               {stories &&
-                stories.slice(0, 10).map(story => {
+                stories.slice(0, 5).map(story => {
                   return (
                     <Link
                       className="story-link"
@@ -68,11 +53,21 @@ class Home extends Component<Props> {
             </div>
           </div>
 
-          <div className="second-home-section-buttons">
+          <div className="second-home-section">
+            <div className="subtitle-ctn">
+              <h2 className="subtitle">
+                The new way to <span className="bold-italic">share your stories</span> with your friends !
+              </h2>
+            </div>
+            <div className="second-logo-ctn">
+              <img className="second-logo" src={logo} alt="second-logo" />
+            </div>
+          </div>
+
+          <div className="first-home-section-buttons">
             <NavLink to="/stories" className="home-btn-links home-btn-ctn1">
               <div
                 className="home-btn-ctn "
-                style={{ backgroundImage: `url(${dikkenek})` }}
               >
                 <div className="buttons-label">Stories</div>
               </div>
@@ -80,7 +75,6 @@ class Home extends Component<Props> {
             <NavLink to="/create" className="home-btn-links home-btn-ctn2">
               <div
                 className="home-btn-ctn"
-                style={{ backgroundImage: `url(${oss})` }}
               >
                 <div className="buttons-label">Create your own</div>
               </div>
@@ -88,7 +82,6 @@ class Home extends Component<Props> {
             <NavLink to="/" className="home-btn-links home-btn-ctn1">
               <div
                 className="home-btn-ctn"
-                style={{ backgroundImage: `url(${workaholic})` }}
               >
                 <div className="buttons-label">About</div>
               </div>

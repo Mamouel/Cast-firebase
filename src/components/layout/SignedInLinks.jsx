@@ -83,12 +83,13 @@ class SignedInLinks extends Component<Props, State> {
             className='search-input'
             onChange={this.handleChange}
           />
-          <button className='search-btn' onClick={this.handleSubmit}><FaSearch /></button>
+          <button className='search-btn' onClick={this.handleSubmit}><FaSearch className="search-icon" /></button>
         </form>
         <NavLink to='/stories'><button className='nav-btn'>All Stories</button></NavLink>
-        <NavLink to='/create'><button className='nav-btn'>New Story</button></NavLink>
-        <button className='nav-btn' onClick={signOut} >Log Out</button>
+        <NavLink to='/create'><button className='nav-btn create-story-btn'>New Story</button></NavLink>
+        <div className="sep-div"/>
         <NavLink to={'/profile/'+ auth.uid}><button className='avatar'>{profile.initials ? profile.initials : 'Guest'}</button></NavLink>
+        <button className='nav-btn' onClick={signOut} >Log Out</button>
       </div>
     )
   }

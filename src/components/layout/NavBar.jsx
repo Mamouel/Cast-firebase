@@ -9,7 +9,9 @@ import SignedOutLinks from './SignedOutLinks';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router'
 
-import '../../style/components/layout/navbar.css';
+import logo from "../../style/images/logoCast.PNG"
+
+import '../../style/components/layout/navbar.scss';
 
 type Props = {
   auth: Object,
@@ -26,7 +28,7 @@ const Navbar = (props: Props) => {
   return (
     <nav id='navbar' className='nav-wrapper'>
       <div className='nav-container'>
-        <Link to='/'><button className='home-button'>CAST</button></Link>
+        <Link to='/'><img className="main-logo" alt="main logo" src={logo} /></Link>
         {links}
       </div>
     </nav>

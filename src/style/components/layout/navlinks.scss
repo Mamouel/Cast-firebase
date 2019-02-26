@@ -1,38 +1,70 @@
+@import "../../variables";
+
 .navlinks {
-  width: 90%;
+  width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: baseline;
   list-style:none;
   font-size: 12px;
 
   .search-form {
     display: flex;
     justify-content: flex-start;
-    font-size: 12px;
-    width: 100%;
-    .search-input {
-      width: 80%;
-      height: 100%;
-      margin: 0;
-      border: none;
-      padding: 10px;
-      border-radius: 0%;
+    width: 80%;
 
+    margin: auto;
+    .search-input {
+      background-color: $primary;
+      border-top-left-radius: 50px;
+      border-bottom-left-radius: 50px;
+      height: 30px;
+      margin: 15px 0px;
+      padding: 15px;
+      font-size: 12px;
+      border: none;
     }
     .search-btn {
+      height: 30px;
+      margin: 15px 5px 15px -5px;
       font-size: 14px;
       font-weight: bold;
-      padding: 20px;
+      background-color: $primary;
+      width: 30px;
+      border-bottom-right-radius: 50px;
+      border-top-right-radius: 50px;
+      .search-icon {
+        margin-right: 20px;
+      }
     }
   }
+  .nav-btn {
+    height: 30px;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 15px 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    white-space: nowrap;
+    &.create-story-btn {
+      border: 1px solid $primary;
+      border-radius: 4px;
+      color: $primary;
+    }
+  }
+  .sep-div {
+    height: 30px;
+    width: 2px;
+    background-color: $grayLight;
+    margin: 15px 20px;
+  }
   .avatar {
-    height: 45px;
-    width: 45px;
+    height: 50px;
+    width: 50px;
     font-size: 16px;
     font-weight: bold;
     border-radius: 50%;
-    margin: 10px;
-    background-color: white;
+    margin: 5px 0px;
+    background-color: $primary;
 
   }
 }

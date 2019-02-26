@@ -1,57 +1,10 @@
-
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @import './variables.scss';
 
-$sans-font: 'Raleway', "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$sans-font: "Open Sans", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $serif-font: "Source Serif Pro", Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif !default;
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $sans-font;
   font-weight: 600;
-  color: $primaryDarker;
-}
-
-h1 {
-  font-size: 2em;
-  letter-spacing: 0.03em;
-  color: $primaryDarker;
-
-}
-
-h2 {
-  font-size: 1.5em;
-  letter-spacing: 0.025em;
-  color: $primaryDarker;
-
-}
-
-h3 {
-  font-size: 1.25em;
-  letter-spacing: 0.02em;
-  color: $primaryDarker;
-
-}
-
-h4 {
-  font-size: 1.15em;
-  letter-spacing: 0.02em;
-  color: $primaryDarker;
-
-}
-
-h5 {
-  font-size: 1em;
-  letter-spacing: 0.01em;
-  color: $primaryDarker;
-
-}
-
-h6 {
-  font-size: 0.9em;
-  letter-spacing: 0.01em;
-  color: $primaryDarker;
-
-}
-
-p {
-  line-height: 1.2em;
 }
