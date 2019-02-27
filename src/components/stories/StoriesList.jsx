@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import StorySummary from './StorySummary';
 import { Link } from 'react-router-dom';
 
-import '../../style/components/stories/stories-list.css';
+import '../../style/components/stories/stories-list.scss';
 
 type Props = {
   stories: Array<Object>,

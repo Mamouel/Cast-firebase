@@ -19,38 +19,52 @@ html {
     .home-container .home-section-ctn .first-home-section {
       width: 100%; }
       .home-container .home-section-ctn .first-home-section .first-home-section-slider {
-        width: 90%;
+        width: 70%;
         margin: -50px auto 50px auto;
         display: flex;
-        overflow: overlay;
+        flex-flow: row nowrap;
+        overflow-wrap: break-word;
+        overflow-x: auto;
         justify-content: baseline;
-        z-index: 30; }
+        z-index: 30;
+        -webkit-overflow-scrolling: touch; }
     .home-container .home-section-ctn .second-home-section {
-      height: 400px;
+      height: 300px;
       background-color: #FF4F4F;
       display: flex;
-      justify-content: space-evenly;
+      justify-content: center;
       margin: auto;
       width: 100%;
-      line-height: 400px; }
+      text-align: center; }
+      .home-container .home-section-ctn .second-home-section .subtitle-ctn {
+        width: 35%;
+        margin: auto 45px; }
+      .home-container .home-section-ctn .second-home-section .second-logo-ctn {
+        width: 15%;
+        margin: auto 45px; }
+        .home-container .home-section-ctn .second-home-section .second-logo-ctn .second-logo {
+          width: 100%; }
     .home-container .home-section-ctn .first-home-section-buttons {
       display: flex;
       justify-content: flex-start; }
-      .home-container .home-section-ctn .first-home-section-buttons .home-btn-links {
-        flex-grow: 1;
+      .home-container .home-section-ctn .first-home-section-buttons .home-btn-links.home-btn-ctn1 {
+        flex-grow: 2;
+        z-index: 4; }
+      .home-container .home-section-ctn .first-home-section-buttons .home-btn-links.home-btn-ctn2 {
+        flex-grow: 3;
         z-index: 3; }
-        .home-container .home-section-ctn .first-home-section-buttons .home-btn-links .home-btn-ctn {
-          height: 300px;
-          background-repeat: no-repeat;
-          background-size: cover;
-          position: relative;
-          text-align: center; }
-          .home-container .home-section-ctn .first-home-section-buttons .home-btn-links .home-btn-ctn:hover > .buttons-label {
-            color: #ffffff; }
-          .home-container .home-section-ctn .first-home-section-buttons .home-btn-links .home-btn-ctn .buttons-label {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 3em;
-            font-weight: 800; }
+      .home-container .home-section-ctn .first-home-section-buttons .home-btn-links .home-btn-ctn {
+        height: 300px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        text-align: center; }
+        .home-container .home-section-ctn .first-home-section-buttons .home-btn-links .home-btn-ctn:hover > .buttons-label {
+          color: #ffffff; }
+        .home-container .home-section-ctn .first-home-section-buttons .home-btn-links .home-btn-ctn .buttons-label {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 3em;
+          font-weight: 800; }

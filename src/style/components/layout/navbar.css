@@ -1,7 +1,8 @@
 .nav-wrapper {
   width: 100%;
-  z-index: 10;
-  height: 60px; }
+  z-index: 60;
+  height: 60px;
+  position: fixed; }
   .nav-wrapper .nav-container {
     display: flex;
     justify-content: space-evenly;

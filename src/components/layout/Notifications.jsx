@@ -6,7 +6,7 @@ import moment from 'moment';
 import { Link } from 'react-router-dom';
 
 
-import '../../style/components/layout/notifications.css';
+import '../../style/components/layout/notifications.scss';
 import LoadingAnimation from './LoadingAnimation';
 
 type Props = {

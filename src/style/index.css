@@ -193,7 +193,10 @@ body {
     font-size: 40px;
     color: #ffffff;
     font-style: italic;
-    width: 50%; }
+    margin: auto; }
   body .bold-italic {
     font-weight: bold;
     font-style: italic; }
+
+::-webkit-scrollbar {
+  display: none; }

@@ -1,4 +1,6 @@
 @import "../../variables";
+@import "../../mixins";
+
 
 .navlinks {
   width: 100%;
@@ -45,10 +47,14 @@
     padding-left: 20px;
     padding-right: 20px;
     white-space: nowrap;
+    @include transition (all, 0.25s, ease-out);
     &.create-story-btn {
       border: 1px solid $primary;
       border-radius: 4px;
       color: $primary;
+      &:hover {
+        transform: scale(1.1);
+      }
     }
   }
   .sep-div {
@@ -64,7 +70,10 @@
     font-weight: bold;
     border-radius: 50%;
     margin: 5px 0px;
-    background-color: $primary;
+    background-image: url("../../images/dikkenek.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
 
   }
 }

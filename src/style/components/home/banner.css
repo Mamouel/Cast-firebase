@@ -17,16 +17,10 @@ html {
     background-size: cover; }
   .banner-wrapper .labels {
     position: absolute;
-    top: 0;
+    top: 20%;
     left: 0;
     z-index: 10;
     font-size: 120px;
     font-weight: bold;
     margin-left: 80px;
-    color: #f48000; }
-    @media only screen and (min-width: 30em) {
-      .banner-wrapper .labels {
-        font-size: 20px; } }
-    @media only screen and (max-width: 30em) {
-      .banner-wrapper .labels {
-        font-size: 20px; } }
+    color: #ffffff; }

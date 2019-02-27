@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import moment from 'moment';
 import firebase from '../../config/fbConfig';
 
-import '../../style/components/stories/story-summary.css';
+import '../../style/components/stories/story-summary.scss';
 
 const storageRef = firebase.storage().ref();
 
@@ -70,28 +70,33 @@ class StorySummary extends Component<Props, State> {
   
 
   render() {
-    const { story } = this.props
+    const { story } = this.props;
     return (
       this.state.imageUrl !== '' && (
-      <div  >
+      <div className="story-summary-card">
         <div className='story-summary-container' style={{ backgroundImage: `url(${this.state.imageUrl})` }}>
-            
+          <div className='story-summary'>
 
-          <div className='story-summary-infos'>
-            <div id='story-title' className='story-summary-title' style={{ backgroundColor: `${this.state.categoryColor}` }}>
-              {story.title}
-            </div>
-            <div className='story-summary-category'>
+            {/* <div className="story-summary-content">
+              "{story.content}"
+            </div> */}
+            
+            <div className='story-summary-category' style={{ backgroundColor: `${this.state.categoryColor}` }}>
               {story.category}
             </div>
-            <div className='story-summary-author'>
-              By { story.authorFirstName } {story.authorLastName}
-            </div>
-            <div className='story-summary-date'>
-              {moment(story.createdAt.toDate().toISOString()).calendar()}
-            </div>
+            
           </div>
-
+        </div>
+        <div className="story-infos-ctn">
+          <div id='story-title' className='story-summary-title' >
+            {story.title}
+          </div>
+          <div className='story-summary-author'>
+            By { story.authorFirstName } {story.authorLastName}
+          </div>
+          <div className='story-summary-date'>
+            {moment(story.createdAt.toDate().toISOString()).calendar()}
+          </div>
         </div>
       </div> 
       )

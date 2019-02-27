@@ -9,8 +9,12 @@ import { Redirect, NavLink, Link } from "react-router-dom";
 import ScrollAnimation from 'react-animate-on-scroll';
 
 import StorySummary from "../stories/StorySummary";
-import Banner from "./Banner";
-import logo from "../../style/images/logoCastWhite.png"
+import Banner from "./layout/Banner";
+import LeftArrow from "./layout/LeftArrow";
+import RightArrow from "./layout/RightArrow";
+import LoadingAnimation from "../layout/LoadingAnimation";
+import logo from "../../style/images/logoCastWhite.png";
+
 
 import "../../style/components/home/home.scss";
 
@@ -26,32 +30,50 @@ class Home extends Component<Props> {
     window.scrollTo(0, 0);
   }
 
+  handleScrollRight = (e) => {
+    e.preventDefault();
+    const slider = document.getElementById("slider");
+    slider.scrollLeft += 600;
+  }
+
+  handleScrollLeft = (e) => {
+    e.preventDefault();
+    const slider = document.getElementById("slider");
+    slider.scrollLeft -= 600;
+  }
+
   render() {
     const { auth, stories } = this.props;
+    const slider = document.getElementById("slider");
+    console.log(stories)
     if (!auth.uid) return <Redirect to="/signin" />;
     return (
       <div className="home-container">
         <Banner labels={["Stories", "Goodies", "Memories"]} />
 
         <div className="home-section-ctn">
-          <div className="first-home-section">
-            <div className="first-home-section-slider">
-              {stories &&
-                stories.slice(0, 5).map(story => {
-                  return (
-                    <Link
-                      className="story-link"
-                      to={"/story/" + story.id}
-                      key={story.id}
-                    >
-                      <ScrollAnimation animateIn="fadeIn">
-                        <StorySummary story={story} />
-                      </ScrollAnimation>
-                    </Link>
-                  );
-                })}
-            </div>
-          </div>
+          {stories !== undefined ?
+            <div className="first-home-section">
+              <LeftArrow handleScrollLeft={this.handleScrollLeft}/>
+              <div id="slider" className="first-home-section-slider" >
+                {stories &&
+                  stories.slice(0, 15).map(story => {
+                    return (
+                      <Link
+                        className="story-link"
+                        to={"/story/" + story.id}
+                        key={story.id}
+                      >
+                        <ScrollAnimation animateIn="fadeIn">
+                          <StorySummary story={story} />
+                        </ScrollAnimation>
+                      </Link>
+                    );
+                  })}
+              </div>
+              <RightArrow handleScrollRight={this.handleScrollRight} />
+            </div> : <LoadingAnimation />
+          }
 
           <div className="second-home-section">
             <div className="subtitle-ctn">
@@ -64,10 +86,10 @@ class Home extends Component<Props> {
             </div>
           </div>
 
-          <div className="first-home-section-buttons">
+          <div className="home-footer-buttons">
             <NavLink to="/stories" className="home-btn-links home-btn-ctn1">
               <div
-                className="home-btn-ctn "
+                className="home-btn-ctn"
               >
                 <div className="buttons-label">Stories</div>
               </div>

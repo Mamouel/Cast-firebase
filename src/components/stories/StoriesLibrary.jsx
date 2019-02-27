@@ -30,7 +30,7 @@ class StoriesLibrary extends Component<Props> {
       return <LoadingAnimation />
     } else{
       return(
-        <div>
+        <div style={{ paddingTop: 60 }}>
           <div >
             <Notifications notifications={notifications} />
           </div>

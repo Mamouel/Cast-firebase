@@ -13,32 +13,38 @@
     background-color: $white;
     width: 100%;
     .first-home-section {
-      width: 100%;
+      width: 80%;
+      margin: auto;
+      display: flex;
+      justify-content: space-evenly;
       .first-home-section-slider {
-        width: 90%;
-        margin: -50px auto 50px auto;
+        flex-grow: 4;
+        margin: -50px auto 0px auto;
         display: flex;
-        overflow: overlay;
-        justify-content: baseline;
-      z-index: 30;
-
+        flex-flow: row nowrap;
+        overflow-x: auto;
+        z-index: 30;
+        scroll-behavior: smooth
       }
+      #slider::-webkit-scrollbar {
+          display: none;
+        }
     }
     .second-home-section {
       height: 300px;
       background-color: $primary;
       display: flex;
       justify-content: center;
-      margin: auto;
+      margin: 50px auto;
       width: 100%;
       text-align: center;
       .subtitle-ctn {
-        width: 40%;
+        width: 35%;
         margin: auto 45px;
 
       }
       .second-logo-ctn {
-        width: 20%;
+        width: 15%;
         margin: auto 45px;
         .second-logo {
           width: 100%;
@@ -46,7 +52,7 @@
       }
 
     }
-    .first-home-section-buttons {
+    .home-footer-buttons {
       display: flex;
       justify-content: flex-start;
       .home-btn-links {
@@ -64,10 +70,12 @@
           background-size: cover;
           position: relative;
           text-align: center;
+          @include transition (all, 0.25s, ease-out);
+          
           &:hover  {
 
             > .buttons-label {
-              color: $white;
+              border: 1px solid $primary;
             }
           }
             
@@ -76,7 +84,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-size: 3em;
+            font-size: 24px;
             font-weight: 800;
           }
         }

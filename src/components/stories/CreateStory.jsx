@@ -6,7 +6,7 @@ import { createStory } from '../../store/actions/storyActions';
 import { Redirect } from 'react-router-dom';
 import firebase from '../../config/fbConfig';
 
-import '../../style/components/stories/create-story.css'
+import '../../style/components/stories/create-story.scss'
 
 const storageRef = firebase.storage().ref();
 
@@ -31,6 +31,11 @@ class CreateStory extends Component<Props, State> {
     img: '',
     category: ''
   };
+
+
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
 
 
   handleChange = (e: SyntheticInputEvent<HTMLButtonElement>) => {
