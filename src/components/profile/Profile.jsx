@@ -7,6 +7,8 @@ import { compose } from 'redux';
 import { Redirect, Link } from 'react-router-dom';
 import StorySummary from '../stories/StorySummary';
 
+import Slider from "../layout/Slider";
+
 import '../../style/components/profile/profile.scss';
 import LoadingAnimation from '../layout/LoadingAnimation';
 
@@ -71,7 +73,6 @@ class Profile extends Component<Props> {
       targetedUser = this.getTargetedUser(users, targetedUserId);
       const targetedUserInfos = targetedUser[0];
       
-      console.log(targetedUserInfos)
       if(targetedUserInfos) {
         const userTargetedStories = this.getUserStories(stories, targetedUserInfos.id);
         return (
@@ -84,15 +85,7 @@ class Profile extends Component<Props> {
             <div className='profile-stories-title'>
               <p>{ targetedUserInfos.firstName }'s Stories </p>
             </div>
-            <div className='profile-stories-list'>
-              {userTargetedStories && userTargetedStories.map(story => {
-                return (
-                  <Link className='story-link' to={'/story/' + story.id} key={story.id}>
-                    <StorySummary story={story} />
-                  </Link>
-                )
-              })}
-            </div>
+            <Slider stories={userTargetedStories} />
           </div>
         )
       } else {
@@ -130,15 +123,7 @@ class Profile extends Component<Props> {
           <div className='profile-stories-title'>
             <p>Your stories</p>
           </div>
-          <div className='profile-stories-list'>
-            {userStories && userStories.map(story => {
-              return (
-                <Link className='story-link' to={'/story/' + story.id} key={story.id}>
-                  <StorySummary story={story} />
-                </Link>
-              )
-            })}
-          </div>
+            <Slider stories={userStories} />
         </div>
       )
     }
