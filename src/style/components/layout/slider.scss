@@ -10,7 +10,8 @@
     flex-flow: row nowrap;
     overflow-x: auto;
     z-index: 30;
-    scroll-behavior: smooth
+    scroll-behavior: smooth;
+    min-height: 500px;
   }
   #slider::-webkit-scrollbar {
       display: none;
