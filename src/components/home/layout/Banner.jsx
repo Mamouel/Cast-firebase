@@ -2,7 +2,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import "../../../style/components/home/banner.scss"
 
 type Props = {
   labels: Array<string>

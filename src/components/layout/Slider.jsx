@@ -31,9 +31,9 @@ const Slider = (props) => {
   return (
     <div>
       {stories !== undefined ?
-            <div className="first-home-section">
+            <div className="slider-ctn">
               <LeftArrow handleScrollLeft={handleScrollLeft}/>
-              <div id="slider" className="first-home-section-slider" >
+              <div id="slider" className="slider" >
                 {stories &&
                   stories.map(story => {
                     return (

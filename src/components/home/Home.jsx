@@ -5,11 +5,15 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
-import { Redirect, NavLink } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 import Banner from "./layout/Banner";
 import Slider from "../layout/Slider";
-import logo from "../../style/images/logoCastWhite.png";
+import SubBanner from "./layout/SubBanner";
+import Footer from "./layout/HomeFooter";
+
+import Notifications from "../layout/Notifications";
+
 
 import "../../style/components/home/home.scss";
 
@@ -26,7 +30,7 @@ class Home extends Component<Props> {
   }
 
   render() {
-    const { auth, stories } = this.props;
+    const { auth, stories, notifications } = this.props;
 
     let latestStories;
 
@@ -41,40 +45,12 @@ class Home extends Component<Props> {
           
           <Slider stories={latestStories} />
 
-          <div className="second-home-section">
-            <div className="subtitle-ctn">
-              <h2 className="subtitle">
-                The new way to <span className="bold-italic">share your stories</span> with your friends !
-              </h2>
-            </div>
-            <div className="second-logo-ctn">
-              <img className="second-logo" src={logo} alt="second-logo" />
-            </div>
-          </div>
+          <SubBanner />
 
-          <div className="home-footer-buttons">
-            <NavLink to="/stories" className="home-btn-links home-btn-ctn1">
-              <div
-                className="home-btn-ctn"
-              >
-                <div className="buttons-label">Stories</div>
-              </div>
-            </NavLink>
-            <NavLink to="/create" className="home-btn-links home-btn-ctn2">
-              <div
-                className="home-btn-ctn"
-              >
-                <div className="buttons-label">Create your own</div>
-              </div>
-            </NavLink>
-            <NavLink to="/" className="home-btn-links home-btn-ctn1">
-              <div
-                className="home-btn-ctn"
-              >
-                <div className="buttons-label">About</div>
-              </div>
-            </NavLink>
-          </div>
+          <Notifications notifications={notifications}/>
+
+          <Footer />
+
         </div>
       </div>
     );

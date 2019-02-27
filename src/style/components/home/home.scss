@@ -8,6 +8,31 @@
   position: relative;
   z-index: 20;
   max-height: 400px;
+  .banner-wrapper {
+    max-height: 400px;
+  
+  
+    .banner-img-ctn {
+      height: 400px;
+      max-height: 400px;
+      background-image: url("../../images/oss.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+  
+  
+    }
+    .labels {
+      display: flex;
+      position: absolute;
+      top: 20%;
+      left: 0;
+      z-index: 10;
+      font-size: 30px;
+      font-weight: bold;
+      margin-left: 80px;
+      color: $white;
+    }
+  }
 
   .home-section-ctn {
     background-color: $white;
