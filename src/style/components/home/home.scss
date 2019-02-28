@@ -61,7 +61,11 @@
     }
     .home-footer-buttons {
       display: flex;
-      justify-content: flex-start;
+      justify-content: space-evenly;
+      margin-top: 100px;
+      padding: 50px;
+      overflow: hidden;
+
       .home-btn-links {
         &.home-btn-ctn1 {
           flex-grow: 2;
@@ -72,29 +76,31 @@
           z-index: 3;
         }
         .home-btn-ctn {
-          height: 300px;
-          background-repeat: no-repeat;
-          background-size: cover;
-          position: relative;
+
           text-align: center;
+          display: flex;
+          flex-direction: column;
           @include transition (all, 0.25s, ease-out);
           
           &:hover  {
-
-            > .buttons-label {
-              border: 1px solid $primary;
-            }
+            transform: scale(1.1)
+          }
+          .logo-ctn {
+            width: 150px;
+            margin: auto;
           }
             
           .buttons-label {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            margin: 50px;
             font-size: 24px;
             font-weight: 800;
           }
         }
+      }
+      .home-footer-sepdiv {
+        height: 250px;
+        width: 2px;
+        background-color: $grayMed;
       }
     }
   }
