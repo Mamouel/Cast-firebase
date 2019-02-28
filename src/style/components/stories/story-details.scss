@@ -13,23 +13,20 @@
         height: 200px;
         width: 60%;
         margin: auto;
+        font-size: 70px;
 
-
-        .stories-details-title {
-          font-size: 70px;
-        }
       }
-      .stories-details-infos {
-        width: 100%;
-        font-size: 20px;
+    }
+    .stories-details-infos {
+      width: 100%;
+      font-size: 20px;
+      text-align: center;
 
-        text-align: center;
-        .stories-details-author {
-          color: blue;
-        }
-        .stories-details-date {
-          color: red;
-        }
+      .stories-details-author {
+        margin: 10px;
+      }
+      .stories-details-date {
+        margin: 10px;
       }
     }
     .stories-details-img-ctn {

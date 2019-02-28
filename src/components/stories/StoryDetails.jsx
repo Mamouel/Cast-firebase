@@ -107,17 +107,16 @@ class StoryDetails extends Component<Props> {
           <div className='stories-details'>
             <div className='secondary-banner'>
               <div className='stories-details-title-ctn'>
-                <span className='stories-details-title'>{ story.title }</span>
-              </div>
-              <div className='stories-details-infos'>
-                <div className='stories-details-author'>Posted by { story.authorFirstName } { story.authorLastName }</div>
-                <div className='stories-details-date'>{moment(story.createdAt.toDate().toISOString()).calendar()}</div>
+               { story.title }
               </div>
             </div>
             <div className='stories-details-img-ctn'>
               <img className='stories-details-img' id='story-img' alt='story-img' />
             </div>
-            
+            <div className='stories-details-infos'>
+                <div className='stories-details-author'>Posted by { story.authorFirstName } { story.authorLastName }</div>
+                <div className='stories-details-date'>{moment(story.createdAt.toDate().toISOString()).calendar()}</div>
+              </div>
   
             <div className='stories-details-content'>
               <p>{ story.content }</p>
@@ -135,8 +134,9 @@ class StoryDetails extends Component<Props> {
                 value={this.state.commentContent}
                 placeholder="Leave comment..."
                 onChange={this.handleChange}
+                style={{margin: "auto"}}
               />
-              <button className="primary-btn" type="submit" value="Post">Post</button>
+              <button className="primary-btn login-btn" type="submit" value="Post">Post</button>
             </form>
           </div>
           <div><CommentsList comments={comments} storyId={storyId}/></div>
