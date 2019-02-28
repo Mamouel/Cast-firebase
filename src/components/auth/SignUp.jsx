@@ -4,9 +4,11 @@ import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { signUp } from '../../store/actions/authActions';
+import { checkStateValues } from "../../utils/checkEmptyFields";
 
 
-import '../../style/components/auth/signup.css';
+
+import '../../style/components/auth/signup.scss';
 
 type State = {
   email: string,
@@ -49,6 +51,8 @@ class SignUp extends Component<Props, State> {
 
   render() {
     const { auth, authError } = this.props;
+    const stateValues = Object.values(this.state);
+    const filledFields = checkStateValues(stateValues);
     if (auth.uid) return <Redirect to='/' />
 
     return (
@@ -68,7 +72,11 @@ class SignUp extends Component<Props, State> {
             <input className='input-fields' type='text' id='lastName' onChange={this.handleChange} placeholder='Last Name'></input>
           </div>
           <div className='signup-btn-ctn'>
-            <button className='primary-btn'>Sign Up</button>
+            {
+              filledFields === 4 ? 
+              <button className='primary-btn login-btn'>Sign Up</button> :
+              <button className='primary-btn login-btn' disabled style={{color: "#d1cfcf"}}>Sign Up</button>
+            }
             <div id='signup-error' className='signup-error'>{authError ? <p>{authError}</p> : null}</div>
           </div>
         </form>

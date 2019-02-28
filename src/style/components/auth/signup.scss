@@ -6,14 +6,16 @@
   .signup-form-container {
     text-align: center;
     width: 35%;
-    margin: 50px auto;
-    background-color: #FEFDD9;
+    margin:auto;
     border-radius: 8px;
-    padding: 25px;
-    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.5);
+    padding-top: 100px;
     .signup-form-title {
       margin: 40px auto;
       font-size: 36px;
+      color: $primary;
+      font-weight: bold;
+
+
     }
   }
 }

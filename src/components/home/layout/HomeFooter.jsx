@@ -1,6 +1,8 @@
 import React from 'react';
 
 import { NavLink } from "react-router-dom";
+import ScrollAnimation from 'react-animate-on-scroll';
+
 import createLogo from "../../../style/images/logoCreate.PNG";
 import aboutLogo from "../../../style/images/logoAbout.PNG";
 import storiesLogo from "../../../style/images/logoStories.PNG";
@@ -9,6 +11,8 @@ import storiesLogo from "../../../style/images/logoStories.PNG";
 
 const HomeFooter = () => {
   return (
+    <ScrollAnimation animateIn="fadeIn">
+
     <div className="home-footer-buttons">
       <NavLink to="/stories" className="home-btn-links home-btn-ctn1">
         <div className="home-btn-ctn">
@@ -31,6 +35,7 @@ const HomeFooter = () => {
         </div>
       </NavLink>
     </div>
+    </ScrollAnimation>
   )
 }
 

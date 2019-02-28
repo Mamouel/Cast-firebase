@@ -5,9 +5,9 @@ import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
 import { Redirect, Link } from 'react-router-dom';
-import StorySummary from '../stories/StorySummary';
 
 import Slider from "../layout/Slider";
+import bannerImg from "../../style/images/oss.jpg";
 
 import '../../style/components/profile/profile.scss';
 import LoadingAnimation from '../layout/LoadingAnimation';
@@ -77,7 +77,7 @@ class Profile extends Component<Props> {
         const userTargetedStories = this.getUserStories(stories, targetedUserInfos.id);
         return (
           <div className='profile-container'>
-            <div className='profile-banner'>
+            <div className='profile-banner' style={{backgroundImage: `url(${bannerImg})`}}>
               <div className='profile-infos'>
                 <div>{ targetedUserInfos.firstName } { targetedUserInfos.lastName }</div>
               </div>
@@ -96,7 +96,7 @@ class Profile extends Component<Props> {
     if(userStories.length === 0 && profile) { 
       return (
         <div className='profile-container'>
-          <div className='profile-banner'>
+          <div className='profile-banner' style={{backgroundImage: `url(${bannerImg})`}}>
             <div className='profile-infos'>
               <div>Hi {profile.firstName}!</div>
             </div>
@@ -115,7 +115,7 @@ class Profile extends Component<Props> {
     } else {
       return (
         <div className='profile-container'>
-          <div className='profile-banner'>
+          <div className='profile-banner' style={{backgroundImage: `url(${bannerImg})`}}>
             <div className='profile-infos'>
               <div>Hi {profile.firstName}!</div>
             </div>

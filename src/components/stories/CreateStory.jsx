@@ -6,6 +6,8 @@ import { createStory } from '../../store/actions/storyActions';
 import { Redirect } from 'react-router-dom';
 import firebase from '../../config/fbConfig';
 
+import { checkStateValues } from "../../utils/checkEmptyFields";
+
 import '../../style/components/stories/create-story.scss'
 
 const storageRef = firebase.storage().ref();
@@ -47,7 +49,7 @@ class CreateStory extends Component<Props, State> {
   handleSubmit = (e: SyntheticEvent<HTMLButtonElement>) => {
     e.preventDefault();
     const stateValues = Object.values(this.state);
-    const filledFields = this.checkStateValues(stateValues);
+    const filledFields = checkStateValues(stateValues);
     if(filledFields === 4) {
       this.props.createStory(this.state);
       this.props.history.push('/stories');
@@ -81,13 +83,7 @@ class CreateStory extends Component<Props, State> {
     }
   }
 
-  checkStateValues = (stateValues: Array<mixed>) => {
-    const allFieldsFilled = stateValues.filter(element => {
-      if(element !== '') return element;
-      return null;
-    })
-    return allFieldsFilled.length;
-  }
+
 
   getUploadedImg = async () => {
     try {
@@ -103,7 +99,7 @@ class CreateStory extends Component<Props, State> {
   render() {
     const { auth } = this.props;
     const stateValues = Object.values(this.state);
-    const filledFields = this.checkStateValues(stateValues);
+    const filledFields = checkStateValues(stateValues);
 
     this.getUploadedImg();
 
@@ -116,7 +112,7 @@ class CreateStory extends Component<Props, State> {
 
           <div className='categories-input-ctn'>
             <select type='text' name='categories'  id='category' onChange={this.handleChange} >
-              <option defaultValue='Choose category'>Choose category</option>
+              <option value="" disabled selected>Choose category</option>
               <option value='Party'>Party</option>
               <option value='Weekend'>Weekend</option>
               <option value='Anecdote'>Anecdote</option>
@@ -127,7 +123,7 @@ class CreateStory extends Component<Props, State> {
           </div>
 
           <div className='input-fields-ctn'>
-            <input className='input-fields' type='text' id='title' placeholder='Title' onChange={this.handleChange}></input>
+            <input className='input-fields' type='text' id='title' placeholder='Title' onChange={this.handleChange} style={{ marginBottom: 20 }}></input>
           </div>
 
           <div className='input-fields-ctn'>

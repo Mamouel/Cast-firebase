@@ -1,13 +1,13 @@
 @import '../../variables';
 
 .create-story-container {
+  padding-top: 100px;
   .create-story-form {
     width: 60%;
     text-align: center;
     background-color: $white;
     border-radius: 8px;
     margin: auto;
-    padding-top: 100px;
     text-decoration: none;
     .create-story-title {
       margin: 40px auto;

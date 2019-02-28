@@ -4,8 +4,10 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux';
 import { signIn } from '../../store/actions/authActions';
 import { Redirect, Link } from 'react-router-dom';
+import { checkStateValues } from "../../utils/checkEmptyFields";
 
-import '../../style/components/auth/signin.css';
+
+import '../../style/components/auth/signin.scss';
 
 
 type State = {
@@ -36,21 +38,29 @@ class SignIn extends Component<Props, State> {
     this.props.signIn(this.state);
   }
 
+
   render() {
     const { authError, auth } = this.props;
+    const stateValues = Object.values(this.state);
+    const filledFields = checkStateValues(stateValues);
     
     if (auth.uid) return <Redirect to='/' />
     return (
       <div className='signin-container'>
         <form className='signin-form-container' onSubmit={this.handleSubmit}>
-          <h5 className='signin-form-title'>Connect to your account</h5>
+          <h5 className='signin-form-title'>Who are you?</h5>
           <div className='input-fields-ctn'>
             <input className='input-fields' type='email' id='email' onChange={this.handleChange} placeholder='Email'></input>
           </div>
           <div className='input-fields-ctn'>
             <input className='input-fields' type='password' id='password' onChange={this.handleChange} placeholder='Password'></input>
           </div>
-          <button className='primary-btn'>Login</button>
+          {
+            filledFields === 2 ? 
+              <button className='primary-btn login-btn'>Login</button> :
+              <button className='primary-btn login-btn' disabled style={{color: "#d1cfcf"}}>Login</button>
+          }
+          
           <div className='login-error'>{authError ? <p>{authError}</p> : null}</div>
           <div className='login-links'>
             <Link to='/signup'>

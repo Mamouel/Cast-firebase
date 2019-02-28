@@ -6,15 +6,17 @@
   .stories-details {
 
     .secondary-banner {
+      padding-top: 100px;
       .stories-details-title-ctn {
-        line-height: 200px; 
         text-align: center;
         vertical-align: middle;
         height: 200px;
+        width: 60%;
+        margin: auto;
+
+
         .stories-details-title {
-          width: 60%;
-          font-size: 92px;
-          margin: 0 auto;
+          font-size: 70px;
         }
       }
       .stories-details-infos {
@@ -36,22 +38,24 @@
       text-align: center;
       border-radius: 10px;
       .stories-details-img {
-        min-width: 50%;
-        max-width: 70%;
+        width: 100%;
+
         margin: 60px auto 40px auto;
         box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.4);
-        border-radius: 10px;
       }
     }
 
     .stories-details-content {
       background-color: white;
-      box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.4);
       border-radius: 10px;
-      width: 60%;
+      width: 70%;
       margin: 50px auto;
       padding: 50px;
-      font-size: 18px;
+      font-size: 20px;
+      text-indent: 50px;
+      word-spacing: 5px;
+      line-height: 1.5;
+
     }
     .delete-btn-ctn{
       width: 100%;

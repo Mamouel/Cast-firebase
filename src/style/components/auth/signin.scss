@@ -14,25 +14,15 @@
     width: 35%;
     text-align: center;
     background-color: $white;
+    padding-top: 100px;
     border-radius: 8px;
-    margin: 50px auto;
-    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.5);
-
+    margin: auto;
     .signin-form-title {
-      margin: auto;
       font-size: 36px;
-      padding: 40px;
-    }
-    .login-btn {
-      border-radius: 8px;
-      margin: auto;
-      font-size: 24px;
-      background-color: $white;
-      color: $primaryDarker;
-      @include transition (all, 0.25s, ease-out);
-      &:hover {
-        transform: scale(1.1)
-      }
+      margin: 40px auto;
+      color: $primary;
+      font-weight: bold;
+
     }
     .login-error {
       margin-bottom: 30px;

@@ -26,35 +26,38 @@
     -moz-box-shadow: 0px 0px 1px 0px rgba(128,128,128,1);
     box-shadow: 0px 0px 1px 0px rgba(128,128,128,1);
     
-    .story-summary {
+
+    .story-summary-content {
+      font-size: 16px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      word-wrap: nowrap;
+      z-index: 5;   
+      font-style: italic;
+      text-align: right;
       color: $white;
       position: absolute;
-      bottom: 5%;
+      bottom: 20%;
       right: 5%;
-      .story-summary-content {
-        font-size: 16px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        word-wrap: nowrap;
-        z-index: 5;   
-        font-style: italic;
-        text-align: right;
-      }
-      .story-summary-category {
-        font-size: 12px;
-        color: white;
-        z-index: 10;
-        padding: 5px;
-        border-radius: 20px;
-        text-transform: uppercase;
-        text-align: center;
-        margin: auto;
-        width: 100%;
-        min-width: 40px;
-      }
+      width: 60%;
+      padding: 5px;
+    }
+    .story-summary-category {
+      font-size: 12px;
+      color: white;
+      z-index: 10;
+      padding: 5px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      text-align: center;
+      margin: auto;
+      min-width: 40px;
+      position: absolute;
+      bottom: 8%;
+      right: 5%;
+    }
   
       
-    }
 
   }
   .story-infos-ctn {
@@ -62,8 +65,11 @@
 
     .story-summary-title {
       font-size: 20px;
-      overflow: hidden;
       text-overflow: ellipsis;
+      overflow: hidden;
+
+      white-space: nowrap;
+      max-width: 250px;
       z-index: 5;   
       color: black;
       font-weight: bold;

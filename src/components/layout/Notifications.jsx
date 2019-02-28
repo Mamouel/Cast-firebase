@@ -4,6 +4,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import { Link } from 'react-router-dom';
+import ScrollAnimation from 'react-animate-on-scroll';
 
 
 import '../../style/components/layout/notifications.scss';
@@ -20,39 +21,42 @@ const Notifications = (props: Props) => {
   if (notifications && notifications.length !== 0) {
 
     return (
-      <div className='notifications-ctn'>
-        <div className='notifications-card'>
-          <span className='notifications-title'>Last Updates</span>
-          <ul className='notifications-list'>
-            {notifications && notifications.map(notification => {
-              return (
-              
-                <li className='notification-ctn' key={notification.id}>
-                  <div className='notification-infos'>
-                    { notification.authorId ?
-                      <div>
-                        <Link to={'/profile/' + notification.authorId} className='notification-user-link' >
-                          <span className='notification-user'>{notification.user}</span>
-                        </Link>
-                        <span className='notification-content'>{notification.content}</span>
-                      </div>
-                      :
-                      <div>
-                        <span className='notification-user'>{notification.user}</span>
-                        <span className='notification-content'>{notification.content}</span>
-                      </div>
-                    }
-                  </div>
-                  <div className='notification-date'>
-                    {moment(notification.time.toDate()).fromNow()}
-                  </div>            
-                </li>
+      <ScrollAnimation animateIn="fadeIn">
+
+        <div className='notifications-ctn'>
+          <div className='notifications-card'>
+            <span className='notifications-title'>Last Updates</span>
+            <ul className='notifications-list'>
+              {notifications && notifications.map(notification => {
+                return (
                 
-              )                
-            })}
-          </ul>     
+                  <li className='notification-ctn' key={notification.id}>
+                    <div className='notification-infos'>
+                      { notification.authorId ?
+                        <div>
+                          <Link to={'/profile/' + notification.authorId} className='notification-user-link' >
+                            <span className='notification-user'>{notification.user}</span>
+                          </Link>
+                          <span className='notification-content'>{notification.content}</span>
+                        </div>
+                        :
+                        <div>
+                          <span className='notification-user'>{notification.user}</span>
+                          <span className='notification-content'>{notification.content}</span>
+                        </div>
+                      }
+                    </div>
+                    <div className='notification-date'>
+                      {moment(notification.time.toDate()).fromNow()}
+                    </div>            
+                  </li>
+                  
+                )                
+              })}
+            </ul>     
+          </div>
         </div>
-      </div>
+      </ScrollAnimation>
     ) 
   } else {
     return (

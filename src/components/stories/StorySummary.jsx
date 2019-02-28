@@ -71,21 +71,21 @@ class StorySummary extends Component<Props, State> {
 
   render() {
     const { story } = this.props;
+    const shortStoryContent = story.content.slice(0, 50) + "...";
     return (
       this.state.imageUrl !== '' && (
       <div className="story-summary-card">
         <div className='story-summary-container' style={{ backgroundImage: `url(${this.state.imageUrl})` }}>
-          <div className='story-summary'>
 
-            {/* <div className="story-summary-content">
-              "{story.content}"
-            </div> */}
+            <div className="story-summary-content">
+              "{shortStoryContent}"
+            </div>
             
             <div className='story-summary-category' style={{ backgroundColor: `${this.state.categoryColor}` }}>
               {story.category}
             </div>
             
-          </div>
+
         </div>
         <div className="story-infos-ctn">
           <div id='story-title' className='story-summary-title' >
