@@ -36,9 +36,7 @@ class SearchResults extends Component<Props, State> {
   }
 
   render() {
-    
     const { auth, search } = this.props;
-    console.log(search.length)
     if (!auth.uid) return <Redirect to='/signin'/>
     if (!search || search.length === undefined) return <Redirect to='/stories'/>
     return(
@@ -54,7 +52,6 @@ class SearchResults extends Component<Props, State> {
       </div> : <div><LoadingAnimation /></div>
     )
   }
-
 };
 
 SearchResults.propTypes = {

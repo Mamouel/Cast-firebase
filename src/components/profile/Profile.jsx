@@ -1,19 +1,17 @@
 // @flow
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { firestoreConnect } from 'react-redux-firebase';
-import { compose } from 'redux';
-import { Redirect, Link } from 'react-router-dom';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { firestoreConnect } from "react-redux-firebase";
+import { compose } from "redux";
+import { Redirect, Link } from "react-router-dom";
 
 import OtherUserProfile from "./components/OtherUserProfile";
 import bannerImg from "../../style/images/oss.jpg";
 import Slider from "../layout/Slider";
-
-
-import '../../style/components/profile/profile.scss';
-import LoadingAnimation from '../layout/LoadingAnimation';
-import UserProfile from './components/UserProfile';
+import "../../style/components/profile/profile.scss";
+import LoadingAnimation from "../layout/LoadingAnimation";
+import UserProfile from "./components/UserProfile";
 
 type Props = {
   auth: Object,
@@ -67,8 +65,8 @@ class Profile extends Component<Props> {
     const targetedUserId = this.props.match.params.id;
     const currentUserId = auth.uid;
 
-    if (!auth.uid) return <Redirect to='/signin'/>
-    if(!stories) return <Redirect to='/'/>
+    if (!auth.uid) return <Redirect to="/signin"/>
+    if(!stories) return <Redirect to="/"/>
     const userStories = this.getUserStories(stories, auth.uid);
 
     let targetedUser;
@@ -116,7 +114,7 @@ const mapStateToProps = (state) => {
 export default compose(
   connect(mapStateToProps),
   firestoreConnect([
-    { collection: 'stories' },
-    { collection: 'users' }
+    { collection: "stories" },
+    { collection: "users" }
   ])
 )(Profile);
