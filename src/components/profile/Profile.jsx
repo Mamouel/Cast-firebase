@@ -6,11 +6,14 @@ import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
 import { Redirect, Link } from 'react-router-dom';
 
-import Slider from "../layout/Slider";
+import OtherUserProfile from "./components/OtherUserProfile";
 import bannerImg from "../../style/images/oss.jpg";
+import Slider from "../layout/Slider";
+
 
 import '../../style/components/profile/profile.scss';
 import LoadingAnimation from '../layout/LoadingAnimation';
+import UserProfile from './components/UserProfile';
 
 type Props = {
   auth: Object,
@@ -76,49 +79,19 @@ class Profile extends Component<Props> {
       if(targetedUserInfos) {
         const userTargetedStories = this.getUserStories(stories, targetedUserInfos.id);
         return (
-          <div className='profile-container'>
-            <div className='profile-banner' style={{backgroundImage: `url(${bannerImg})`}}>
-              <div className='profile-infos'>
-                <div>{ targetedUserInfos.firstName } { targetedUserInfos.lastName }</div>
-              </div>
-            </div>
-            <div className='profile-stories-title'>
-              <p>{ targetedUserInfos.firstName }'s Stories </p>
-            </div>
-            <Slider stories={userTargetedStories} />
-          </div>
+          <OtherUserProfile stories={stories} targetedUserInfos={targetedUserInfos} userTargetedStories={userTargetedStories} bannerImg={bannerImg}/>
         )
       } else {
         return <LoadingAnimation />
       }
     }
-
     if(profile) { 
       return (
-        <div className='profile-container'>
-          <div className='profile-banner' style={{backgroundImage: `url(${bannerImg})`}}>
-            <div className='profile-infos'>
-              <div>Hi {profile.firstName}!</div>
-            </div>
-          </div>
-          <div className='profile-stories-title'>
-            <p>Your stories</p>
-          </div>
-          {
-            userStories.length === 0 ? 
-            <div>
-              <div className='profile-stories-emptylist'>
-                No story to show
-              </div>
-              <Link to='/create'>
-                <button className='primary-btn create-btn create-btn-profile'>Let's create one!</button>
-              </Link>
-            </div> :
-            <div>
-            <Slider stories={userStories} />
-            </div>
-          }
-        </div>
+        <UserProfile stories={stories} profile={profile} bannerImg={bannerImg} userStories={userStories}/>
+      )
+    } else {
+      return (
+        <LoadingAnimation />
       )
     }
   }
