@@ -29,7 +29,7 @@ class SignIn extends Component<Props, State> {
 
   handleChange = (e: SyntheticInputEvent<HTMLElement>) => {
     this.setState({
-      [e.target.id]: e.target.value
+      [e.target.id]: e.target.value 
     })
   }
 

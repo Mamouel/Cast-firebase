@@ -65,7 +65,7 @@
       margin-top: 100px;
       padding: 50px;
       overflow: hidden;
-
+      background-color: $grayLight;
       .home-btn-links {
         &.home-btn-ctn1 {
           flex-grow: 2;
@@ -76,7 +76,7 @@
           z-index: 3;
         }
         .home-btn-ctn {
-
+          height: 100%;
           text-align: center;
           display: flex;
           flex-direction: column;
@@ -86,13 +86,13 @@
             transform: scale(1.1)
           }
           .logo-ctn {
-            height: 150px;
-            margin: auto;
+            height: 100px;
+            margin: 20px auto;
           }
             
           .buttons-label {
-            margin: 50px;
-            font-size: 30px;
+            margin: 10px;
+            font-size: 20px;
             font-weight: bolder;
           }
         }
@@ -100,7 +100,7 @@
       .home-footer-sepdiv {
         height: 250px;
         width: 2px;
-        background-color: $grayMed;
+        background-color: $white;
       }
     }
   }

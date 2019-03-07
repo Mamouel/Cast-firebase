@@ -114,10 +114,9 @@ class StoryDetails extends Component<Props> {
               <img className='stories-details-img' id='story-img' alt='story-img' />
             </div>
             <div className='stories-details-infos'>
-                <div className='stories-details-author'>Posted by { story.authorFirstName } { story.authorLastName }</div>
-                <div className='stories-details-date'>{moment(story.createdAt.toDate().toISOString()).calendar()}</div>
-              </div>
-  
+              <div className='stories-details-author'>Posted by { story.authorFirstName } { story.authorLastName }</div>
+              <div className='stories-details-date'>{moment(story.createdAt.toDate().toISOString()).calendar()}</div>
+            </div>
             <div className='stories-details-content'>
               <p>{ story.content }</p>
             </div>
