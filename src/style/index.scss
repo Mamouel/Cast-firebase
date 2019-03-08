@@ -108,10 +108,7 @@ body {
       &.create-btn {
         background-color: $white;
         font-size: 50px;
-        color: $primaryDarker;
-      }
-      &.create-btn-profile {
-        background-color: $primary;
+        color: $primary;
       }
       &.disabled {
         color: $grayDark;

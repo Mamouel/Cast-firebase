@@ -15,10 +15,10 @@
     .banner-img-ctn {
       height: 400px;
       max-height: 400px;
-      background-image: url("../../images/oss.jpg");
+      background-image: url("../../images/banner.jpg");
       background-repeat: no-repeat;
       background-size: cover;
-  
+      background-position-y: center;
   
     }
     .labels {
@@ -98,9 +98,9 @@
         }
       }
       .home-footer-sepdiv {
-        height: 250px;
+        height: 200px;
         width: 2px;
-        background-color: $white;
+        background-color: $grayDark;
       }
     }
   }

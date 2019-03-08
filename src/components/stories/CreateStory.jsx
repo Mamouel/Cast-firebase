@@ -118,7 +118,7 @@ class CreateStory extends Component<Props, State> {
               <option value='Anecdote'>Anecdote</option>
               <option value='Story'>Story</option>
               <option value='Goodies'>Goodies</option>
-              <option value='X'>X</option>
+              <option value='Travel'>Travel</option>
             </select>
           </div>
 

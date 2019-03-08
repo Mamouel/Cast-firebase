@@ -24,7 +24,7 @@ const UserProfile = (props) => {
                 No story to show
               </div>
               <Link to="/create">
-                <button className="primary-btn create-btn create-btn-profile">Let"s create one!</button>
+                <button className="primary-btn create-btn">Let's create one!</button>
               </Link>
             </div> :
             <div>

@@ -60,7 +60,7 @@ class StorySummary extends Component<Props, State> {
           return this.setState({ categoryColor: '#ffc65d' })
         case 'Goodies':
         return this.setState({ categoryColor: '#93648d' })
-        case 'X':
+        case 'Travel':
         return this.setState({ categoryColor: '#f16745' })
         default:
           return this.setState({ categoryColor: 'grey' })
