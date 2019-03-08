@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import moment from 'moment';
 import firebase from '../../config/fbConfig';
 
@@ -96,12 +96,14 @@ class StoryDetails extends Component<Props> {
 
     const { story, auth, comments } = this.props;
     const storyId = this.props.match.params.id;
+    console.log(this.props)
   
     if(!story) return <Redirect to='/' />
     if (!auth.uid) return <Redirect to='/signin'/>
     
     if(story && comments) {
       this.storyImgRef();
+      const storyAuthorId = story.authorId;
       return (
         <div className='stories-details-container'>
           <div className='stories-details'>
@@ -111,7 +113,7 @@ class StoryDetails extends Component<Props> {
               </div>
             </div>
             <div className='stories-details-infos'>
-              <div className='stories-details-author'>Posted by { story.authorFirstName } { story.authorLastName }</div>
+              <div className='stories-details-author'>Posted by <Link to={`/profile/${storyAuthorId}`}><span style={{ fontWeight: "bold" }}>{ story.authorFirstName } { story.authorLastName }</span></Link></div>
               <div className='stories-details-date'>{moment(story.createdAt.toDate().toISOString()).calendar()}</div>
             </div>
             <div className='stories-details-img-ctn'>
