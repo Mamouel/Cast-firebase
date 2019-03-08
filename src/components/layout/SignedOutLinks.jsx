@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-import '../../style/components/layout/navlinks.css';
+import '../../style/components/layout/navlinks.scss';
 
 const SignedOutLinks = () => {
   return (

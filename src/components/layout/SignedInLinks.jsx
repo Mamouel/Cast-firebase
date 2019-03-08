@@ -8,7 +8,7 @@ import { search } from '../../store/actions/searchActions';
 import { NavLink } from 'react-router-dom';
 import { FaSearch } from 'react-icons/fa'
 
-import '../../style/components/layout/navlinks.css';
+import '../../style/components/layout/navlinks.scss';
 
 type Props = {
   auth: Object,

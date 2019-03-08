@@ -5,7 +5,7 @@ import StorySummary from './StorySummary';
 import { Redirect, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import '../../style/components/stories/stories-list.css';
+import '../../style/components/stories/stories-list.scss';
 import LoadingAnimation from '../layout/LoadingAnimation';
 
 type Props = {

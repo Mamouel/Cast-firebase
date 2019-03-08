@@ -1,5 +1,5 @@
 import React from "react";
-import "../../style/components/layout/loading-animation.css";
+import "../../style/components/layout/loading-animation.scss";
 
 const LoadingAnimation = () => (
   <div className="sk-chasing-dots">
