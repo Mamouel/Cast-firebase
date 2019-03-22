@@ -6,7 +6,7 @@ import { signIn } from '../../store/actions/authActions';
 import { Redirect, Link } from 'react-router-dom';
 import { checkStateValues } from "../../utils/checkEmptyFields";
 
-
+import logo from "../../style/images/logoCast.PNG"
 import '../../style/components/auth/signin.scss';
 
 
@@ -48,7 +48,7 @@ class SignIn extends Component<Props, State> {
     return (
       <div className='signin-container'>
         <form className='signin-form-container' onSubmit={this.handleSubmit}>
-          <h5 className='signin-form-title'>Who are you?</h5>
+          <img className="logo-cast" src={logo} alt="logo-cast" />
           <div className='input-fields-ctn'>
             <input className='input-fields' type='email' id='email' onChange={this.handleChange} placeholder='Email'></input>
           </div>

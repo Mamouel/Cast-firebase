@@ -7,32 +7,32 @@
   margin: auto;
   text-align: center;
   min-height: 100vh;
-
-
+  padding-top: 200px;
+  background-color: $grayLight;
 
   .signin-form-container {
-    width: 35%;
+    width: 25%;
     text-align: center;
     background-color: $white;
-    padding-top: 100px;
     border-radius: 8px;
     margin: auto;
-    .signin-form-title {
-      font-size: 36px;
-      margin: 40px auto;
-      color: $primary;
-      font-weight: bold;
-
+    border: 1px solid $primary;
+    border-radius: 8px;
+    padding: 50px;
+    .logo-cast {
+      height: 100px;
+      margin-bottom: 40px;
     }
     .login-error {
-      margin-bottom: 30px;
+      margin: 30px auto;
       color: $error-dark;
     }
     .login-links {
       width: 100%;
       margin: auto 20x;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
+      justify-content: space-evenly;
     }
   }
 }

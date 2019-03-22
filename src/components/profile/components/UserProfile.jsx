@@ -6,7 +6,7 @@ import Slider from "../../layout/Slider";
 
 
 const UserProfile = (props) => {
-  const { stories, profile, bannerImg, userStories } = props
+  const { profile, bannerImg, userStories } = props
   return (
     <div className="profile-container">
           <div className="profile-banner" style={{backgroundImage: `url(${bannerImg})`}}>

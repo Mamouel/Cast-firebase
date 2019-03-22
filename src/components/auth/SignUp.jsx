@@ -7,8 +7,8 @@ import { signUp } from '../../store/actions/authActions';
 import { checkStateValues } from "../../utils/checkEmptyFields";
 
 
-
-import '../../style/components/auth/signup.scss';
+import logo from "../../style/images/logoCast.PNG"
+import '../../style/components/auth/signin.scss';
 
 type State = {
   email: string,
@@ -56,9 +56,9 @@ class SignUp extends Component<Props, State> {
     if (auth.uid) return <Redirect to='/' />
 
     return (
-      <div className='signup-container'>
-        <form className='signup-form-container' onSubmit={this.handleSubmit}>
-          <h5 className='signup-form-title'>Create account</h5>
+      <div className='signin-container'>
+        <form className='signin-form-container' onSubmit={this.handleSubmit}>
+        <img className="logo-cast" src={logo} alt="logo-cast" />
           <div className='input-fields-ctn'>
             <input className='input-fields' type='email' id='email' onChange={this.handleChange} placeholder='Email'></input>
           </div>
@@ -71,7 +71,7 @@ class SignUp extends Component<Props, State> {
           <div className='input-fields-ctn'>
             <input className='input-fields' type='text' id='lastName' onChange={this.handleChange} placeholder='Last Name'></input>
           </div>
-          <div className='signup-btn-ctn'>
+          <div>
             {
               filledFields === 4 ? 
               <button className='primary-btn login-btn'>Sign Up</button> :

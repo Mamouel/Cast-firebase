@@ -4,11 +4,10 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
-import { Redirect, Link } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 import OtherUserProfile from "./components/OtherUserProfile";
 import bannerImg from "../../style/images/oss.jpg";
-import Slider from "../layout/Slider";
 import "../../style/components/profile/profile.scss";
 import LoadingAnimation from "../layout/LoadingAnimation";
 import UserProfile from "./components/UserProfile";

@@ -5,7 +5,7 @@ import '../../style/components/layout/navlinks.scss';
 
 const SignedOutLinks = () => {
   return (
-    <div className='navlinks'>
+    <div className='navlinks signed-out-links'>
       <NavLink to='/signup'><button className='nav-btn'>Signup</button></NavLink>
       <NavLink to='/signin'><button className='nav-btn'>Login</button></NavLink>
     </div>

@@ -2,12 +2,16 @@
 @import "../../mixins";
 
 
+
 .navlinks {
   width: 100%;
   display: flex;
-  justify-content: baseline;
-  list-style:none;
+  justify-content: right;
+  list-style: none;
   font-size: 12px;
+  &.signed-out-links { 
+    width: unset;
+  }
 
   .search-form {
     display: flex;
@@ -24,6 +28,7 @@
       padding: 15px;
       font-size: 12px;
       border: none;
+      width: 60%;
     }
     .search-btn {
       height: 30px;
@@ -74,6 +79,5 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position-x: center;
-
   }
 }

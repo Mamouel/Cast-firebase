@@ -10,8 +10,6 @@
   max-height: 400px;
   .banner-wrapper {
     max-height: 400px;
-  
-  
     .banner-img-ctn {
       height: 400px;
       max-height: 400px;
@@ -19,7 +17,7 @@
       background-repeat: no-repeat;
       background-size: cover;
       background-position-y: center;
-  
+      background-position-x: center; 
     }
     .labels {
       display: flex;
@@ -33,7 +31,6 @@
       color: $white;
     }
   }
-
   .home-section-ctn {
     background-color: $white;
     width: 100%;
@@ -48,7 +45,6 @@
       .subtitle-ctn {
         width: 35%;
         margin: auto 45px;
-
       }
       .second-logo-ctn {
         width: 15%;
@@ -57,7 +53,6 @@
           width: 100%;
         }
       }
-
     }
     .home-footer-buttons {
       display: flex;
@@ -94,13 +89,14 @@
             margin: 10px;
             font-size: 20px;
             font-weight: bolder;
+            color: $primary;
           }
         }
       }
       .home-footer-sepdiv {
         height: 200px;
         width: 2px;
-        background-color: $grayDark;
+        background-color: $white;
       }
     }
   }
