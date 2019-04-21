@@ -41,10 +41,6 @@ class StoryDetails extends Component<Props> {
     }
   }
 
-  componentDidMount() {
-    window.scrollTo(0, 0);
-  }
-
   handleChange = (e) => {
     this.setState({
       commentContent: e.target.value,

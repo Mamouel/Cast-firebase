@@ -5,32 +5,29 @@
   .create-story-form {
     width: 60%;
     text-align: center;
-    background-color: $white;
+    background-color: aqua;;
     border-radius: 8px;
     margin: auto;
     text-decoration: none;
-    .create-story-title {
-      margin: 40px auto;
-      font-size: 36px;
-    }
-    .categories-input-ctn {
-        margin: 20px auto;
+    padding: 30px;
+    .categories-input-ctn, .title-input-ctn {
+      width: 49%;
     }
     .img-input-ctn {
       display: flex;
       flex-direction: column;
       .input-image-infos {
-        margin-top: 20px;
+        margin: 20px;
         .image-upload {
+          width: 100%;
           .label-file {
             cursor: pointer;
             color: $primary;
             font-weight: bold;
             font-size: 26px;
-            margin: 30px;
-            border-radius: 10px;
             padding: 10px;
             background-color: $white;
+            width: 100%;
             &:hover {
               color: $primaryDark;
             }
@@ -51,10 +48,6 @@
           }
         }
       }
-    }
-    .create-btn-ctn {
-      margin: 50px auto;
-      background-color: $white;
     }
   }
 }

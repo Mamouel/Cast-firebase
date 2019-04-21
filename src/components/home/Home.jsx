@@ -25,10 +25,6 @@ type Props = {
 
 class Home extends Component<Props> {
   
-  componentDidMount() {
-    window.scrollTo(0, 0);
-  }
-
   render() {
     const { auth, stories, notifications } = this.props;
 

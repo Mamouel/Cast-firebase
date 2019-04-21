@@ -3,212 +3,170 @@
 @import "./mixins.scss";
 @import "./reset.scss";
 
-
-
 body {
-  scroll-behavior: smooth;
-  margin: 0;
-  padding: 0;
-  font-family: $sans-font;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: $white;
-  background-repeat: no-repeat;
-  background-size: 100%;
-  min-height: 100vh;
-  a {
-    color: $black;
-    text-decoration: none;
-    cursor: pointer;
-    @include transition (all, 0.25s, ease);
-    &:link {
-      color: $black;
-      text-decoration: none;
-    }
-    &:visited {
-      color: $black;
-      text-decoration: none;
-    }
-    &:hover {
-      color: $primaryDark;
-      text-decoration: none;
-    }
-    &:active {
-      color: $white;
-      text-decoration: none;
-    }
-  }
+	scroll-behavior: smooth;
+	margin: 0;
+	padding: 0;
+	font-family: $sans-font;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background-color: $white;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	min-height: 100vh;
+	a {
+		color: $black;
+		text-decoration: none;
+		cursor: pointer;
+		@include transition (all, 0.25s, ease);
+		&:link {
+			color: $black;
+			text-decoration: none;
+		}
+		&:visited {
+			color: $black;
+			text-decoration: none;
+		}
+		&:hover {
+			color: $primaryDark;
+			text-decoration: none;
+		}
+		&:active {
+			color: $white;
+			text-decoration: none;
+		}
+	}
 
-  input, textarea, select {
-    @include transition (all, 0.25s, ease);
-  }
+	input,
+	textarea,
+	select {
+		@include transition (all, 0.25s, ease);
+		box-shadow: none;
+		background-color: $white;
+		border-bottom: 1px solid $grayMed;
+		border-top: none;
+		border-left: none;
+		border-right: none;
+		font-family: $sans-font;
+		font-size: 1.3em;
+		letter-spacing: 0.05em;
+		padding: 10px;
+		color: $black;
+		outline: none;
+		height: 50px;
+		width: 100%;
+		&:focus,
+		&:active {
+			letter-spacing: 0;
+			outline: none;
+			border-bottom: 2px solid $primary;
 
-  input, textarea {
-    box-shadow: none;
-    background-color: $white;
-    border-bottom: 1px solid $grayMed;
-    border-top: none;
-    border-left: none;
+			&::placeholder {
+				color: $white;
+			}
+		}
+		&::placeholder {
+			color: $grayMed;
+		}
+	}
 
-    border-right: none;
+	select {
+		&:focus,
+		&:active {
+			letter-spacing: 0;
+			outline: none;
+			border-bottom: 2px solid $primary;
 
-    font-family: $sans-font;
-    font-size: 1.3em;
-    letter-spacing: 0.05em;
-    padding: 0;
-    color: $black;
-    outline: none;
-    height: 50px;
+			&::placeholder {
+				color: $primaryLight;
+			}
+		}
+		&::placeholder {
+			color: $grayMed;
+		}
+	}
 
-    width: 100%;
-    &:focus, &:active {
-      letter-spacing: 0;
-      outline: none;
-      border-bottom: 2px solid $primary;
+	textarea {
+		height: 50vh;
+	}
 
+	button {
+		border: none;
+		background-color: $white;
+		color: $grayMed;
+		cursor: pointer;
+		&:hover,
+		&:focus {
+			color: $primary;
+		}
+		&:active {
+			// box-shadow: 0 2px 4px 2px rgba(54, 39, 28, 0);
+		}
+		&:focus {
+			outline: $black !important;
+		}
+		&.primary-btn {
+			font-size: 16px;
+			background-color: $white;
+			color: $grayDark;
+			@include transition (all, 0.25s, ease-out);
+			&:hover {
+				transform: scale(1.1);
+			}
+			&.special-btn {
+				color: $grayDark;
+				font-size: 14px;
+				&:hover {
+					transform: none;
+				}
+			}
+			&.create-btn {
+				background-color: $white;
+				font-size: 50px;
+				color: $primaryLight;
+			}
+			&.disabled {
+				color: $grayDark;
+				cursor: auto;
+				&:hover {
+					transform: none;
+				}
+			}
+			&.login-btn {
+				border-radius: 8px;
+				margin: 40px auto 0px auto;
+				font-size: 24px;
+				background-color: $white;
+				color: $primary;
+				@include transition (all, 0.25s, ease-out);
+				&:hover {
+					transform: scale(1.1);
+				}
+			}
+		}
+	}
 
-      &::placeholder {
-        color: $white;
-      }
-    }
-    &::placeholder {
-      color: $grayMed;
-    }
-  }
+	.banner {
+		position: relative;
+		width: 100%;
+		height: 93vh;
+		margin: auto;
+		background-color: $primaryLight;
+		align-content: center;
+	}
 
-  button {
-    border: none;
-    background-color: $white;
-    color: $grayMed;
-    cursor: pointer;
-    &:hover, &:focus {
-      color: $primary;
-    }
-    &:active {
-      box-shadow: 0 2px 4px 2px rgba(54, 39, 28, 0);
-    }
-    &:focus {
-      outline: $black !important;
-    }
-    &.primary-btn {
-      font-size: 16px;
-      background-color: $white;
-      color: $grayDark;
-      @include transition (all, 0.25s, ease-out);
-      &:hover {
-        transform: scale(1.1)
-      }
-      &.special-btn {
-        color: $grayDark;
-        font-size: 14px;
-        &:hover {
-          transform: none;
-        }
-      }
-      &.create-btn {
-        background-color: $white;
-        font-size: 50px;
-        color: $primary;
-      }
-      &.disabled {
-        color: $grayDark;
-        cursor: auto;
-        &:hover {
-          transform: none;
-        }
-      }
-      &.login-btn {
-        border-radius: 8px;
-        margin: 40px auto 0px auto;
-        font-size: 24px;
-        background-color: $white;
-        color: $primary;
-        @include transition (all, 0.25s, ease-out);
-        &:hover {
-          transform: scale(1.1)
-        }
-      }
-    }
-  }
-
-  textarea {
-    width: 100%;
-    height: 50vh;
-  }
-
-  select {
-    box-shadow: none;
-    background-color: $white;
-    border-bottom: 1px solid $grayMed;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-
-    font-family: $sans-font;
-    font-size: 1.3em;
-    letter-spacing: 0.05em;
-    padding: 0;
-    color: $black;
-    outline: none;
-    height: 50px;
-    margin: 10px auto;
-    width: 100%;
-    &:focus, &:active {
-      letter-spacing: 0;
-      outline: none;
-      border-bottom: 2px solid $primary;
-
-
-      &::placeholder {
-        color: $primaryLight;
-      }
-    }
-    &::placeholder {
-      color: $grayMed;
-    }
+	.title {
+		font-size: 60px;
+		font-weight: bold;
+	}
+	.subtitle {
+		font-size: 40px;
+		color: $white;
+		font-style: italic;
+		margin: auto;
+	}
+	.bold-italic {
+		font-weight: bold;
+		font-style: italic;
+	}
 }
-
-  .banner {
-    position: relative;
-    width: 100%;
-    height: 93vh;
-    margin: auto;
-    background-color: $primaryLight;
-    align-content: center;
-  }
-
-  .title {
-    font-size: 60px;
-    font-weight: bold;
-  }
-  .subtitle {
-    font-size: 40px;
-    color: $white;
-    font-style: italic;
-    margin: auto;
-
-  }
-  .bold-italic {
-    font-weight: bold;
-    font-style: italic;
-  }
-}
-
-
-// .hideOnMobile {
-//   @include bp-mobileOnly {
-//     display: none !important;
-//   }
-// }
-
-// .mobileonly {
-//   @include bp-mobileOnly {
-//     display: block !important;
-//   }
-// }
-
-// .hideOnSmallScreen {
-//   @include bp-small {
-//     display: none!important;
-//   }
-// }

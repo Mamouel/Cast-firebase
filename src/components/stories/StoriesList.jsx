@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import StorySummary from './StorySummary';
 import { Link } from 'react-router-dom';
-import ScrollAnimation from 'react-animate-on-scroll';
-
 
 import '../../style/components/stories/stories-list.scss';
 
@@ -18,9 +16,7 @@ const StoryList = (props: Props) => {
       {stories && stories.map(story => {
         return (
           <Link className='story-link' to={'/story/' + story.id} key={story.id}>
-            <ScrollAnimation animateIn="fadeIn">
-              <StorySummary story={story} />
-            </ScrollAnimation>
+            <StorySummary story={story} />
           </Link>
         )
       })}

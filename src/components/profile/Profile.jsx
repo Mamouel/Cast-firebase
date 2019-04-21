@@ -21,10 +21,7 @@ type Props = {
 };
 
 class Profile extends Component<Props> {
-  componentDidMount() {
-    window.scrollTo(0, 0)
-  }
-
+  
   getUserStories = (stories: Array<Object>, id: number ) => {
     let currentList = [];
     let newList = [];
